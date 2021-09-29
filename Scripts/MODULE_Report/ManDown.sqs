@@ -1,0 +1,11 @@
+if(VAR_PoliceReport_ManDown)then{exit;}
+VAR_PoliceReport_ManDown = true;
+~1
+_array = ["report_manDown1","report_manDown2","report_manDown3","report_manDown4","report_manDown5","report_manDown6","report_manDown6"]
+_r = random ((count _array)-1);
+_random = _r - (_r mod 1);
+_selected = _array select (_random);
+playsound _selected;
+
+~random(60)
+VAR_PoliceReport_ManDown = false;

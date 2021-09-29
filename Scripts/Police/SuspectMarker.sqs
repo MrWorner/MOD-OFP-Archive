@@ -1,0 +1,26 @@
+~1
+;///ÐÀÁÎÒÀÅÒ ÏÐÈ ÇÀÏÓÑÊÅ ÈÃÐÛ!
+
+;//susp lost!
+_Located = false;
+_wasKilled = true;
+
+
+if(!SETTINGS_SuspectMarker)then{exit;};
+#LOOP
+
+
+
+
+if(HowManySeeYou > 0)then{_wasKilled = false; _Located = true; _Dist = player distance Hero; _Final = _Dist - (_Dist mod 1); if(alive Hero)then{TOC globalchat FORMAT ["{DISPATCH 911]: Suspect located!",_Final ]; "HeroTarget" setMarkerPos getpos Hero; "HeroTarget" setMarkerType "Flag";}else{_wasKilled = true; TOC globalchat FORMAT ["{DISPATCH 911]: Suspect is down! %1 meters",_Final ]; "HeroTarget" setMarkerType "Marker"; "HeroTarget" setMarkerPos getpos Hero;};  }else{ if!(alive Hero)then{"HeroTarget" setMarkerType "Marker"; "HeroTarget" setMarkerPos getpos Hero; _Located = false;  } else {if(_wasKilled)then{"HeroTarget" setMarkerType "Marker";}else{ "HeroTarget" setMarkerType "Unknown";}; if(_Located)then{_Located = false; TOC globalchat FORMAT ["{DISPATCH 911]: Suspect lost!",_Final ];} }}
+
+~0.2
+"HeroTarget" setMarkerColor "ColorBlue";
+~0.2
+"HeroTarget" setMarkerColor "ColorRed";
+~0.2
+
+
+
+goto "LOOP"
+

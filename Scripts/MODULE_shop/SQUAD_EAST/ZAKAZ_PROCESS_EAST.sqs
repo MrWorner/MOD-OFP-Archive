@@ -1,0 +1,45 @@
+
+
+_HeroZakaz = HeroZakaz
+HeroZakaz = 0;
+publicvariable "HeroZakaz";
+
+;//------------TERROR 1
+
+
+IF(_HeroZakaz == 1)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR1_1.sqs"; exit;};
+IF(_HeroZakaz == 2)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR1_2.sqs"; exit;};
+IF(_HeroZakaz == 3)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR1_3.sqs"; exit;};
+IF(_HeroZakaz == 4)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR1_4.sqs"; exit;};
+
+IF(_HeroZakaz == 5)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR1_S_5.sqs"; exit;};
+IF(_HeroZakaz == 6)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR1_S_6.sqs"; exit;};
+
+;//------------TERROR 2
+
+IF(_HeroZakaz == 100)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR2_1.sqs"; exit;};
+IF(_HeroZakaz == 101)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR2_2.sqs"; exit;};
+IF(_HeroZakaz == 102)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR2_3.sqs"; exit;};
+IF(_HeroZakaz == 103)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR2_4.sqs"; exit;};
+
+IF(_HeroZakaz == 104)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR2_s_5.sqs"; exit;};
+IF(_HeroZakaz == 105)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR2_s_6.sqs"; exit;};
+IF(_HeroZakaz == 106)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR2_s_7.sqs"; exit;};
+
+;//------------TERROR 3
+
+IF(_HeroZakaz == 200)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR3_1.sqs"; exit;};
+IF(_HeroZakaz == 201)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR3_2.sqs"; exit;};
+IF(_HeroZakaz == 204)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR3_5.sqs"; exit;};
+
+IF(_HeroZakaz == 202)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR3_s_3.sqs"; exit;};
+IF(_HeroZakaz == 203)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR3_s_4.sqs"; exit;};
+IF(_HeroZakaz == 205)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR3_s_5.sqs"; exit;};
+IF(_HeroZakaz == 206)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR3_s_6.sqs"; exit;};
+IF(_HeroZakaz == 207)then{[] exec "MODULE_shop\SQUAD_EAST\SQUAD_TERROR3_s_7.sqs"; exit;};
+
+
+
+
+
+

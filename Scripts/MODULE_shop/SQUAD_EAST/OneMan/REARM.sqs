@@ -1,0 +1,247 @@
+
+_man = _this select 0;
+_Type = _this select 1;
+
+
+
+if(_Type == "Terror1_UziGuy")then {removeAllweapons _man; goto "Terror1_UziGuy";};
+if(_Type == "Terror1_Shotgun")then {removeAllweapons _man; goto "Terror1_Shotgun";};
+if(_Type == "Terror1_AKS")then {removeAllweapons _man; goto "Terror1_AKS";};
+if(_Type == "Terror1_RPD")then {removeAllweapons _man; goto "Terror1_RPD";};
+if(_Type == "Terror1_RPG")then {removeAllweapons _man; goto "Terror1_RPG";};
+if(_Type == "Terror1_MEDIC")then {removeAllweapons _man; goto "Terror1_MEDIC";};
+
+if(_Type == "Terror2_RPK")then {removeAllweapons _man; goto "Terror2_RPK";};
+if(_Type == "Terror2_PK")then {removeAllweapons _man; goto "Terror2_PK";};
+if(_Type == "Terror2_MEDIC")then {removeAllweapons _man; goto "Terror2_MEDIC";};
+if(_Type == "Terror2_RPG")then {removeAllweapons _man; goto "Terror2_RPG";};
+if(_Type == "Terror2_MP5K")then {removeAllweapons _man; goto "Terror2_MP5K";};
+
+
+
+
+if(_Type == "Terror3_Soldat")then {removeAllweapons _man; goto "Terror3_Soldat";};
+if(_Type == "Terror3_RPG")then {removeAllweapons _man; goto "Terror3_RPG";};
+if(_Type == "Terror3_AT")then {removeAllweapons _man; goto "Terror3_AT";};
+if(_Type == "Terror3_MEDIC")then {removeAllweapons _man; goto "Terror3_MEDIC";};
+if(_Type == "Terror3_MM1")then {removeAllweapons _man; goto "Terror3_MM1";};
+if(_Type == "Terror3_MP5SD")then {removeAllweapons _man; goto "Terror3_MP5SD";};
+if(_Type == "Terror3_M60")then {removeAllweapons _man; goto "Terror3_M60";};
+
+player globalchat format ["DEBUG: %1 no rearm class (%2).", _man, _Type]
+exit;
+
+#Terror1_UziGuy
+	[_man, "sof2_microuziMag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "sof2_microuzi";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Terror1_Shotgun
+	[_man, "sof2_m590Mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "sof2_m590";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Terror1_AKS
+	[_man, "ICP_ak47mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "ICP_aks47";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+#Terror1_RPD
+	[_man, "sof2_rpdMag", 5] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "sof2_rpd";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Terror1_RPG
+	[_man, "sof2_m4Mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "sof2_m4";
+	~4
+	_man addMagazine "ICPRPG_18";
+	~4
+	_man addWeapon "ICPRPG_18";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Terror1_MEDIC
+	[_man, "HK_MP5mag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "HK_MP5A5FB";
+	~4
+	[_man, "sof2_m1911Mag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "sof2_m1911";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+
+
+
+
+
+#Terror2_RPK
+	[_man, "ICP_rpk74mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "ICP_rpk74m";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+#Terror2_PK
+	[_man, "ICP_PKMMag", 5] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "ICP_PKM";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+#Terror2_PK
+	[_man, "ICP_PKMMag", 5] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "ICP_PKM";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+#Terror2_MEDIC
+	[_man, "ICP_akmmag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "ICP_akm";
+	~4
+	[_man, "sof2_m1911Mag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	_man addWeapon "sof2_m1911";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+#Terror2_RPG
+	[_man, "ICPRPG7mag", 5] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	[_man, "ICP_ak74mag", 5] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "ICP_ak74";
+	~4
+	_man addWeapon "ICPRPG7V";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+#Terror2_MP5K
+	[_man, "HK_MP5mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "HK_MP5KA4P";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+
+#Terror3_Soldat
+	[_man, "ICP_valmag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "ICP_val";
+	~4
+	_man addMagazine "ICPRPG_18";
+	~4
+	_man addWeapon "ICPRPG_18";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Terror3_RPG
+	[_man, "ICPRPG7Vmag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	[_man, "LSR_m16mag", 6] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4	
+	_man addWeapon "LSR_m16a4";
+	~4
+	_man addWeapon "ICPRPG7V";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Terror3_AT
+	[_man, "LSR_m16mag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4	
+	_man addWeapon "LSR_m16a4";
+	~4
+	_man addMagazine "ICPRPG29mag";
+	~4
+	_man addWeapon "ICPRPG29";
+	~1
+	_man addWeapon "NVGoggles";
+	
+exit;
+
+#Terror3_MEDIC
+	[_man, "ICP_SVDMag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "ICP_SVDN";
+		
+	~4
+	[_man, "sof2_m1911Mag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "sof2_m1911";
+	
+	~4
+	_man addMagazine "ICPRPG_18";
+	~4
+	_man addWeapon "ICPRPG_18";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Terror3_MM1
+	[_man, "sof2_mm1Mag", 1] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "sof2_mm1";
+	~4
+	[_man, "sof2_m1911Mag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	_man addWeapon "sof2_m1911";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Terror3_MP5SD
+	[_man, "HK_MP5SDmag", 10] exec "FUNCTIONS\func_addMagazine.sqs"
+	~4
+	_man addWeapon "HK_MP5SD6";
+	~4
+	_man addMagazine "ICPRPG_18";
+	~4
+	_man addWeapon "ICPRPG_18";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+#Terror3_M60
+	[_man, "JAM_W762M_200mag", 5] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "LSR_m60";
+	~4
+	_man addMagazine "ICPRPG_18";
+	~4
+	_man addWeapon "ICPRPG_18";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

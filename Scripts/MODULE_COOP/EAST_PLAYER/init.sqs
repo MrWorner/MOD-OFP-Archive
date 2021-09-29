@@ -1,0 +1,6 @@
+
+
+
+~1
+;// Дополнительные патрули
+[] exec "MODULE_COOP\EAST_PLAYER\MORE_PATROL_UNITS.sqs";

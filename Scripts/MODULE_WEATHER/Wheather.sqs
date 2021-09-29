@@ -1,0 +1,14 @@
+
+~5
+
+#CHECK
+
+	if(var_isServer)then{SETTINGS_WEATHER = random(1); publicvariable "SETTINGS_WEATHER";};
+	~10
+	SETTINGS_WEATHER_TimeChange setOvercast SETTINGS_WEATHER
+
+~SETTINGS_WEATHER_TimeChange
+
+goto "CHECK"
+
+

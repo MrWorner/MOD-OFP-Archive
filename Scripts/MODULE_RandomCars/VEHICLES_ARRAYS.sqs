@@ -1,0 +1,85 @@
+;//array_ = ["", "", "", "", "", "", "","", "", "", "", "", "", "","", "", "", "", "", "", "","", "", "", "", "", "", "","", "", "", "", "", "", "","", "", "", "", "", "", "", "DONTDELETE"]
+;//	carNEW = "Tahoe" createVehicle getpos player; player moveInDriver carNEW;
+
+;//Массив сброса тачек @_car_JawaMOD
+;//array_hero_carDrop = ["Jawa", "JawaQUAD", "DONTDELETE"];
+;//Массив начальный пак транспорта для главного подозреваемого @_car_JawaMOD
+;//array_hero_starterCarPack = ["Jawa", "JawaQUAD", "DONTDELETE"];
+
+array_DMX_cars_Wave2 = ["Octavia5", "nivapol", "nivapolold", "dmx_policieuaz", "dmx_policiegaz", "DONTDELETE"];
+array_DMX_cars_Wave3 = ["Octavia5", "CadillacN", "DONTDELETE"];
+
+
+array_HMW_Wave5 = ["CBT_M1025_D91_MK19", "CBT_M1025_D_M240", "DONTDELETE"];
+
+
+
+
+;//Массив тачек мэра
+;//array_mayor_cars = ["Amvv12", "hum2spc", "viper", "LincolnBlackN", "mersed1", "dzik", "DONTDELETE"];
+
+;//---begin Тачки для ARRAY_FINAL_VEHICLES_SPAWN	ARRAY_FINAL_COOLVEHICLES_SPAWN
+
+	;//BIS тачки
+	array_BIS_car = ["Mini", "Trabant", "SkodaBlue", "SkodaGreen", "SkodaRed", "Skoda", "Rapid","RapidY", "Bus", "TruckV3SCivil"];
+	if(!SETTINGS_CarSpawn_BIS_bool)then{array_BIS_car = []};
+	
+	;//VAZ21 PACK ;@_car_GoodVazPack
+
+	;//array_pack_GoodVazPack = ["vaz4gr","vaz3gr","vaz2gr","vaz1gr","vaz05grsn","vaz05gr","vaz05gr2","vaz05gr3","vaz07gr2","vaz07gr4","vaz07gr","vaz07gr3","vaz08gr2"]
+	
+	array_pack_GoodVazPack = ["vaz3gra","vaz2gra","vaz1gra","vaz05grsna","vaz05graw","vaz05gr2a","vaz05gr3a","vaz07gr2a","vaz07gr4a","vaz07graw","vaz07gr3a","vaz08gr2a","vaz4gra"]
+	;//array_pack_GoodVazPack = []
+	
+
+	
+	;//Быстрые тачки	@_pack_DifferentCARS
+	;//array_pack_DifferentCARS = ["Amvv12", "BMWM", "CadillacE", "Challenger", "LincolnBlackN", "JeepG", "Mazda6","mersed1", "Mondeo", "Mustang69", "OR_MUSTANG", "SKODA800S", "Roadster", "Tahoe", "Z3", "viper","DONTDELETE"];
+	array_pack_DifferentCARS_1 = ["Tahoe", "CadillacE", "JeepG", "Mazda6", "Mondeo"];
+	array_pack_DifferentCARS_2 = ["BMWM", "Amvv12", "mersed1", "Challenger", "Mustang69", "OR_MUSTANG", "SKODA800S", "Roadster", "Z3", "viper"];
+	if(!SETTINGS_CarSpawn_DifferentCARS_bool)then{array_pack_DifferentCARS_1 = []; array_pack_DifferentCARS_2 = []};
+	
+	;//ФИНАЛЬНЫЙ МАССИВ МАШИН ДЛЯ СПАВНА
+	ARRAY_FINAL_VEHICLES_SPAWN = [];
+	ARRAY_FINAL_COOLVEHICLES_SPAWN = [];
+	ARRAY_FINAL_VEHICLES_SPAWN = ARRAY_FINAL_VEHICLES_SPAWN + array_BIS_car + array_pack_DifferentCARS_1 + array_pack_GoodVazPack + ["Tahoe"];
+	ARRAY_FINAL_COOLVEHICLES_SPAWN = ARRAY_FINAL_COOLVEHICLES_SPAWN + array_pack_DifferentCARS_2 + ["Tahoe"];
+
+;//---end Тачки для ARRAY_FINAL_VEHICLES_SPAWN
+
+
+
+
+
+
+
+
+
+
+
+;//"Vaz2106","Vaz2106_sin","B45mb3000KM2","B45mb3000LW2","BMW75","BMWr75","BMWr75mg","GST_Ost","GAZ67b","GAZM","Zis5","GSTE_FA","GSTE_FA1",
+;Civ_BIS_Casual_vehicles= ["Rapid","RapidY","HMMWV","JeepPolice","Jeep","Skoda","SkodaBlue","SkodaRed","SkodaGreen","Mini","Trabant","UAZ","GJeep","UAZG","Tractor"]
+;Civ_BIS_Heavy_vehicles = ["TruckV3SG","Bus"]
+
+;Civ_Motorcycles = ["Jawa","JawaQUAD"]
+;Civ2_Motorcycles = ["RabbiT_Jawa21","Gst_KawaP","BAS_klr250dese","BOHcub","BOHcubd","BOHxlr250","OFrP_Cagiva_350T","SFP_bike","SFP_mc","SFP_moped",,,,,,,,,,,,,,,,,,,]
+
+;Civ_Tracktors = ["wozek2","wozek"];
+;Civ2_Tracktors = ["Eks","DT75kz","T130","t16","t25","t40","DT75V","t40m",,,,,,,,,,,,,,,,,];
+
+;Civ_Casual_vehicles = ["Gaz24b","Gaz24t","Gaz24w","skoda800s","VAZ21099","VAZ21099p","740"]
+;Civ2_Casual_vehicles = ["ChallengVP","AZLK","volvo240","skudka","Fiat126","kanciak","golf","polonez","polonez3","wartburg","awmmercwhite","Challenger","moskvich2137","BT_DeLorean","Hearse","w123or2","w123or1","w123or3","oldtruck","ZAZ968M","ZAZ968M_GREEN","ZAZ968M_RED","ZAZ968M_BLUE","ZAZ968M_PZR",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]
+
+;Civ_4x4_vehicles = ["Y_HUMMER_CIVILE","tancland","MTYV8Jeep","nivaArmyStandart","nivaStandart"]
+;Civ2_4x4_vehicles = ["Expedition","Mondeo","JeepG","hum2","hum2spc","hum2bl","JeepW","IkaR_pajero81","uaz23602b","uaz23602r","uaz31514","uaz3160b","uaz3160h","Tahoe",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]
+
+;Civ2_MiniBuses_vehicles = ["1203","lublin4","lublin","nysa","zuk1","zuk","zuk2","awmvwbuswhite","awmvwbusgreen","RAF_2203_azure","RAF_2203_yellow",,,,,,,,,,,,,,,,,,,,,,]
+
+;Civ_Trucks_vehicles = ["Gaz53AH","Gaz53","Gaz53prop","Gaz53AV","Gaz53ab","Gaz53jo","jmgfiretruck","kamaz","kamaz_m"]
+;Civ2_Trucks_vehicles = ["BAS_AUral2","maz7","maz6","maz1aNew","mfm_ZiL157kv","mfm_ZiL157kd",,,,,,,,,,,,,,,,,,,,,]
+;//"BOHPSC300"
+
+;Civ2_Buses_vehicles = ["autosan","autozan","ikarus","ikaruz",,,,,,,,,,,,,,,,,,,,,,,]
+
+;Civ_EXPENSIVE_vehicles = ["KoenigseggCC","M3P","M3S","Roadster","GSTE_FA","GSTE_FA1"]
+;Civ2_EXPENSIVE_vehicles = ["Amvv12","Z3","BB69vette","BB69vetteGS","viper","Rabit_Escort","BB_34hot","BB_34hotRC","Mustang69","BB_34hotRA","BB_34hotSE","Mazda6","OR_MUSTANG","Peugeot2062","Peugeot206","SubaruPravy","SubaruBlack",,,,,,,,,,,,,,,,,,,,]

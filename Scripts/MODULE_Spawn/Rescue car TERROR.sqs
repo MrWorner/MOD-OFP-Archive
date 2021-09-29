@@ -1,0 +1,27 @@
+_cost = SETTINGS_HERO_RescueVehicle
+_veh= "BAS_klr250dese"
+if(HowManySeeYou > 0)then{player groupchat format ["You cannot call resuce vehicle when %1 police officer(s) nearby",HowManySeeYou]; exit;}
+if(Cop1 distance Hero < 250)then{player groupchat format ["You cannot call resuce vehicle when the Omega leader near by",HowManySeeYou]; exit;}
+if(HeroMoney < _cost)then{player groupchat format ["Not enough money! You have only $%2. Required additional: $%3.",_cost,HeroMoney, (_cost - HeroMoney)]; exit;}
+HeroMoney = HeroMoney - _cost
+PublicVariable "HeroMoney";
+player sidechat "Please wait 20 sec! Your vehicle is coming!";
+
+_pos = position player
+"SmokeShellGreen" createVehicle (_pos)
+
+TOC_GreenSmoke setpos _pos
+
+SuspectGreenSmoke = true
+publicvariable "SuspectGreenSmoke"
+
+~5
+playmusic "Plane"
+~14
+;//titleText [" ", "BLACK", 1];
+;//if(random 1 > 0.5)then{_veh= "JawaTT"}else{_veh= "JawaQUAD"};
+;//~1
+
+_veh createVehicle _pos;
+player sidechat "Done!";
+;//titleText [" ", "BLACK IN", 1];

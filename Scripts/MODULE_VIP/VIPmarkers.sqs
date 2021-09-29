@@ -1,0 +1,51 @@
+~1
+
+_ignore1= false
+_ignore2= false
+_ignore3= false
+_ignore4= false
+_ignore5= false
+_ignore6= false
+_ignore7= false
+_ignore8= false
+_ignore9= false
+_ignore10= false
+_ignore11= false
+_ignore12= false
+_ignore13= false
+_ignore14= false
+_ignore15= false
+_ignore16= false
+_ignore17= false
+_ignore18= false
+~1
+#LOOP
+
+
+
+if(!(alive VIP1)&&!(_ignore1))then{_ignore1 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker1" setMarkerColor "ColorBlack"; "VIPmarker1" setMarkerType "Marker";}else{"VIPmarker1" setMarkerPos getpos VIP1;};
+if(!(alive VIP2)&&!(_ignore2))then{_ignore2 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker2" setMarkerColor "ColorBlack"; "VIPmarker2" setMarkerType "Marker";}else{"VIPmarker2" setMarkerPos getpos VIP2;};
+if(!(alive VIP3)&&!(_ignore3))then{_ignore3 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker3" setMarkerColor "ColorBlack"; "VIPmarker3" setMarkerType "Marker";}else{"VIPmarker3" setMarkerPos getpos VIP3;};
+if(!(alive VIP4)&&!(_ignore4))then{_ignore4 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker4" setMarkerColor "ColorBlack"; "VIPmarker4" setMarkerType "Marker";}else{"VIPmarker4" setMarkerPos getpos VIP4;};
+if(!(alive VIP5)&&!(_ignore5))then{_ignore5 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker5" setMarkerColor "ColorBlack"; "VIPmarker5" setMarkerType "Marker";}else{"VIPmarker5" setMarkerPos getpos VIP5;};
+if(!(alive VIP6)&&!(_ignore6))then{_ignore6 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker6" setMarkerColor "ColorBlack"; "VIPmarker6" setMarkerType "Marker";}else{"VIPmarker6" setMarkerPos getpos VIP6;};
+if(!(alive VIP7)&&!(_ignore7))then{_ignore7 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker7" setMarkerColor "ColorBlack"; "VIPmarker7" setMarkerType "Marker";}else{"VIPmarker7" setMarkerPos getpos VIP7;};
+if(!(alive VIP8)&&!(_ignore8))then{_ignore8 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker8" setMarkerColor "ColorBlack"; "VIPmarker8" setMarkerType "Marker";}else{"VIPmarker8" setMarkerPos getpos VIP8;};
+if(!(alive VIP9)&&!(_ignore9))then{_ignore9 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker9" setMarkerColor "ColorBlack"; "VIPmarker9" setMarkerType "Marker";}else{"VIPmarker9" setMarkerPos getpos VIP9;};
+if(!(alive VIP10)&&!(_ignore10))then{_ignore10 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker10" setMarkerColor "ColorBlack"; "VIPmarker10" setMarkerType "Marker";}else{"VIPmarker10" setMarkerPos getpos VIP10;};
+if(!(alive VIP11)&&!(_ignore11))then{_ignore11 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker11" setMarkerColor "ColorBlack"; "VIPmarker11" setMarkerType "Marker";}else{"VIPmarker11" setMarkerPos getpos VIP11;};
+if(!(alive VIP12)&&!(_ignore12))then{_ignore12 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker12" setMarkerColor "ColorBlack"; "VIPmarker12" setMarkerType "Marker";}else{"VIPmarker12" setMarkerPos getpos VIP12;};
+if(!(alive VIP13)&&!(_ignore13))then{_ignore13 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker13" setMarkerColor "ColorBlack"; "VIPmarker13" setMarkerType "Marker";}else{"VIPmarker13" setMarkerPos getpos VIP13;};
+if(!(alive VIP14)&&!(_ignore14))then{_ignore14 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker14" setMarkerColor "ColorBlack"; "VIPmarker14" setMarkerType "Marker";}else{"VIPmarker14" setMarkerPos getpos VIP14;};
+
+if(!(alive VIP15)&&!(_ignore15))then{_ignore15 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker15" setMarkerColor "ColorBlack"; "VIPmarker15" setMarkerType "Marker";}else{"VIPmarker15" setMarkerPos getpos VIP15;};
+if(!(alive VIP16)&&!(_ignore16))then{_ignore16 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker16" setMarkerColor "ColorBlack"; "VIPmarker16" setMarkerType "Marker";}else{"VIPmarker16" setMarkerPos getpos VIP16;};
+if(!(alive VIP17)&&!(_ignore17))then{_ignore17 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker17" setMarkerColor "ColorBlack"; "VIPmarker17" setMarkerType "Marker";}else{"VIPmarker17" setMarkerPos getpos VIP17;};
+if(!(alive VIP18)&&!(_ignore18))then{_ignore18 = true ;hint "{BREAKING NEWS]: VIP has been eliminated!!"; "VIPmarker18" setMarkerColor "ColorBlack"; "VIPmarker18" setMarkerType "Marker";}else{"VIPmarker18" setMarkerPos getpos VIP18;};
+
+;//FIX FOR SERVER 
+if(HowManySeeYou < 0)then{HowManySeeYou = 0; publicvariable "HowManySeeYou"; HINT "FIX FOR SERVER ACTIVATED!";}
+
+~5
+
+goto "LOOP"

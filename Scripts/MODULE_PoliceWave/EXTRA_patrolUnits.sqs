@@ -1,0 +1,42 @@
+
+_units = SETTINGS_WAVE_ExtraUnits
+
+#SpawnDefaultArmy
+if(_units == 0)then{exit;};
+_units = _units - 1;
+
+_CopBase = array_CopBaseAIspawn select 0;
+_r = random ((count array_CopBaseAIspawn)-1);
+_random = _r - (_r mod 1);
+_CopBase = array_CopBaseAIspawn select (_random);
+~0.1
+
+_Police_car = "dmx_policiejawa" createVehicle (getpos _CopBase);
+_Police_car animate ["mig_anim", 0.5];
+~0.1
+"dmx_policiesailor" createUnit [position _Police_car, WestGroup,"NAMESAVER_extraUnit = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_extraUnit;
+[_man] join grpnull
+[_man, "sof2_m1911Mag", 4, "sof2_m1911"] exec "FUNCTIONS\func_addWepAndMag.sqs"
+~1
+_man moveInDriver _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_2] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+_LocalLeader = _man
+
+[_LocalLeader] exec "Police\AI_police.sqs"; 
+
+~0.1
+
+"dmx_policiesailor" createUnit [position _Police_car, group _LocalLeader,"NAMESAVER_extraUnit = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_extraUnit;
+[_man, "sof2_m1911Mag", 4, "sof2_m1911"] exec "FUNCTIONS\func_addWepAndMag.sqs"
+
+_man moveInCargo _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_2] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+
+
+goto "SpawnDefaultArmy"

@@ -1,0 +1,27 @@
+_VIP = _this select 0;
+~5
+_group = group _VIP;
+
+(group _VIP) setBehaviour "SAFE"
+~0.2
+
+_VIP addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_vip.sqs"" ;"];
+
+
+#CHECK
+~3
+	if(! (alive _VIP) ) then {_group exec "Police\AI_REVENGE_SEARCH.sqs"; exit;};
+	if ((  _group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then { _group reveal (vehicle Hero); HowManySeeYou = HowManySeeYou + 1; publicVariable "HowManySeeYou"; report_IsCalling_VIP = true; PublicVariable "report_IsCalling_VIP"; report_IsCalling_VIP = true; PublicVariable "report_IsCalling_VIP"; [_VIP, Hero] exec "FUNCTIONS\func_position_Difference_btw2.sqs"; goto "PURSUIT"; } 
+goto "CHECK"
+
+#PURSUIT
+
+	if(!(alive _VIP) ) then {HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou"; _group exec "Police\AI_REVENGE_SEARCH.sqs"; exit;}
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then{report_call_VIP = report_call_VIP + 1; PublicVariable "report_call_VIP";}else{ HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou";  goto "CHECK"; }
+~5
+goto "PURSUIT"
+
+
+
+
+

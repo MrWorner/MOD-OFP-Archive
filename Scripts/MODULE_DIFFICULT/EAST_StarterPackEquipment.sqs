@@ -1,0 +1,66 @@
+;//_r = random ((count SPAWNPOS_ARRAY)-1);
+;//_random = _r - (_r mod 1);
+;//HELIDROP = SPAWNPOS_ARRAY select (_random);
+
+_r = random ((count array_SpawnPos)-1);
+_random = _r - (_r mod 1);
+_selected = array_SpawnPos select (_random);
+player setpos getMarkerPos _selected;
+playmusic "HeliDrop2";
+
+_array_Cars = ARRAY_FINAL_VEHICLES_SPAWN + ["Skoda"];
+_r = random ((count _array_Cars)-1);
+_random = _r - (_r mod 1);
+_selected = _array_Cars select (_random);
+_car1 = _selected createVehicle position player;
+
+;//~0.1
+
+;//_r = random ((count array_hero_starterCarPack)-1);
+;//_random = _r - (_r mod 1);
+;//_selected = array_hero_starterCarPack select (_random);
+;//_car2 = _selected createVehicle position player;
+
+
+
+"edg_resSoldierGMedic" createUnit [position player, group player,"Soldat1 = this; removeAllweapons this;", 1, "corporal"]
+"edg_resSoldierGBr" createUnit [position player, group player,"Soldat2 = this ; removeAllweapons this;", 1, "corporal"]
+"edg_resSoldierGBn" createUnit [position player, group player,"Soldat3 = this ; removeAllweapons this;", 1, "corporal"]
+
+;//случайные начальные пушки для главного подозреваемого
+IF(side player == east)THEN{ [] exec "MODULE_WEAPONS\BeginWep_Rebbel.sqs"}
+
+~0.1
+TotalSusp  = TotalSusp + 1;
+AliveSusp  = AliveSusp + 1;
+PublicVariable "TotalSusp";
+PublicVariable "AliveSusp";
+Soldat1 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+[Soldat1, "Terror1_MEDIC"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+
+
+~0.1
+TotalSusp  = TotalSusp + 1;
+AliveSusp  = AliveSusp + 1;
+PublicVariable "TotalSusp";
+PublicVariable "AliveSusp";
+Soldat2 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+[Soldat2, "Terror2_PK"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+
+
+~0.1
+TotalSusp  = TotalSusp + 1;
+AliveSusp  = AliveSusp + 1;
+PublicVariable "TotalSusp";
+PublicVariable "AliveSusp";
+Soldat3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+[Soldat3, "Terror2_RPK"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+
+;//_myMassive = ["1","2","3"];
+;//_r = random ((count _myMassive)-1);
+;//_random = _r - (_r mod 1);
+;//_selected = _myMassive select (_random);
+;//hintc format ["%1",(_myMassive select (_random))];
+
+
+

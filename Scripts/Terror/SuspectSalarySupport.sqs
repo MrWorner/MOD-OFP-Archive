@@ -1,0 +1,12 @@
+#LOOP
+~60
+_Bonus =  TotalVIP - AliveVIP;
+_income = SETTINGS_Salary_EAST + 10*_Bonus;
+TOC globalchat format ["Income $%1 from your sponsor!", _income];
+HeroMoney = HeroMoney + _income;
+PublicVariable "HeroMoney";
+
+WantedLevelPoints = WantedLevelPoints + 1;
+PublicVariable "WantedLevelPoints";
+
+goto "LOOP"

@@ -1,0 +1,36 @@
+
+_LEADER = _this select 0;
+_GROUP = group _LEADER;
+
+ARRAY_EASTSquadForMarkers = ARRAY_EASTSquadForMarkers + [_GROUP];
+
+~0.2
+
+
+
+#PURSUIT
+
+
+	if(count units _GROUP == 0) then {exit;};
+
+	;//{IF(ALIVE MAYOR)THEN{_x DoMove getpos MAYOR}ELSE{IF(ALIVE GENERAL)THEN{_x DoMove getpos GENERAL}}}foreach _ALLUNITS	
+	IF(ALIVE MAYOR)THEN{(units _group) DoMove getpos MAYOR}ELSE{goto "PURSUIT2"}
+~12
+goto "PURSUIT"
+
+
+
+#PURSUIT2
+
+	if(count units _GROUP == 0) then {exit;};
+	if(!(alive GENERAL)) then {exit;};
+	
+	_r = random (count array_AttackPosBase);
+	_random = _r - (_r mod 1);
+	_chosenPos = array_AttackPosBase select (_random);
+	;//if( (leader _GROUP) distance GENERAL > 120)THEN{(units _group) DoMove getpos _chosenPos}
+	(units _group) DoMove getpos _chosenPos;
+	
+	
+~30
+goto "PURSUIT2"

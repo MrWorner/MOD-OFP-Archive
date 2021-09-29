@@ -1,0 +1,12 @@
+;//[] exec "MODULE_Report\CrimeInProgress.sqs";
+
+
+if(VAR_PoliceReport_CrimeInProgress)then{exit;}
+VAR_PoliceReport_CrimeInProgress = true;
+~1
+
+playsound "report_CrimeInProgress";
+
+
+~random(60)
+VAR_PoliceReport_CrimeInProgress = false;

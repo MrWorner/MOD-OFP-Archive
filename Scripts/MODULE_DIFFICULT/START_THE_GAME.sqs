@@ -1,0 +1,4 @@
+;//ЗАПУЩЕН ИЗ ACTION MENU ОТ HERO, КОТОРЫЙ ПОДОШЕЛ К EAST_GENERAL. НУЖЕН ДЛЯ АКТИВАЦИИ ТРИГГЕРА, ЧТОБЫ ПОТОМ ПРОИГРАТЬ У ВСЕХ ИНТРО.
+
+GAME_STARTED = true;
+PublicVariable "GAME_STARTED";

@@ -1,0 +1,258 @@
+
+
+
+
+if(WantedLevel == 1)then{goto "Level1";};
+if(WantedLevel == 2)then{goto "Level2";};
+if(WantedLevel == 3)then{goto "Level3";};
+if(WantedLevel == 4)then{goto "Level4";};
+if(WantedLevel == 5)then{goto "Level5";};
+if(WantedLevel == 6)then{goto "Level6";};
+
+
+#Level1
+
+
+"edg_resSoldierGMedic" createUnit [position player, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_MEDIC"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+ 
+~0.1
+_r = random ((count ARRAY_FINAL_VEHICLES_SPAWN)-1);
+_random = _r - (_r mod 1);
+_selected = ARRAY_FINAL_VEHICLES_SPAWN select (_random);
+_car = _selected createVehicle getpos VARfriend;
+VARfriend moveInDriver _car;
+
+
+exit;
+#Level2
+
+
+"edg_resSoldierGMedic" createUnit [position player, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_MEDIC"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~0.1
+_r = random ((count ARRAY_FINAL_VEHICLES_SPAWN)-1);
+_random = _r - (_r mod 1);
+_selected = ARRAY_FINAL_VEHICLES_SPAWN select (_random);
+_car = _selected createVehicle getpos VARfriend;
+VARfriend moveInDriver _car;
+~0.1
+"edg_resSoldierGBr" createUnit [position _car, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_AKS"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+
+
+
+exit;
+#Level3
+
+
+
+
+"edg_resSoldierGMedic" createUnit [position player, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_MEDIC"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~0.1
+_r = random ((count ARRAY_FINAL_VEHICLES_SPAWN)-1);
+_random = _r - (_r mod 1);
+_selected = ARRAY_FINAL_VEHICLES_SPAWN select (_random);
+_car = _selected createVehicle getpos VARfriend;
+VARfriend moveInDriver _car;
+~0.1
+"edg_resSoldierGBr" createUnit [position _car, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror2_RPK"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~0.1
+"edg_resSoldierGBr" createUnit [position _car, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_AKS"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+
+
+
+
+exit;
+#Level4
+
+
+"edg_resSoldierGMedic" createUnit [position player, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_MEDIC"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~0.1
+_r = random ((count ARRAY_FINAL_VEHICLES_SPAWN)-1);
+_random = _r - (_r mod 1);
+_selected = ARRAY_FINAL_VEHICLES_SPAWN select (_random);
+_car = _selected createVehicle getpos VARfriend;
+VARfriend moveInDriver _car;
+~0.1
+"edg_resSoldierGBr" createUnit [position _car, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror2_RPK"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~0.1
+"edg_resSoldierGBr" createUnit [position _car, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_AKS"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+
+~0.1
+
+_jeep = "VTbtrcz" createVehicle (getpos _car);
+clearmagazinecargo _jeep; clearweaponcargo _jeep;
+
+~0.1
+	"res_troop_MG" createUnit [position _jeep, player,"NAMESAVER_respawnArmy1 = this; RemoveAllWeapons this;", 1, "corporal"]
+	_man = NAMESAVER_respawnArmy1
+	[_man, "Terror2_RPK"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+	_man moveInDriver  _jeep
+	TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+	AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+	_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+
+~1
+_count = 5;
+#LOOp_CARGO_CAR1
+	"res_troop_MG" createUnit [position _jeep, player,"NAMESAVER_respawnArmy1 = this ; RemoveAllWeapons this;", 1, "corporal"]
+	_man = NAMESAVER_respawnArmy1
+	[_man, "Terror2_RPK"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+	
+	TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+	AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+	_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+	
+	_man moveInCargo _jeep
+	_count = _count - 1;
+~0.1
+IF(_count > 0)THEN{ GOTO "LOOp_CARGO_CAR1";};
+
+
+
+
+
+exit;
+#Level5
+
+
+"edg_resSoldierGMedic" createUnit [position player, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_MEDIC"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~0.1
+_r = random ((count ARRAY_FINAL_VEHICLES_SPAWN)-1);
+_random = _r - (_r mod 1);
+_selected = ARRAY_FINAL_VEHICLES_SPAWN select (_random);
+_car = _selected createVehicle getpos VARfriend;
+VARfriend moveInDriver _car;
+~0.1
+"edg_resSoldierGBr" createUnit [position _car, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror2_RPK"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~0.1
+"edg_resSoldierGBr" createUnit [position _car, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_AKS"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+
+
+
+
+_jeep = "mfm_goretsk_nomrap" createVehicle (getpos _car);
+clearmagazinecargo _jeep; clearweaponcargo _jeep;
+
+~0.1
+	"CRSMOfficer" createUnit [position _jeep, player,"NAMESAVER_respawnArmy1 = this; RemoveAllWeapons this;", 1, "corporal"]
+	_man = NAMESAVER_respawnArmy1
+	[_man, "Terror3_RPG"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+	_man moveInDriver  _jeep
+	_LocalLeader = _man
+	TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+	AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+	_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~1
+_count = 6;
+#LOOp_CARGO_CAR1b
+	"CRSMOfficer" createUnit [position _jeep, player,"NAMESAVER_respawnArmy1 = this ; RemoveAllWeapons this;", 1, "corporal"]	
+	_man = NAMESAVER_respawnArmy1
+	[_man, "Terror3_RPG"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+	TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+	AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+	_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+	
+	_man moveInCargo _jeep
+	_count = _count - 1;
+~0.11
+IF(_count > 0)THEN{ GOTO "LOOp_CARGO_CAR1b";};
+
+
+
+
+exit;
+#Level6
+
+
+"edg_resSoldierGMedic" createUnit [position player, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_MEDIC"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~0.1
+_r = random ((count ARRAY_FINAL_VEHICLES_SPAWN)-1);
+_random = _r - (_r mod 1);
+_selected = ARRAY_FINAL_VEHICLES_SPAWN select (_random);
+_car = _selected createVehicle getpos VARfriend;
+VARfriend moveInDriver _car;
+~0.1
+"edg_resSoldierGBr" createUnit [position _car, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror2_RPK"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+~0.1
+"edg_resSoldierGBr" createUnit [position _car, player,"VARfriend = This;", 1, "corporal"];
+[VARfriend, "Terror1_AKS"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+TotalSusp  = TotalSusp + 1; AliveSusp  = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp"; 
+VARfriend addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+
+
+
+
+_jeep = "MNF_BMP1R" createVehicle (getpos _car);
+clearmagazinecargo _jeep; clearweaponcargo _jeep;
+
+~0.1
+	"CRSMOfficer" createUnit [position _jeep, player,"NAMESAVER_respawnArmy1 = this; RemoveAllWeapons this;", 1, "corporal"]
+	_man = NAMESAVER_respawnArmy1
+	[_man, "Terror1_RPG"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+	_man moveInDriver  _jeep
+	_LocalLeader = _man
+	TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+	AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+	_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+
+~1	
+
+	_count = 8;
+	#LOOp_CARGO_CAR1c
+		"CRSMOfficer" createUnit [position _jeep, player,"NAMESAVER_respawnArmy1 = this ; RemoveAllWeapons this;", 1, "corporal"]	
+		_man = NAMESAVER_respawnArmy1
+		[_man, "Terror1_RPG"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+		TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+		AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+		_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+		
+		IF(_count == 8)THEN{ _man moveInCommander  _jeep};
+		IF(_count == 7)THEN{ _man moveInGunner  _jeep};
+		IF(_count < 7)THEN{ _man moveInCargo  _jeep};
+		_count = _count - 1;
+	~0.11
+	IF(_count > 0)THEN{ GOTO "LOOp_CARGO_CAR1c";};
+	
+
+exit;

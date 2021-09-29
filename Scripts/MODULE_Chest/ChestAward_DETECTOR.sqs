@@ -1,0 +1,7 @@
+
+
+
+TOC globalchat "You got Decryption device, now you can track the OMEGA leader on the map!";
+Deletevehicle Chest_3;
+playmusic "DangerClose2"
+[] exec "MODULE_Chest\OmegaMarker.sqs"

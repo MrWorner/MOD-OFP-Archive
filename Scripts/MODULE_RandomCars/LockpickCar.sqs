@@ -1,0 +1,38 @@
+if(!(alive player))then{exit};
+_car = _this select 0;
+
+if(_car distance player > 5)then{player sidechat "you are too far!"; exit;}
+
+_car removeAction 0;
+_bool_Alarm = false;
+if(SETTINGS_CarSteal_AlarmChance >= random 100)then{_bool_Alarm = true;};
+
+player switchmove "combatToMedic";
+~3
+
+
+OBJ_stolenCar = _car; publicvariable "OBJ_stolenCar"
+
+if(!(alive player))then{_car lock false; bool_CarHasBeenStolen = true; publicvariable "bool_CarHasBeenStolen";exit};
+if(_bool_Alarm)then{ _car say "CarAlarm"; REPORT_stolenCar = REPORT_stolenCar + 1;publicvariable "REPORT_stolenCar";};
+
+
+player switchmove "combatToMedic";
+~3
+if(!(alive player))then{_car lock false; bool_CarHasBeenStolen = true; publicvariable "bool_CarHasBeenStolen";exit};
+if(_bool_Alarm)then{_car say "CarAlarm"; REPORT_stolenCar = REPORT_stolenCar + 1;publicvariable "REPORT_stolenCar"; };
+player switchmove "combatToMedic";
+~3
+if(!(alive player))then{_car lock false; bool_CarHasBeenStolen = true; publicvariable "bool_CarHasBeenStolen";exit};
+if(_bool_Alarm)then{REPORT_stolenCar = REPORT_stolenCar + 1;publicvariable "REPORT_stolenCar";}; 
+player switchmove "";
+_car say "unlock"
+player sidechat "You unlocked the car!"; 
+~0.1
+if(!(alive player))then{_car lock false; bool_CarHasBeenStolen = true; publicvariable "bool_CarHasBeenStolen"; exit};
+if(_bool_Alarm)then{REPORT_stolenCar = REPORT_stolenCar + 1;publicvariable "REPORT_stolenCar";}; 
+_car lock false;
+player moveInDriver _car;
+bool_CarHasBeenStolen = true; publicvariable "bool_CarHasBeenStolen";
+;//player action ["GetInDriver", _car]
+;//player action ["lightOn", _car]

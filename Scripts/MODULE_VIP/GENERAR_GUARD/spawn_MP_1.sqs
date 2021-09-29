@@ -1,0 +1,83 @@
+_VIP1 = ExtraMP1
+
+
+ExtraMP1 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ExtraMP2 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ExtraMP3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ExtraMP4 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ExtraMP5 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+TotalGuard = TotalGuard + 5; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 5; 
+publicVariable "AliveGuard";
+
+
+
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP1,"spawn_MP_1 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_1 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP1,"spawn_MP_1 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_1 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP1,"spawn_MP_1 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_1 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP1,"spawn_MP_1 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_1 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP1,"spawn_MP_1 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_1 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP1,"spawn_MP_1 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_1 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP1,"spawn_MP_1 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_1 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";

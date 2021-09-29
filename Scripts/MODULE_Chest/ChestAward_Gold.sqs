@@ -1,0 +1,8 @@
+
+
+
+TOC globalchat "You got $100000 from the gold chest!";
+HeroMoney = HeroMoney + 100000
+PublicVariable "HeroMoney"
+Deletevehicle Chest_2;
+playmusic "Buy"

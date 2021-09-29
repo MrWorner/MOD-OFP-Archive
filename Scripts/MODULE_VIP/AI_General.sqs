@@ -1,0 +1,33 @@
+_VIP = _this select 0;
+_group = group _VIP;
+~0.2
+_group setBehaviour "SAFE"
+
+_VIP addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_GENERAL.sqs"" ;"];
+
+[] exec "MODULE_VIP\GENERAR_GUARD\spawn_MP_3.sqs";
+~3
+[] exec "MODULE_VIP\GENERAR_GUARD\spawn_MP_2.sqs";
+~3
+[] exec "MODULE_VIP\GENERAR_GUARD\spawn_MP_1.sqs";
+~3
+[] exec "MODULE_VIP\GENERAR_GUARD\spawn_GeneralGuard.sqs";
+
+#CHECK
+~3
+
+	if(! (alive _VIP) ) then {_group exec "Police\AI_REVENGE_SEARCH.sqs"; exit;};
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then { _group reveal (vehicle Hero);  HowManySeeYou = HowManySeeYou + 1; publicVariable "HowManySeeYou"; report_IsCalling_General = true; publicVariable "report_IsCalling_General"; goto "PURSUIT"; }
+	
+goto "CHECK"
+
+
+#PURSUIT
+
+	if(! (alive _VIP) ) then {HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou"; _group exec "Police\AI_REVENGE_SEARCH.sqs"; exit;};
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then{report_call_General = report_call_General + 1; PublicVariable "report_call_General";}else { HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou";  goto "CHECK"; }
+~5
+goto "PURSUIT"
+
+
+

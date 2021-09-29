@@ -1,0 +1,25 @@
+
+
+removeAllWeapons player;
+
+_r = random ((count Rebbel_begin)-1);
+_random = _r - (_r mod 1);
+_selected = Rebbel_begin select (_random);
+
+
+
+
+_mag = (_selected select 1)
+_wep = (_selected select 0)
+
+if(_mag in MachineGun_Array)then{[player, _mag, 5] exec "FUNCTIONS\func_addMagazine.sqs";}else{[player, _mag, 10] exec "FUNCTIONS\func_addMagazine.sqs";};
+~0.1
+player addweapon _wep;
+
+
+~1
+player addmagazine "ICPRPG_18"
+player addweapon "ICPRPG_18"
+~1
+player addweapon "Binocular";
+player addweapon "nvgoggles";

@@ -1,0 +1,34 @@
+
+
+if( (random 100) > SETTINGS_CarSpawn_Chance)then{EXIT};
+
+~(random 1)
+_place = _this;
+
+if(random 100 <= SETTINGS_CarSpawn_ChanceCoolCar)then{goto "CoolCars";};
+
+
+
+
+_r = random ((count ARRAY_FINAL_VEHICLES_SPAWN)-1);
+_random = _r - (_r mod 1);
+_selected = ARRAY_FINAL_VEHICLES_SPAWN select (_random);
+_car = _selected createVehicle GetMarkerPos _place;
+_place setMarkerType "Dot";
+_car lock true;
+_car addaction ["Steal","MODULE_RandomCars\LockpickCar.sqs"]
+;//player sidechat format ["Car %1 created!",_selected]
+
+
+EXIT;
+
+
+#CoolCars
+_r = random ((count ARRAY_FINAL_COOLVEHICLES_SPAWN)-1);
+_random = _r - (_r mod 1);
+_selected = ARRAY_FINAL_COOLVEHICLES_SPAWN select (_random);
+_car = _selected createVehicle GetMarkerPos _place;
+_place setMarkerType "Dot";
+_car lock true;
+_car addaction ["Steal","MODULE_RandomCars\LockpickCar.sqs"]
+;//player sidechat format ["Car %1 created!",_selected]

@@ -1,0 +1,23 @@
+~0.01
+createDialog "Button_Menu"
+
+
+_Button_textMedkit = format ["Use medkit (%1)", Police_Medkit]
+_Button_textRepairKit = format ["Use repairkit (%1)", Police_RepairKit]
+_Button_textLeaveSquad = format ["Leave squad (%1p)", SETTINGS_OMEGA_LeaveSquadCost]
+
+_button_properties = [[_Button_textMedkit, "[] exec ""MODULE_shop\Item_action\medkit.sqs""; closedialog 1;"], [_Button_textRepairKit, "[] exec ""MODULE_shop\Item_action\repairkit.sqs""; closedialog 1;"], [_Button_textLeaveSquad,"; [] exec ""Police\ClearGroup.sqs"""], ["<-","[] exec ""MODULE_HUD\GUI_FastMenu_WEST.sqs"";  closedialog 1;"]]
+_button_idc        = 10
+_number_of_buttons = 4
+
+_i = 0
+
+#Loop
+_idc  = _button_idc + _i
+_text = (_button_properties select _i) select 0
+_code = (_button_properties select _i) select 1
+
+ctrlSetText [_idc, _text]
+buttonSetAction [_idc, _code]
+
+? _i < _number_of_buttons : _i=_i+1; goto "Loop"

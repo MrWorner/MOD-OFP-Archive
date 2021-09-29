@@ -1,0 +1,71 @@
+_VIP = MAYOR
+
+
+
+_car = "bas_ah6mp" createVehicle (getpos MAYOR);
+~0.1
+"SoldierWPilot" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; RemoveAllWeapons this;this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInDriver _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+"SoldierWPilot" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; RemoveAllWeapons this; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInGunner _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+;//_car setPos [getPos _car select 0, getPos _car select 1, 2000]
+_car engineOn true
+
+
+
+_car = "jmgcops" createVehicle (getpos MAYOR);
+~0.1
+"SWAT_M4A1" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInDriver  _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+"SWAT_M4A1" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInCargo  _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+"SWAT_M4A1" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInCargo _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+"SWAT_M4A1" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInCargo _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+
+_car = "CadillacE" createVehicle (getpos MAYOR);
+~0.1
+"SWAT_M4A1" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInDriver  _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+"SWAT_M4A1" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInCargo  _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+"SWAT_M4A1" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInCargo _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+"SWAT_M4A1" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5F"";", 1, "corporal"]
+NAMESAVER_mayorGuard moveInCargo _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+
+"SoldierWSaboteurDay" createUnit [position _car,group MAYOR,"NAMESAVER_mayorGuard = this ;RemoveAllWeapons THIS; this addMagazine ""M4""; this addMagazine ""M4""; this addMagazine ""M4""; this addMagazine ""M4""; this addWeapon ""M4""; this addMagazine ""LAWLauncher""; this addMagazine ""LAWLauncher""; this addMagazine ""LAWLauncher""; this addWeapon ""LAWLauncher""; ", 1, "corporal"]
+NAMESAVER_mayorGuard moveInCargo _car
+NAMESAVER_mayorGuard addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+
+
+~0.1
+;//_r = random ((count array_mayor_cars)-1);
+;//_random = _r - (_r mod 1);
+;//_selected = array_mayor_cars select (_random);
+;//Limo = _selected createVehicle position _VIP;
+;//_VIP moveInDriver Limo
+
+Limo = "mersed1" createVehicle position _VIP;
+_VIP moveInDriver Limo

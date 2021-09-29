@@ -1,0 +1,22 @@
+_COP = _this select 0;
+_ALLCOPS = units _COP;
+_RandomMarker = array_RandomPatrolPoints select 0
+#START
+~10
+
+{ if (not alive _x) then {_ALLCOPS = _ALLCOPS - [_x];}; }foreach _ALLCOPS
+if(count _ALLCOPS == 0) then {exit;};
+
+_r = random ((count array_RandomPatrolPoints)-1);
+_random = _r - (_r mod 1);
+_RandomMarker = array_RandomPatrolPoints select (_random);
+
+IF(HowManySeeYou < 1)THEN{{_x DoMove GetMarkerPos _RandomMarker; (vehicle _x) setFuel 1;}foreach _ALLCOPS};
+
+_r = random 400;
+_randomTime = (_r - (_r mod 1)) + 120;
+
+
+~_randomTime
+
+GOTO "START";

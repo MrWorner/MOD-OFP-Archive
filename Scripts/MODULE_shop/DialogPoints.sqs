@@ -1,0 +1,203 @@
+_T = _this select 0
+
+_Dialog = createdialog {Buy}
+
+_ID_ListBox = 40
+_ID_Money = 41
+_ID_Buy = 42
+
+_ary = aryT
+
+_c = count _ary
+_i = 0
+
+#Select
+_sel = _ary select _i
+_i = _i + 1
+
+?(_T in _sel): _assort = _sel select 1; goto "Next"
+?(_i != _c): goto "Select"
+
+hint "Торговец не найден!"
+exit
+
+#Next
+_assortgun = _assort select 0
+_assortmag = _assort select 1
+_assortveh = _assort select 2
+_assortmen = _assort select 3
+_assortsquad = _assort select 4
+
+_ar = []
+
+~0.1
+
+?(count _assortgun > 0): _ar = _assortgun; _a = 1; goto "Add"
+?(count _assortmag > 0): _ar = _assortmag; _a = 2; goto "Add"
+?(count _assortveh > 0): _ar = _assortveh; _a = 3; goto "Add"
+?(count _assortmen > 0): _ar = _assortmen; _a = 4; goto "Add"
+?(count _assortsquad > 0): _ar = _assortsquad; _a = 5; goto "Add"
+
+hint "Not available"
+exit
+
+#Add
+lbClear _ID_ListBox
+ctrlShow [_ID_Buy, true]
+
+_c2 = count _ar
+_i2 = 0
+
+?(_c2 == 0): lbAdd [_ID_ListBox,format ["Not available"]]; ctrlShow [_ID_Buy, false]; goto "B"
+
+#A
+_n = (((_ar select _i2) select 0) select 1)
+_c = ((_ar select _i2) select 1)
+_i2 = _i2 + 1
+lbAdd [_ID_ListBox,format ["%1 - %2p",_n,_c]]
+?(_i2 < _c2): goto "A"
+
+#B
+lbSetCurSel [_ID_ListBox,110]
+
+Gun = false; Mag = false; Veh = false; MenSelected = false; SquadSelected = false;
+
+#Check
+?(!dialog): goto "shutdown"
+ctrlSetText [_ID_MONEY, format ["Points: %1", PolicePoint]]
+
+?(Gun): Gun = false; _ar = _assortgun; _a = 1; goto "Add"
+?(Mag): Mag = false; _ar = _assortmag; _a = 2; goto "Add"
+?(Veh): Veh = false; _ar = _assortveh; _a = 3; goto "Add"
+?(MenSelected): MenSelected = false; _ar = _assortmen; _a = 4; goto "Add"
+?(SquadSelected): SquadSelected = false; _ar = _assortsquad; _a = 5; goto "Add"
+
+?(Buy): Buy = false; goto "Buy"
+
+~0.01
+goto "Check"
+
+
+#Buy
+_cost = ((_ar select (lbCurSel _ID_ListBox)) select 1)
+?(PolicePoint < _cost): hint "HINT\n\nNot enough points!"; goto "Check"
+?(_a == 1): goto "BuyG"
+?(_a == 2): goto "BuyA"
+?(_a == 3): goto "BuyV"
+?(_a == 4): goto "BuyMen"
+?(_a == 5): goto "BuySquad"
+
+goto "Check"
+
+
+#BuyG
+_box = _sel select 2
+?!(alive _box): _box setdammage 0
+
+_weapon = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 0)
+_mag = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 2)
+
+_box addweaponcargo [format ["%1", _weapon],1]
+_box addmagazinecargo [format ["%1", _mag],50]
+
+_text = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 1)
+player sidechat format ["Your bought %2 for %1 point(s).", _cost, _text]; 
+
+_check = ((_ar select (lbCurSel _ID_ListBox)) select 0)
+if(count _check > 2)then{_mag = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 3); _box addmagazinecargo [format ["%1", _mag],50];};
+
+PolicePoint = PolicePoint - _cost
+publicvariable "PolicePoint"
+playsound "buy_point";
+
+goto "Check"
+;//closedialog 1
+;//exit
+
+
+#BuyA
+_box = _sel select 2
+?!(alive _box): _box setdammage 0
+
+_mag = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 0)
+_text = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 1)
+
+if(_mag == "medkit")then{[_cost, _text, "points"] exec "MODULE_shop\Item_action\BUY_medkit.sqs"; goto "Check"};
+if(_mag == "repairkit")then{[_cost, _text, "points"] exec "MODULE_shop\Item_action\BUY_repairkit.sqs"; goto "Check"};
+
+
+goto "Check"
+
+
+
+#BuyV
+_plac = _sel select 3
+
+_vehType = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 0)
+_text = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 1)
+player sidechat format ["Your bought %2 for %1 point(s).", _cost, _text]; 
+_car = _vehType createVehicle getPos _plac;
+clearmagazinecargo _car; clearweaponcargo _car
+_car animate ["mig_anim", 0.5];
+player reveal _car;
+
+PolicePoint = PolicePoint - _cost
+publicvariable "PolicePoint"
+playsound "buy_point";
+
+goto "Check"
+;//closedialog 1
+;//exit
+
+;//----------MEN
+#BuyMen
+if(count units group player == 12)then{player groupchat format ["Your squad is full!",_cost]; goto "Check";}
+
+_menClass = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 0)
+_menClass_text = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 1)
+_menWEAPON_text = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 2)
+player sidechat format ["Your bought %2 for %1 point(s).", _cost, _menClass_text]; 
+_Man = _menClass createUnit [position player, player,"VAR_BoughtGuyP = this;", 1, "corporal"];
+_Man = VAR_BoughtGuyP;
+~0.1
+[_Man, _menWEAPON_text] exec "MODULE_shop\SQUAD_WEST\OneMan\REARM.sqs";
+
+PolicePoint = PolicePoint - _cost
+publicvariable "PolicePoint"
+playsound "buy_point";
+
+TotalOMEGA  = TotalOMEGA + 1; PublicVariable "TotalSusp";
+AliveOMEGA  = AliveOMEGA + 1; PublicVariable "AliveOMEGA";
+_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_OMEGA.sqs"" ;"];
+
+
+
+
+goto "Check"
+;//closedialog 1
+;//exit
+
+;//----------SQUAD
+#BuySquad
+
+_SquadCODE = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 0)
+_text = (((_ar select (lbCurSel _ID_ListBox)) select 0) select 1)
+
+if(PoliceZakaz != 0)then{hint "Your previous order is not completed! Please wait 2 seconds."; player sidechat "Your previous order is not completed! Please wait 2 seconds."; goto "Check";}
+player sidechat format ["Your bought %2 for %1 point(s).", _cost, _text]; 
+
+_plac = _sel select 4;
+PoliceZakaz_SpawnArmyPos = _plac;
+publicvariable "PoliceZakaz_SpawnArmyPos"
+
+PoliceZakaz = _SquadCODE
+publicvariable "PoliceZakaz"
+
+PolicePoint = PolicePoint - _cost
+publicvariable "PolicePoint"
+playsound "buy_point";
+
+
+goto "Check"
+;//closedialog 1
+;//exit

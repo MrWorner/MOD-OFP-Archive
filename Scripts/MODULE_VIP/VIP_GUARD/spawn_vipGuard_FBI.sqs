@@ -1,0 +1,37 @@
+_VIP = _this
+
+"GhostRifleman" createUnit [position _VIP, group _VIP,"NAMESAVER_BODYGUARD_FBI = this; removeAllWeapons this; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5FAi"";", 1, "private"]
+NAMESAVER_BODYGUARD_FBI addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"];
+TotalVIPGuardCount = TotalVIPGuardCount + 1; publicVariable "TotalVIPGuardCount"; AliveVIPGuard = AliveVIPGuard + 1; 
+publicVariable "AliveVIPGuard";
+
+~0.1
+"GhostRifleman" createUnit [position _VIP, group _VIP,"NAMESAVER_BODYGUARD_FBI = this; removeAllWeapons this; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5FAi"";", 1, "private"]
+NAMESAVER_BODYGUARD_FBI addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"];
+TotalVIPGuardCount = TotalVIPGuardCount + 1; publicVariable "TotalVIPGuardCount"; AliveVIPGuard = AliveVIPGuard + 1; 
+publicVariable "AliveVIPGuard";
+
+~0.1
+"GhostRifleman" createUnit [position _VIP, group _VIP,"NAMESAVER_BODYGUARD_FBI = this; removeAllWeapons this; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5FAi"";", 1, "private"]
+NAMESAVER_BODYGUARD_FBI addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"];
+TotalVIPGuardCount = TotalVIPGuardCount + 1; publicVariable "TotalVIPGuardCount"; AliveVIPGuard = AliveVIPGuard + 1; 
+publicVariable "AliveVIPGuard";
+
+~0.1
+"GhostRifleman" createUnit [position _VIP, group _VIP,"NAMESAVER_BODYGUARD_FBI = this; removeAllWeapons this; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5FAi"";", 1, "private"]
+NAMESAVER_BODYGUARD_FBI addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"];
+TotalVIPGuardCount = TotalVIPGuardCount + 1; publicVariable "TotalVIPGuardCount"; AliveVIPGuard = AliveVIPGuard + 1; 
+publicVariable "AliveVIPGuard";
+
+~0.1
+
+"GhostRifleman" createUnit [position _VIP, group _VIP,"NAMESAVER_BODYGUARD_FBI = this; removeAllWeapons this; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5FAi"";", 1, "private"]
+TotalVIPGuardCount = TotalVIPGuardCount + 1; publicVariable "TotalVIPGuardCount"; AliveVIPGuard = AliveVIPGuard + 1; 
+publicVariable "AliveVIPGuard";
+
+~0.1
+
+"GhostRifleman" createUnit [position _VIP, group _VIP,"NAMESAVER_BODYGUARD_FBI = this; removeAllWeapons this; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addMagazine ""HK_MP5mag""; this addWeapon ""HK_MP5A5FAi"";", 1, "private"]
+NAMESAVER_BODYGUARD_FBI addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"];
+TotalVIPGuardCount = TotalVIPGuardCount + 1; publicVariable "TotalVIPGuardCount"; AliveVIPGuard = AliveVIPGuard + 1; 
+publicVariable "AliveVIPGuard";

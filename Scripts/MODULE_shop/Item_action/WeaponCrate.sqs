@@ -1,0 +1,30 @@
+_cost = STATIC_Hero_WeaponCrate
+
+if(HowManySeeYou > 0)then{player groupchat format ["You cannot request weapon crate when %1 police officer(s) nearby",HowManySeeYou]; exit;}
+if(Cop1 distance Hero < 250)then{player groupchat format ["You cannot request weapon crate when the Omega leader near by",HowManySeeYou]; exit;}
+if(HeroGoldCoins < _cost)then{player groupchat format ["Not enough gold coins! You have only $%2. Required additional: %3.",_cost,HeroGoldCoins, (_cost - HeroGoldCoins)]; exit;}
+HeroGoldCoins = HeroGoldCoins - _cost
+PublicVariable "HeroGoldCoins";
+player sidechat "Please wait 20 sec! Your weapon crate is coming!";
+
+_pos = position player
+"SmokeShellRed" createVehicle (_pos)
+
+~5
+playmusic "Plane"
+
+
+~14
+_crate = "Crate2" createVehicle _pos;
+player sidechat "Done!";
+
+_crate addWeaponCargo ["sof2_microuzi",1];
+_crate addMagazineCargo ["sof2_microuziMag",20];
+_crate addWeaponCargo ["LSR_m60mag",1];
+_crate addMagazineCargo ["JAM_W762M_100HDmag",10];
+_crate addWeaponCargo ["LSR_m82a1",1];
+_crate addMagazineCargo ["LSR_m82a1magIT",25];
+_crate addWeaponCargo ["ICPRPG7V",1];
+_crate addMagazineCargo ["ICPRPG7Vmag",20];
+
+;//titleText [" ", "BLACK IN", 1];

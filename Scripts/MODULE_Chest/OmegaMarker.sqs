@@ -1,0 +1,16 @@
+~1
+
+#LOOP
+
+
+
+"HeroTarget2" setMarkerPos getpos Cop1
+~0.2
+"HeroTarget2" setMarkerColor "ColorBlue";
+~0.2
+"HeroTarget2" setMarkerColor "ColorRed";
+~0.2
+
+
+
+goto "LOOP"

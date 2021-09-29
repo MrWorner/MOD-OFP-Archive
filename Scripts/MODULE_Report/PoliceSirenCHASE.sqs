@@ -1,0 +1,19 @@
+_car = _this;
+
+
+
+if(VAR_CarSiren_inChase_CoolDown)then{exit;}
+VAR_CarSiren_inChase_CoolDown = true;
+~1
+_array = ["Short1","Short2","Short3","Short4","Short5","Short6","Short7", "Siren1B","Siren2B","Siren5B","Siren6B","Siren7B","Siren8B","Siren9B","Siren10B","Siren14B"];
+_r = random ((count _array)-1);
+_random = _r - (_r mod 1);
+_selected = _array select (_random);
+
+~0.1
+
+_car say _selected;
+
+
+~random(30)
+VAR_CarSiren_inChase_CoolDown = false;

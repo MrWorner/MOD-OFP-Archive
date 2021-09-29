@@ -1,0 +1,25 @@
+
+
+;spg9
+;malyutka
+
+if(!STATIC_Hero_HasMalutka)then{player sidechat "You don't have Malutka"; exit;};
+playsound "deploy";
+player sidechat "Deploying...";
+~0.1
+player switchMove "combatToMedic";
+~4
+player switchMove "combatToMedic";
+~4
+player sidechat "Done!";
+_StatiWep = "malyutka" createVehicle (getpos player);
+~1
+player moveinGunner _StatiWep;
+STATIC_Hero_HasMalutka = false
+publicVariable "STATIC_Hero_HasMalutka";
+STATIC_Hero_DeployedMalutka = _StatiWep;
+publicVariable "STATIC_Hero_DeployedMalutka";
+
+_text = format ["-> DISMOUNT MALUTKA ($%1) <-",STATIC_Hero_Malutka_priceMoney];
+
+STATIC_Hero_DeployedMalutka addAction [_text, "MODULE_shop\Item_action\DismountMalutka.sqs"];

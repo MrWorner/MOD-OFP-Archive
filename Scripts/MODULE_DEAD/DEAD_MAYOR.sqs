@@ -1,0 +1,37 @@
+_DEADMAN = _this
+
+;//============ВНИМАНИЕ: ТОЛЬКО НА ОДНОЙ СТОРОНЕ ДОЛЖЕН РАБОТАТЬ ДАННЫЙ EVENTHANDLER
+;//--------------НАГРАДЫ
+HeroGoldCoins = HeroGoldCoins + SETTINGS_Mayorkill_GoldCoin;
+publicVariable "HeroGoldCoins";
+
+
+if(alive General)then{WantedLevelPoints = WantedLevelPoints + SETTINGS_Mayorkill_wantedPoint; PublicVariable "WantedLevelPoints";};
+
+
+HeroMoney = HeroMoney + SETTINGS_Mayorkill_money;
+publicVariable "HeroMoney";
+
+;//--------------СТАТИСТИКА
+;//AliveVIP = AliveVIP - 1; 
+;//publicVariable "AliveVIP";
+AliveMayor = false; 
+publicVariable "AliveMayor";
+
+;//--------------МАРКЕР НА УБИТОГО, И ОТПРАВКИ СООБЩЕНИЯ
+TOC_DEAD_VIP setpos getpos _DEADMAN;
+report_dead_Mayor = report_dead_Mayor + 1;
+publicVariable "report_dead_Mayor"
+
+
+
+;//--------------ОЧИСТКА ТРУПА
+~SETTINGS_deleteCorpTime
+deleteVehicle _DEADMAN;
+
+
+
+
+
+
+

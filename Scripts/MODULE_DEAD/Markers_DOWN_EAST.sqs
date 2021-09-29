@@ -1,0 +1,14 @@
+~1
+
+
+#LOOP
+
+
+
+"UnknowSuspDOWN" setMarkerPos getpos TOCUnknSusp;
+"UnknowSuspDOWN" setMarkerColor "ColorRed";
+~0.3
+"UnknowSuspDOWN" setMarkerPos getpos TOCUnknSusp;
+"UnknowSuspDOWN" setMarkerColor "ColorBlue";
+~0.3
+goto "LOOP"

@@ -1,0 +1,16 @@
+#LOOP
+
+_position = getpos Hero;
+_MarkerPositionTemp = [(_position select 0) - (random 583) + (random 583), (_position select 1) + (random 1166), 0];
+"Area_susp_1" setMarkerPos _MarkerPositionTemp;
+_MarkerPosition = getMarkerPos "Area_susp_1";
+_MarkerPositionTemp = [(_MarkerPosition select 0) - 595, (_MarkerPosition select 1) - 596, 0];
+"Area_susp_2" setMarkerPos _MarkerPositionTemp;
+_MarkerPositionTemp = [(_MarkerPosition select 0) - 1.261718, (_MarkerPosition select 1) - 1191.543945, 0];
+"Area_susp_3" setMarkerPos _MarkerPositionTemp;
+_MarkerPositionTemp = [(_MarkerPosition select 0) + 594.899414, (_MarkerPosition select 1) - 594.892578, 0];
+"Area_susp_4" setMarkerPos _MarkerPositionTemp;
+;//player globalchat "[HQ]: Main suspect's location updated!";
+
+~SETTINGS_TimeToPing
+goto "LOOP"

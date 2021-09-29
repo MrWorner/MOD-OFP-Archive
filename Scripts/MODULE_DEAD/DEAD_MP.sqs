@@ -1,0 +1,22 @@
+_DEADMAN = _this
+
+;//============ВНИМАНИЕ: ТОЛЬКО НА ОДНОЙ СТОРОНЕ ДОЛЖЕН РАБОТАТЬ ДАННЫЙ EVENTHANDLER
+;//--------------НАГРАДЫ
+
+WantedLevelPoints = WantedLevelPoints + SETTINGS_MPKill_wantedPoint; 
+PublicVariable "WantedLevelPoints";
+HeroMoney = HeroMoney + SETTINGS_MPKill_money;
+publicVariable "HeroMoney";
+
+;//--------------СТАТИСТИКА
+AliveGuard = AliveGuard - 1; 
+publicVariable "AliveGuard";
+
+;//--------------МАРКЕР НА УБИТОГО, И ОТПРАВКИ СООБЩЕНИЯ
+TOC setpos getpos _DEADMAN;
+report_dead_MP = report_dead_MP + 1;
+publicVariable "report_dead_MP"
+
+;//--------------ОЧИСТКА ТРУПА
+~SETTINGS_deleteCorpTime
+deleteVehicle _DEADMAN;

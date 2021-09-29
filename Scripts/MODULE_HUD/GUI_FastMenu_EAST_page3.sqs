@@ -1,0 +1,25 @@
+~0.01
+createDialog "Button_Menu"
+_Button_textStaticMalutka = "";
+_Button_textStaticSPG9 = "";
+_Button_textWeapon_crate = format ["Request A crate (%1 gold)", STATIC_Hero_WeaponCrate];
+;//if(STATIC_Hero_HasMalutka)then{_Button_textStaticMalutka = "Deploy PTRK Malutka";}else{ _Button_textStaticMalutka =  format ["Dismount Malutka(%1 gold)", STATIC_Hero_Malutka_priceGold ];};
+if(STATIC_Hero_HasMalutka)then{_Button_textStaticMalutka = "Deploy PTRK Malutka";}else{ _Button_textStaticMalutka =  format ["Malutka (N/A)", STATIC_Hero_Malutka_priceGold ];};
+;//if(STATIC_Hero_HasSPG9)then{_Button_textStaticSPG9 = "Deploy SPG-9";}else{ _Button_textStaticSPG9 =  format ["Dismount SPG-9(%1 gold)", STATIC_Hero_SPG9_priceGold ];};
+if(STATIC_Hero_HasSPG9)then{_Button_textStaticSPG9 = "Deploy SPG-9";}else{ _Button_textStaticSPG9 =  format ["SPG-9 (N/A)", STATIC_Hero_SPG9_priceGold ];};
+
+_button_properties = [[ _Button_textStaticMalutka, "[] exec ""MODULE_shop\Item_action\DeployMalutka.sqs""; closedialog 1;"], [_Button_textStaticSPG9, "[] exec ""MODULE_shop\Item_action\DeploySPG.sqs""; closedialog 1;"], [_Button_textWeapon_crate,"[] exec ""MODULE_shop\Item_action\WeaponCrate.sqs""; closedialog 1;"], ["<-","[] exec ""MODULE_HUD\GUI_FastMenu_EAST_page2.sqs"";  closedialog 1;"]]
+_button_idc        = 10
+_number_of_buttons = 4
+
+_i = 0
+
+#Loop
+_idc  = _button_idc + _i
+_text = (_button_properties select _i) select 0
+_code = (_button_properties select _i) select 1
+
+ctrlSetText [_idc, _text]
+buttonSetAction [_idc, _code]
+
+? _i < _number_of_buttons : _i=_i+1; goto "Loop"

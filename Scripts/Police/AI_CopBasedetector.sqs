@@ -1,0 +1,13 @@
+_base = _this select 0
+
+#main
+~5
+if(_base distance hero <100)then{report_call_PoliceBase = true; PublicVariable "report_call_PoliceBase"; HowManySeeYou = HowManySeeYou + 1; goto "start"}
+goto "main"
+
+#start
+
+~1
+if!(_base distance hero <100)then{HowManySeeYou = HowManySeeYou - 1; publicvariable "HowManySeeYou"; goto "main"}
+;//TOC globalchat "[HQ]:Warning! The main suspect inside the Police station!"
+goto "start"

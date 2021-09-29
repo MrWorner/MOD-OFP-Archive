@@ -1,0 +1,186 @@
+
+
+
+;//WeP_A pistols
+CopWep_A1 = [["Beretta","BerettaMag"],["Glock","GlockMag"],["sof2_m1911","sof2_m1911Mag"], ["sof2_socom","sof2_socomMag"]]
+CopWep_A2 =[["GlockS","GlockSMag"],["Revolver","RevolverMag"]]
+CopWep_A3 = [["BFS_FiveSeven","BFS_FiveSevenmag"]]
+
+RebWep_A1 = [["Tokarev","TokarevMag"],["CZ75","CZ75Mag"],["21VBluger","21VBlugerMag"],["Enfieldn2","Enfieldn2Mag"],["sof2_socom","sof2_socomMag"]]
+RebWep_A2 = [["sof2_socomsil","sof2_socomsilMag"],["BFS_GP","BFS_GPmag"],["Ingram","IngramMag"]]
+RebWep_A3 = [["Skorpion","SkorpionMag"],["HK_MP5KA4P","HK_MP5mag"],["sof2_microuzi","sof2_microuziMag"]]
+
+
+;//WeP_B shotguns
+CopWep_B1 =[["Kozlice","KozliceBall"]]
+CopWep_B2 = [["sof2_m590","sof2_m590Mag"],["SpG_Remington870","SpG_R870shell"]]
+CopWep_B3 =[["C8XM1014cco","c8xm1014Mag"]]
+
+RebWep_B1 = [["Kozlice","KozliceShell"],["Shotg","Shotgshell"],["Beretta471","Beretta471shell"]]
+RebWep_B2 = [["sof2_m590","sof2_m590Mag"],["C8XM1014","c8xm1014Mag"],["pompe3","rapidsshell"]]
+RebWep_B3 = [["sof2_usas12","sof2_usas12Mag"]]
+
+
+
+
+;//WeP_C submachines
+CopWep_C1 = [["Sten5","StenMag"],["PPS43","PPS43M"],["sof2_m3a1","sof2_m3a1Mag"]]
+CopWep_C2 = [["SGC_P90","P90Mag"],["HK_MP5A5F","HK_MP5mag"],["HK_MP5SD5swat","HK_MP5SDmag"]]
+CopWep_C3 = [["BFS_P90","BFS_P90Mag"],["HK_MP5A5Fai","HK_MP5mag"],["HK_MP5A5SF","HK_MP5mag"],["HK_MP5SD6SF","HK_MP5SDmag"],["HK_MP5SD6Ai","HK_MP5SDmag"]]
+
+RebWep_C1 = [["UZI","UZIMag"],["UP_MP40","UP_MP40Mag"],["Sten2","StenMag"],["Sten3","StenMag"],["HK_MP5A5","HK_MP5mag"],["HK_MP5A5FB","HK_MP5mag"],["HK_MP5a4swat","HK_MP5mag"]]
+RebWep_C2 = [["Bizon","BizonMag"],["HK","HK"],["HK_MP510A4","HK_MP510mag"],["HK_MP510a5","HK_MP510mag"],["HK_MP5SD6","HK_MP5SDmag"]]
+RebWep_C3 = [["UP_FG42","UP_FG42Mag"],["LSR_mp5sd6","LSR_mp5sdmag"],["UP_PPSHA","UP_PPSHAMag"]]
+
+;//WeP_D assault rifles
+
+
+CopWep_D1 = [["HKG3","HKG3Mag"],["FAL","FALMag"],["M4","M4"],["M16","M16"],["OFPL_Beryl","OFPL_BerylMag"],["SJB_TOS_M16A4","SJB_TOS_M16A4_mag"]]
+CopWep_D2 = [["XMS","M4"],["G36a","G36aMag"],["BFS_FNCparaaimpoint","BFS_FNCmag"],["bfs_f2000c","bfs_f2000Mag"],["jr_famas_acog","jr_famasMag"],["jr_famas_sc","jr_famasMag"],["OFPL_BerylPCS6","OFPL_BerylMag"],["OFPL_BerylEOT","OFPL_BerylMag"],["OFPL_BerylCK","OFPL_BerylMag"],["OFPL_M4A1_EOT","JAM_W556_30mag"],["SJB_TOS_M4_CQB","SJB_TOS_M4_mag"],["SJB_TOS_M16A4_ACOG","SJB_TOS_M16A4_mag"] ]
+
+CopWep_D3 = [["M16GrenadeLauncher","M16","GrenadeLauncher","Flare"],["C8XM4M203acog_sd","c8xm4SDmag"],["bfs_f2000sc","bfs_f2000sMag"],["OFPL_M4A1_M68_SD","JAM_W556_30SDmag"],["OFPL_M4A1GL_EOT","JAM_W556_30mag","JAM_M433Belt"],["jr_famas_sc_sd","jr_famassdMag"]]
+
+RebWep_D1 = [["HKG3","HKG3Mag"],["AK47","AK47"],["AK47CZ","AK47"],["AK74","AK74"],["AK74SU","AK74"],["FAL","FALMag"],["OFPL_AKMS1","OFPLAKMSmag"],["mAS","mASmag"]]
+RebWep_D2 = [["sof2_m4","sof2_m4Mag"],["Steyr","SteyrMag"],["sof2_AK74b","sof2_AK74Mag"],["BFS_FNC","BFS_FNCmag"],["C8XAKS74Ucobra_sd","c8xaks74uSDmag"],["VIAsa80","VIAsa80"],["LSR_m16a2","LSR_m16mag"],["LSR_xm733","LSR_m4mag"],["OFPL_pbs1","OFPLpbsmag"],["RFAKMN","RFAKMMag"],["OFPL_miniBerylCK","OFPL_BerylMag"]]
+RebWep_D3 = [["AK47GrenadeLauncher","AK47","GrenadeLauncher","Flare"],["AK74GrenadeLauncher","AK74","GrenadeLauncher","Flare"],["sof2_oicw","sof2_oicwMag","sof2_oicwGrenade"],["C8XAK74M1p29_sd","c8xak74SDmag"],["OFPL_BerylGL_LKA4","OFPL_BerylMag","OFPL_GrenadeVest"]]
+
+
+
+;//WeP_E sniper rifles
+CopWep_E1 = [["M21","M21"],["Enfieldn4","Enfieldn4mag"]]
+CopWep_E2 = [["BFS_AW","BFS_AWMag"],["ck_M40A3","JAM_W762_5mag"],["mVSS","mVSSmag"]]
+CopWep_E3 = [["LSR_SR25","LSR_SR25Mag"],["prph_m95","prph_10x127mm_S_mag"],["RFSVUa","RFSVUAmag"]]
+
+RebWep_E1 = [["HuntingRifle","HuntingRifleMag"],["UP_K98K","UP_K98KMag"],["UP_SVT","UP_SVTMag"]]
+RebWep_E2 = [["SVDDragunov","SVDDragunov"],["SJB_TOS_M24","SJB_TOS_M24_mag"],["OFPL_SWDM","ofplswdmag"]]
+RebWep_E3 = [["sof2_msg90a1","sof2_msg90a1Mag"],["SJB_TOS_M82A1","SJB_TOS_M82A1_Mag"],["prph_msg90","prph_20x762mm_S_mag"]]
+
+
+;//WeP_F machine guns
+CopWep_F1 = [["Bren2","Bren2mag"],["UP_DTM","UP_DTMMag"]]
+CopWep_F2 = [["M60","M60"],["BFS_Minimi","BFS_Minimimag"]]
+CopWep_F3 = [["C8XM249PARAcco","c8xm249mag"],["LSR_m240_m145","LSR_M240Mag"]]
+
+RebWep_F1 = [["sof2_rpd","sof2_rpdMag"],["BFS_fnmag","BFS_gpmgmag"],["PK","PK"]]
+RebWep_F2 = [["prph_M249_IR","prph_200x556mm_MG_mag"],["sof2_m60","sof2_m60Mag"]]
+RebWep_F3 = [["UP_MG42","UP_MG42Mag"],["LSR_m249spw_acog_sd","LSR_M249SDMag"]]
+
+
+;//WeP_G Explosives and RPG
+CopWep_G1 = [["LAWLauncher","LAWLauncher"]]
+CopWep_G2 =[["MM1","MM1Magazine"]]
+CopWep_G3 = [["AALauncher","AALauncher"],["CarlGustavLauncher","CarlGustavLauncher"]]
+
+RebWep_G1 = [["Piat","PiatMag"],["RPGLauncher","RPGLauncher"]]
+RebWep_G2 =[["sof2_mm1","sof2_mm1Mag"],["6G30","6G30Magazine"]]
+RebWep_G3 = [["9K32Launcher","9K32Launcher"],["AT4Launcher","AT4Launcher"]]
+
+
+
+
+
+
+;//REBEL BEGIN
+Rebbel_begin = [["HK_MP5SD6","HK_MP5SDmag"],["HK_MP510a5","HK_MP510mag"],["HK_MP510A4","HK_MP510mag"],["HK_MP5a4swat","HK_MP5mag"],["HK_MP5A5FB","HK_MP5mag"],["HK_MP5A5","HK_MP5mag"],["HK_MP5SD6Ai","HK_MP5SDmag"],["HK_MP5SD6SF","HK_MP5SDmag"],["HK_MP5A5SF","HK_MP5mag"],["HK_MP5A5Fai","HK_MP5mag"],["HK_MP5SD5swat","HK_MP5SDmag"],["HK_MP5A5F","HK_MP5mag"],["HK_MP5KA4P","HK_MP5mag"],["Steyr","Steyrmag"],["G36A","G36aMag"],["LSR_m82a1","LSR_m82a1magIT"],["LSR_m40","JAM_W762_5mag"],["LSR_m24","HuntingRifleMag"],["LSR_m21_sd","JAM_W762Sniper_20SDmag"],["LSR_m21_nbp","JAM_W762Sniper_20mag"],["LSR_sr25_sd","JAM_W762Sniper_20SDmag"],["LSR_sr25","JAM_W762Sniper_20mag"],["LSR_m3","LSR_m3mag"],["LSR_m1014_aim","JAM_12Gauge_Shotgun_Mag"],["LSR_m14_sopmod_sd","LSR_m14sdmag"],["LSR_m14_leu","JAM_W762_20mag"],["LSR_m14_aim_new","JAM_W762_20mag"],["LSR_m16a2","JAM_W556_30Bmag"],["LSR_m4","JAM_W556_30mag"],["LSR_m60e4","JAM_W762M_100HDmag"],["LSR_M249saw","JAM_W556M_200HDmag"],["LSR_m240","JAM_W762M_200mag"],["sof2_msg90a1","sof2_msg90a1Mag"],["sof2_usas12","sof2_usas12Mag"],["sof2_m590","sof2_m590Mag"],["sof2_m3a1","sof2_m3a1Mag"],["sof2_m4","sof2_m4Mag"],["sof2_rpd","sof2_rpdMag"],["ICP_vsk","ICP_vskmag"],["ICP_vss","ICP_vssmag"],["ICP_val","ICP_valmag"],["ICP_PK","ICP_PKMMag"],["ICP_SVD63","ICP_SVDMag"],["ICP_ak74mo","ICP_ak74mag"],["ICP_akm","ICP_akmmag"],["DONTDEL","DONTDEL"]];
+
+;//SUSPECT RESPAWN
+AllWeapons_array = [ ["ICP_akm","ICP_akmmag"],["ICP_ak74mo","ICP_ak74mag"],["ICP_SVD63","ICP_SVDMag"],["ICP_PK","ICP_PKMMag"],["ICP_val","ICP_valmag"],["ICP_vss","ICP_vssmag"],["ICP_vsk","ICP_vskmag"],["sof2_rpd","sof2_rpdMag"],["sof2_m4","sof2_m4Mag"],["sof2_m3a1","sof2_m3a1Mag"],["sof2_m590","sof2_m590Mag"],["sof2_usas12","sof2_usas12Mag"],["sof2_msg90a1","sof2_msg90a1Mag"],["LSR_m249spw_acog","JAM_W556M_200HDmag"],["LSR_M249saw","JAM_W556M_200HDmag"],["LSR_m249spw_acog_sd","JAM_W556M_200SDHDmag"],["LSR_m240","JAM_W762M_200mag"],["LSR_m60mag","JAM_W762M_100HDmag"],["LSR_m60e4","JAM_W762M_100HDmag"],["LSR_m4_rx","LSR_m4mag"],["LSR_xm733","JAM_W556_30mag"],["LSR_m4","JAM_W556_30mag"],["LSR_car15_aim","JAM_W556_30mag"],["LSR_car15_aim_sd","LSR_m4sdmag"],["LSR_m16a2","JAM_W556_30Bmag"],["LSR_m16a4_acog","LSR_m16mag"],["LSR_m14_aim_new","JAM_W762_20mag"],["LSR_m14_leu","JAM_W762_20mag"],["LSR_m14_sopmod_sd","LSR_m14sdmag"],["LSR_m1014_aim","JAM_12Gauge_Shotgun_Mag"],["LSR_m3","LSR_m3mag"],["LSR_sr25","JAM_W762Sniper_20mag"],["LSR_sr25_sd","JAM_W762Sniper_20SDmag"],["LSR_m21_nbp","JAM_W762Sniper_20mag"],["LSR_m21_sd","JAM_W762Sniper_20SDmag"],["LSR_m24","HuntingRifleMag"],["LSR_m40","JAM_W762_5mag"],["LSR_m82a1","LSR_m82a1magIT"],["G36A","G36aMag"],["Steyr","Steyrmag"],["HK_MP5KA4P","HK_MP5mag"],["HK_MP5A5F","HK_MP5mag"],["HK_MP5SD5swat","HK_MP5SDmag"],["HK_MP5A5Fai","HK_MP5mag"],["HK_MP5A5SF","HK_MP5mag"],["HK_MP5SD6SF","HK_MP5SDmag"],["HK_MP5SD6Ai","HK_MP5SDmag"],["HK_MP5A5","HK_MP5mag"],["HK_MP5A5FB","HK_MP5mag"],["HK_MP5a4swat","HK_MP5mag"],["HK_MP510A4","HK_MP510mag"],["HK_MP510a5","HK_MP510mag"],["HK_MP5SD6","HK_MP5SDmag"],["",""]];
+
+;//для того чтобы проверить добавляю ли я пулемет
+MachineGun_Array = ["sof2_rpdMag", "JAM_W556M_200HDmag", "JAM_W556M_200SDHDmag", "JAM_W762M_200mag", "JAM_W762M_100HDmag"]
+
+
+;//COP BEGIN
+Cop_begin = [["LSR_m1911_sd","LSR_m1911sdmag"], ["LSR_hpda","LSR_hpdamag"], ["LSR_m9_sd","LSR_m9sdmag"], ["LSR_m9","LSR_m9mag"], ["LSR_socom_sd","LSR_socomsdmag"], ["ICP_pmms","ICP_pmmsMag"], ["sof2_m1911","sof2_m1911Mag"], ["sof2_socom","sof2_socomMag"], ["DONTDEL","DONTDEL"]];
+
+
+EXIT;
+,["ICP_akm","ICP_akmmag"]
+,["ICP_ak74mo","ICP_ak74mag"]
+,["ICP_SVD63","ICP_SVDMag"]
+,["ICP_PK","ICP_PKMMag"]
+,["ICP_val","ICP_valmag"]
+,["ICP_vss","ICP_vssmag"]
+,["ICP_vsk","ICP_vskmag"]
+,["sof2_rpd","sof2_rpdMag"]
+,["sof2_m4","sof2_m4Mag"]
+,["sof2_m3a1","sof2_m3a1Mag"]
+,["sof2_m590","sof2_m590Mag"]
+,["sof2_usas12","sof2_usas12Mag"]
+,["sof2_msg90a1","sof2_msg90a1Mag"]
+,["LSR_m249spw_acog","JAM_W556M_200HDmag"]
+,["LSR_M249saw","JAM_W556M_200HDmag"]
+,["LSR_m249spw_acog_sd","JAM_W556M_200SDHDmag"]
+,["LSR_m240","JAM_W762M_200mag"]
+,["LSR_m60mag","JAM_W762M_100HDmag"]
+,["LSR_m60e4","JAM_W762M_100HDmag"]
+,["LSR_m4_rx","LSR_m4mag"]
+,["LSR_xm733","JAM_W556_30mag"]
+,["LSR_m4","JAM_W556_30mag"]
+,["LSR_car15_aim","JAM_W556_30mag"]
+,["LSR_car15_aim_sd","LSR_m4sdmag"]
+,["LSR_m16a2","JAM_W556_30Bmag"]
+,["LSR_m16a4_acog","LSR_m16mag"]
+,["LSR_m14_aim_new","JAM_W762_20mag"]
+,["LSR_m14_leu","JAM_W762_20mag"]
+,["LSR_m14_sopmod_sd","LSR_m14sdmag"]
+,["LSR_m1014_aim","JAM_12Gauge_Shotgun_Mag"]
+,["LSR_m3","LSR_m3mag"]
+,["LSR_sr25","JAM_W762Sniper_20mag"]
+,["LSR_sr25_sd","JAM_W762Sniper_20SDmag"]
+,["LSR_m21_nbp","JAM_W762Sniper_20mag"]
+,["LSR_m21_sd","JAM_W762Sniper_20SDmag"]
+,["LSR_m24","HuntingRifleMag"]
+,["LSR_m40","JAM_W762_5mag"]
+,["LSR_m82a1","LSR_m82a1magIT"]
+,["G36A","G36aMag"]
+,["Steyr","Steyrmag"]
+,["HK_MP5KA4P","HK_MP5mag"]
+,["HK_MP5A5F","HK_MP5mag"]
+,["HK_MP5SD5swat","HK_MP5SDmag"]
+,["HK_MP5A5Fai","HK_MP5mag"]
+,["HK_MP5A5SF","HK_MP5mag"]
+,["HK_MP5SD6SF","HK_MP5SDmag"]
+
+,["HK_MP5SD6Ai","HK_MP5SDmag"]
+,["HK_MP5A5","HK_MP5mag"]
+,["HK_MP5A5FB","HK_MP5mag"]
+,["HK_MP5a4swat","HK_MP5mag"]
+,["HK_MP510A4","HK_MP510mag"]
+,["HK_MP510a5","HK_MP510mag"]
+,["HK_MP5SD6","HK_MP5SDmag"]
+
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+,["",""]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+["ICP_akm","ICP_akmmag"],["ICP_ak74mo","ICP_ak74mag"],["ICP_SVD63","ICP_SVDMag"],["ICP_PK","ICP_PKMMag"],["ICP_val","ICP_valmag"],["ICP_vss","ICP_vssmag"],["ICP_vsk","ICP_vskmag"],["sof2_rpd","sof2_rpdMag"],["sof2_m4","sof2_m4Mag"],["sof2_m3a1","sof2_m3a1Mag"],["sof2_m590","sof2_m590Mag"],["sof2_usas12","sof2_usas12Mag"],["sof2_msg90a1","sof2_msg90a1Mag"],["LSR_m249spw_acog","JAM_W556M_200HDmag"],["LSR_M249saw","JAM_W556M_200HDmag"],["LSR_m249spw_acog_sd","JAM_W556M_200SDHDmag"],["LSR_m240","JAM_W762M_200mag"],["LSR_m60mag","JAM_W762M_100HDmag"],["LSR_m60e4","JAM_W762M_100HDmag"],["LSR_m4_rx","LSR_m4mag"],["LSR_xm733","JAM_W556_30mag"],["LSR_m4","JAM_W556_30mag"],["LSR_car15_aim","JAM_W556_30mag"],["LSR_car15_aim_sd","LSR_m4sdmag"],["LSR_m16a2","JAM_W556_30Bmag"],["LSR_m16a4_acog","LSR_m16mag"],["LSR_m14_aim_new","JAM_W762_20mag"],["LSR_m14_leu","JAM_W762_20mag"],["LSR_m14_sopmod_sd","LSR_m14sdmag"],["LSR_m1014_aim","JAM_12Gauge_Shotgun_Mag"],["LSR_m3","LSR_m3mag"],["LSR_sr25","JAM_W762Sniper_20mag"],["LSR_sr25_sd","JAM_W762Sniper_20SDmag"],["LSR_m21_nbp","JAM_W762Sniper_20mag"],["LSR_m21_sd","JAM_W762Sniper_20SDmag"],["LSR_m24","HuntingRifleMag"],["LSR_m40","JAM_W762_5mag"],["LSR_m82a1","LSR_m82a1magIT"],["G36A","G36aMag"],["Steyr","Steyrmag"],["HK_MP5KA4P","HK_MP5mag"],["HK_MP5A5F","HK_MP5mag"],["HK_MP5SD5swat","HK_MP5SDmag"],["HK_MP5A5Fai","HK_MP5mag"],["HK_MP5A5SF","HK_MP5mag"],["HK_MP5SD6SF","HK_MP5SDmag"],["HK_MP5SD6Ai","HK_MP5SDmag"],["HK_MP5A5","HK_MP5mag"],["HK_MP5A5FB","HK_MP5mag"],["HK_MP5a4swat","HK_MP5mag"],["HK_MP510A4","HK_MP510mag"],["HK_MP510a5","HK_MP510mag"],["HK_MP5SD6","HK_MP5SDmag"]

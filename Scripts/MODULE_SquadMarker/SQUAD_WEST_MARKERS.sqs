@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+~15
+_count = 0;
+#LOOP
+
+~1
+	;//Принятие новой группы от сервера
+	if( !(isnull grp_WEST) )then{ ARRAY_PoliceSquadForMarkers = ARRAY_PoliceSquadForMarkers + [grp_WEST]; grp_WEST = grpNull; publicVariable "grp_WEST";};
+	;//Отправка новой группы для других клиента
+	if(count ARRAY_EASTSquadForMarkers > 0)then{ if( (isnull grp_EAST) )then{ grp_EAST = ARRAY_EASTSquadForMarkers select 0; ARRAY_EASTSquadForMarkers = ARRAY_EASTSquadForMarkers - [grp_EAST]; publicVariable "grp_EAST";}; };
+
+	
+	
+	{_x setMarkerPos [0,0,0] }foreach ARRAY_SQUADmarkers;
+	{_x setMarkerPos [0,0,0] }foreach ARRAY_SQUADmarkersT;
+	{[_x, _count] exec "MODULE_SquadMarker\setWestMarker.sqs";_count = _count + 1;}foreach ARRAY_PoliceSquadForMarkers;
+	_count = 0;
+
+goto "LOOP"

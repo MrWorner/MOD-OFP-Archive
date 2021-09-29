@@ -1,0 +1,11 @@
+if(VAR_PoliceReport_HeroContact)then{exit;}
+VAR_PoliceReport_HeroContact = true;
+~1
+_array = ["report_contact1","report_contact2","report_contact3","report_contact4","report_contact5","report_contact6","report_contact7","report_contact8","report_contact9","report_contact10","report_contact10"]
+_r = random ((count _array)-1);
+_random = _r - (_r mod 1);
+_selected = _array select (_random);
+playsound _selected;
+
+~random(60)
+VAR_PoliceReport_HeroContact = false;

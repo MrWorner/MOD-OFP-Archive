@@ -1,0 +1,90 @@
+
+[] exec "MODULE_PoliceWave\EXTRA_patrolUnits.sqs"; 
+;///////// WantedLevel 1
+#WaitLevel1
+~15
+
+if!(WantedLevelPoints >= SETTINGS_WantedLevelPoints_LEVEL2)then{goto "WaitLevel1";}
+
+
+VAR_ArriveNotification = true;
+publicvariable "VAR_ArriveNotification";
+_time = (60 * SETTINGS_ArriveTimeWave2)
+~ _time
+
+
+;///////// WantedLevel 2
+WantedLevel = 2;
+PublicVariable "WantedLevel"
+
+[] exec "MODULE_PoliceWave\WaveLevel_2.sqs"; 
+[] exec "MODULE_PoliceWave\EXTRA_patrolUnits.sqs"; 
+
+#WaitLevel2
+~15
+if!(WantedLevelPoints >= SETTINGS_WantedLevelPoints_LEVEL3)then{goto "WaitLevel2";}
+
+VAR_ArriveNotification = true;
+publicvariable "VAR_ArriveNotification";
+_time = (60 * SETTINGS_ArriveTimeWave3)
+~ _time
+
+;///////// WantedLevel 3
+WantedLevel = 3;
+PublicVariable "WantedLevel"
+[] exec "MODULE_PoliceWave\WaveLevel_3.sqs"; 
+[] exec "MODULE_PoliceWave\EXTRA_patrolUnits.sqs"; 
+#WaitLevel3
+~15
+if!(WantedLevelPoints >= SETTINGS_WantedLevelPoints_LEVEL4)then{goto "WaitLevel3";}
+
+VAR_ArriveNotification = true;
+publicvariable "VAR_ArriveNotification";
+_time = (60 * SETTINGS_ArriveTimeWave4)
+~ _time
+;///////// WantedLevel 4
+WantedLevel = 4;
+PublicVariable "WantedLevel"
+[] exec "MODULE_PoliceWave\WaveLevel_4.sqs"; 
+[] exec "MODULE_PoliceWave\EXTRA_patrolUnits.sqs"; 
+#WaitLevel4
+~15
+if!(WantedLevelPoints >= SETTINGS_WantedLevelPoints_LEVEL5)then{goto "WaitLevel4";}
+
+VAR_ArriveNotification = true;
+publicvariable "VAR_ArriveNotification";
+_time = (60 * SETTINGS_ArriveTimeWave5)
+~ _time
+;///////// WantedLevel 5
+WantedLevel = 5;
+PublicVariable "WantedLevel"
+[] exec "MODULE_PoliceWave\WaveLevel_5.sqs"; 
+[] exec "MODULE_PoliceWave\EXTRA_patrolUnits.sqs"; 
+#WaitLevel5
+~15
+if!(WantedLevelPoints >= SETTINGS_WantedLevelPoints_LEVEL6)then{goto "WaitLevel5";}
+
+VAR_ArriveNotification = true;
+publicvariable "VAR_ArriveNotification";
+_time = (60 * SETTINGS_ArriveTimeWave6)
+~ _time
+
+;///////// WantedLevel 6
+WantedLevel = 6;
+PublicVariable "WantedLevel"
+[] exec "MODULE_PoliceWave\WaveLevel_6.sqs"; 
+[] exec "MODULE_PoliceWave\EXTRA_patrolUnits.sqs"; 
+
+
+
+
+;//#WaitLevel6
+;//~30
+;//if!(WantedLevelPoints >= SETTINGS_WantedLevelPoints_LEVEL7)then{goto "WaitLevel6";}
+
+
+;///////// WantedLevel 7
+;//WantedLevel = 7;
+;//PublicVariable "WantedLevel"
+;//[] exec "Police\Waves\wanted7.sqs"; 
+

@@ -1,0 +1,22 @@
+_DEADMAN = _this
+
+;//============ВНИМАНИЕ: ТОЛЬКО НА ОДНОЙ СТОРОНЕ ДОЛЖЕН РАБОТАТЬ ДАННЫЙ EVENTHANDLER
+;//--------------НАГРАДЫ
+HeroGoldCoins = HeroGoldCoins + SETTINGS_OmegaLeaderkill_GoldCoin;
+publicVariable "HeroGoldCoins";
+WantedLevelPoints = WantedLevelPoints + SETTINGS_OmegaLeaderkill_wantedPoint; 
+PublicVariable "WantedLevelPoints";
+HeroMoney = HeroMoney + SETTINGS_OmegaLeaderkill_money;
+publicVariable "HeroMoney";
+
+;//--------------СТАТИСТИКА
+
+
+;//--------------МАРКЕР НА УБИТОГО, И ОТПРАВКИ СООБЩЕНИЯ
+TOC setpos getpos _DEADMAN;
+report_dead_OmegaLeader = report_dead_OmegaLeader + 1;
+publicVariable "report_dead_OmegaLeader"
+
+;//--------------ОЧИСТКА ТРУПА
+~SETTINGS_deleteCorpTime
+deleteVehicle _DEADMAN;

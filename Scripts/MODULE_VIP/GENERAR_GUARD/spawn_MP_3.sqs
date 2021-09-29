@@ -1,0 +1,127 @@
+_VIP3 = MP_SQUAD2;
+_jeep = "CBT_M3A2OD" createVehicle (position _VIP3);
+_jeep2 = "CBT_M3A2OD" createVehicle (position _VIP3);
+~0.1
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A""", 1, "corporal"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+;//[spawn_MP_3] join grpnull;
+_VIP3 moveInCommander  _jeep;
+
+
+
+~0.1
+
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+spawn_MP_3 moveInDriver  _jeep;
+~0.1
+
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+spawn_MP_3 moveInGunner  _jeep;
+~0.1
+
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+spawn_MP_3 moveInDriver  _jeep2;
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+spawn_MP_3 moveInGunner  _jeep2;
+
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+spawn_MP_3 moveInCommander  _jeep2;
+
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""CarlGustavLauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""CarlGustavLauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+
+
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+
+"HYK_USsolDe" createUnit [position _VIP3, group _VIP3,"spawn_MP_3 = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+spawn_MP_3 addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";

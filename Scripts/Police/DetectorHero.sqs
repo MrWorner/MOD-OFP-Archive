@@ -1,0 +1,23 @@
+
+
+
+if(!SETTINGS_PoliceRadarONSuspect)then{exit;};
+
+#LOOP_noSignal
+
+	~1
+	_Dist = Cop1 distance Hero;	
+	if(_Dist < SETTINGS_SETTINGS_PoliceRadarONSuspect_Distance)then{ playmusic "DangerClose2"; _Final = _Dist - (_Dist mod 1); player sidechat format ["Signal found! The main suspect is close: %1 meters", _Final]; goto "LOOP_FOUND" };
+	 
+goto "LOOP_noSignal"
+
+#LOOP_FOUND
+
+	~1
+	_Dist = Cop1 distance Hero;
+	if( (_Dist ) >= SETTINGS_SETTINGS_PoliceRadarONSuspect_Distance + 50)then{ playmusic "DangerClose"; player sidechat format ["Signal lost! The main suspect is out of range.", _Final]; goto "LOOP_noSignal" };	
+	_Final = _Dist - (_Dist mod 1);
+	player sidechat format ["Suspect's cellphone signal: %1 meters", _Final];
+	
+goto "LOOP_FOUND"
+;//Cop1

@@ -1,0 +1,23 @@
+
+_StaticWep = _this select 0;
+;spg9
+;malyutka
+
+
+if( !(alive _StaticWep) )then{player sidechat "Current static weapon destroyed... You can't use it."; deleteVehicle _StaticWep; exit;}
+if(STATIC_Hero_Malutka_priceMoney > HeroMoney)then{player sidechat format ["You don't have enugh money. You need $%. You have only $%2", STATIC_Hero_Malutka_priceMoney, HeroMoney]; exit;}
+if(_StaticWep distance player > 15)then{player sidechat "You are too far to dismount Malutka"; exit;}
+
+HeroMoney = HeroMoney - STATIC_Hero_Malutka_priceMoney;
+publicVariable "HeroMoney";
+playsound "buy_coin";
+player sidechat format ["Dismounting for %1 gold coin(s)...", STATIC_Hero_Malutka_priceMoney];
+~0.1
+player switchMove "combatToMedic";
+~4
+player switchMove "combatToMedic";
+deletevehicle _StaticWep;
+STATIC_Hero_HasMalutka = true;
+publicVariable "STATIC_Hero_HasMalutka";
+~4
+player sidechat "Done!";

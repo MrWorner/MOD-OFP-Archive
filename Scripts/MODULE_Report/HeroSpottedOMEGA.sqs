@@ -1,0 +1,14 @@
+
+;//[] exec "MODULE_Report\HeroSpottedOMEGA.sqs";
+
+if(VAR_PoliceReport_HeroContactOMEGA)then{exit;}
+VAR_PoliceReport_HeroContactOMEGA = true;
+~1
+_array = ["report_omegaContact1","report_omegaContact2","report_omegaContact2"]
+_r = random ((count _array)-1);
+_random = _r - (_r mod 1);
+_selected = _array select (_random);
+playsound _selected;
+
+~300
+VAR_PoliceReport_HeroContactOMEGA = false;

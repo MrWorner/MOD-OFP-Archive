@@ -1,0 +1,62 @@
+~2
+_array_position = array_RandomPatrolPoints;
+_units = 6
+#CHECK
+
+if(_units == 0)then{exit;};
+_units = _units - 1;
+
+_place = _this;
+_r = random ((count _array_position)-1);
+_random = _r - (_r mod 1);
+_selected = _array_position select (_random);
+
+~0.2
+_r = random ((count array_DMX_cars_Wave2)-1);
+_random = _r - (_r mod 1);
+_Police_car_MODEL = array_DMX_cars_Wave2 select (_random);
+
+~0.1
+_Police_car = _Police_car_MODEL createVehicle (getMarkerPos _selected);
+~0.1
+"dmx_policiesailor" createUnit [position _Police_car, WestGroup,"NAMESAVER_RandPatrol = this; RemoveAllWeapons this", 1, "corporal"];
+_man = NAMESAVER_RandPatrol;
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addWeapon "sof2_m1911";
+_man moveInDriver _Police_car;
+[_man] join grpnull
+_LocalLeader = _man
+
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+[_man] exec "Police\AI_policeDISTANCE.sqs"; 
+~0.1
+"dmx_policiesailor" createUnit [position _Police_car, group _LocalLeader,"NAMESAVER_RandPatrol = this; RemoveAllWeapons this", 1, "corporal"];
+_man = NAMESAVER_RandPatrol;
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addMagazine "sof2_m1911Mag";
+_man addWeapon "sof2_m1911";
+_man moveInCargo _Police_car;
+
+
+
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+
+goto "CHECK"
+

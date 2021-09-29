@@ -1,0 +1,17 @@
+
+
+
+[] exec "MODULE_VIP\MAYOR_GUARD\MayorGuardPack_1.sqs";
+
+EXIT;
+;///WIP
+_array = ["MayorGuardPack_1","MayorGuardPack_2","MayorGuardPack_3","DONT DELETE"]
+
+_r = random ((count _array)-1);
+_random = _r - (_r mod 1);
+_selected = _array select (_random);
+
+if(_selected = "MayorGuardPack_1")then{[] exec "MODULE_VIP\MAYOR_GUARD\MayorGuardPack_1.sqs";};
+if(_selected = "MayorGuardPack_2")then{[] exec "MODULE_VIP\MAYOR_GUARD\MayorGuardPack_2.sqs";};
+if(_selected = "MayorGuardPack_3")then{[] exec "MODULE_VIP\MAYOR_GUARD\MayorGuardPack_3.sqs";};
+

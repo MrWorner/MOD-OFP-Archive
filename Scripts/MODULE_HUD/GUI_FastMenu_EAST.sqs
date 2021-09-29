@@ -1,0 +1,22 @@
+~0.01
+createDialog "Button_Menu"
+
+;//--/---_Button_textEvac = format ["Request vehicle (%1/%2$)", SETTINGS_HERO_RescueVehicle, HeroMoney]
+_Button_textEvac = format ["Request vehicle ($%1)", SETTINGS_HERO_RescueVehicle, HeroMoney]
+;//_Button_textEvac = format ["Use medkit (%1)", Police_Medkit]	Use medkit	Use repair kit
+
+_button_properties = [["Statistic", "[] exec ""hud.sqs""; "], [_Button_textEvac, "[] exec ""MODULE_Spawn\Rescue car TERROR.sqs""; closedialog 1;"], ["->","[] exec ""MODULE_HUD\GUI_FastMenu_EAST_page2.sqs""; closedialog 1; "], ["LEAVE",";  closedialog 1;"]]
+_button_idc        = 10
+_number_of_buttons = 4
+
+_i = 0
+
+#Loop
+_idc  = _button_idc + _i
+_text = (_button_properties select _i) select 0
+_code = (_button_properties select _i) select 1
+
+ctrlSetText [_idc, _text]
+buttonSetAction [_idc, _code]
+
+? _i < _number_of_buttons : _i=_i+1; goto "Loop"

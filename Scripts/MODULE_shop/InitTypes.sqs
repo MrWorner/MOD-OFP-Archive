@@ -1,0 +1,636 @@
+~0.1
+
+aryWeapons = []
+aryAmmo = []
+aryVehicle = []
+aryT = []
+aryMen = []
+arySquad = []
+
+~0.1
+
+_number = 0
+
+;/ AryWeapons [вид: ["оригинальное название оружия","текст, который будет видеть игрок","оригинальное название боеприпаса к данному оружию"]
+_ary = aryWeapons
+;/////player addeventhandler ["fired",{hint format ["Weapon name : %1 Ammo name : %2",_this select 1,_this select 4]}]
+
+_ary set [_number, ["NVGoggles","NV Goggles","NVGoggles"]]
+_NVGoggles = _ary select _number; _number = _number + 1
+_ary set [_number, ["BINOCULAR","Binocular","BINOCULAR"]]
+_BINOCULAR = _ary select _number; _number = _number + 1
+
+
+;/------ ICP RUS WEP
+_ary set [_number, ["ICP_rpkn","ASSAULT RIFLE: RPK74 NightScope","ICP_rpk74mag"]]
+_RPK74NS = _ary select _number; _number = _number + 1
+
+
+_ary set [_number, ["ICP_akm","ASSAULT RIFLE: AKM","ICP_akmmag"]]
+_AKM = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_ak74mo","ASSAULT RIFLE: AK74M PSO","ICP_ak74mag"]]
+_AK74PSO = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_aks74m","ASSAULT RIFLE: AKS 74M","ICP_ak74mag"]]
+_ICP_aks74m = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_akmb","ASSAULT RIFLE: AKM B","ICP_akmmag"]]
+_ICP_akmb = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_akmsgp","ASSAULT RIFLE: AKM GP","ICP_akmmag", "ICP_grenadeEbag5"]]
+_AKMGP = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_SVD63","SNIPER RIFLE: SVD","ICP_SVDMag"]]
+_SVD = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_PK","MACHINE GUN: PK","ICP_PKMMag"]]
+_PK = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_val","ASSAULT RIFLE: AS VAL","ICP_valmag"]]
+_ASVAL = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_vss","SNIPER RIFLE: VSS Vintorez","ICP_vssmag"]]
+_VSS = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_vsk","SNIPER RIFLE: VSK","ICP_vskmag"]]
+_VSK = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_makarov","HANDGUN: Makarov","ICP_makarovMag"]]
+_Makarov = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_tt","HANDGUN: TT","ICP_ttMag"]]
+_TThandgun = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICP_pmms","HANDGUN: MakarovM SD","ICP_pmmsMag"]]
+_MakarovMSD = _ary select _number; _number = _number + 1
+
+;/------ SOF
+
+_ary set [_number, ["sof2_rpd","MACHINE GUN: RPD","sof2_rpdMag"]]
+_RPD = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_m4","ASSAULT RIFLE: M4","sof2_m4Mag"]]
+_M4 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_m4gl","ASSAULT RIFLE: M4 m203","sof2_m4Mag", "sof2_m203Grenade"]]
+_M4GL = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_m3a1","SUBMACHINE GUN: m3a1","sof2_m3a1Mag"]]
+_m3a1 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_m590","SHOTGUN: Mossberg m590","sof2_m590Mag"]]
+_Mossbergm590 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_usas12","SHOTGUN: USAS 12","sof2_usas12Mag"]]
+_USAS12 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_msg90a1","SNIPER RIFLE: MSG 90 A1","sof2_msg90a1Mag"]]
+_msg90a1 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_oicw","ASSAULT RIFLE: OICW","sof2_oicwMag","sof2_oicwGrenade"]]
+_OICW = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_mm1","GRENADE LAUNCHER: MM1","sof2_mm1Mag"]]
+_MM1 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_m1911","HANDGUN: Colt m1911","sof2_m1911Mag"]]
+_m1911 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_ussocom","HANDGUN: US SOCOM","sof2_ussocomMag"]]
+_ussocom = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["sof2_microuzi","HANDGUN: Micro UZI","sof2_microuziMag"]]
+_microuzi = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICPRPG2","RPG: RPG-2","ICPRPG2mag"]]
+_ICPRPG2 = _ary select _number; _number = _number + 1
+
+
+_ary set [_number, ["ICPRPG7V","RPG: RPG-7v","ICPRPG7Vmag"]]
+_RPG7v = _ary select _number; _number = _number + 1
+
+
+_ary set [_number, ["ICPRPG26","RPG: RPG-26","ICPRPG26mag"]]
+_ICPRPG26 = _ary select _number; _number = _number + 1
+
+
+_ary set [_number, ["ICPRPG29","RPG: RPG-29 Vampire","ICPRPG29mag"]]
+_ICPRPG29 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["ICPRPG_18","RPG: RPG-18 Muha","ICPRPG_18"]]
+_ICPRPG18 = _ary select _number; _number = _number + 1
+
+;/---------------------------------LSR weapons
+
+_ary set [_number, ["LSR_m249spw_acog","MACHINE GUN: M249 SAW Scope","JAM_W556M_200HDmag"]]
+_M249sawScope = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_M249saw","MACHINE GUN: M249 SAW","JAM_W556M_200HDmag"]]
+_m249saw = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m249spw_acog_sd","MACHINE GUN: M249SD ACOG","JAM_W556M_200SDHDmag"]]
+_M249SDACOG = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m240","MACHINE GUN: M240","JAM_W762M_200mag"]]
+_M240 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m240_m145","MACHINE GUN: M240 Scope","JAM_W762M_200mag"]]
+_M240Scope = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m60mag","MACHINE GUN: M60","JAM_W762M_100HDmag"]]
+_M60 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m60e4","MACHINE GUN: M60 Scope","JAM_W762M_100HDmag"]]
+_M60Scope = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m4_rx","ASSAULT RIFLE: M4 Reflex sight","LSR_m4mag"]]
+_M4rs = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_xm733","ASSAULT RIFLE: XM 733","JAM_W556_30mag"]]
+_xm733 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m4","ASSAULT RIFLE: M4 black","JAM_W556_30mag"]]
+_M4black = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_car15_aim","ASSAULT RIFLE: CAR 15 Aimpoint","JAM_W556_30mag"]]
+_car15_aim = _ary select _number; _number = _number + 1
+
+
+_ary set [_number, ["LSR_car15_aim_sd","ASSAULT RIFLE: CAR 15 Aimpoint SD","LSR_m4sdmag"]]
+_car15_aimSD = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m16a2","ASSAULT RIFLE: m16A2","JAM_W556_30Bmag"]]
+_m16A2 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m16a4_acog","ASSAULT RIFLE: M16A4 Acog","LSR_m16mag"]]
+_M16A4Acog = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m16a4_m203","ASSAULT RIFLE: M16A4 m203","LSR_m16mag","JAM_M433vest"]]
+_m16a4_m203 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_car15_m203","ASSAULT RIFLE: CAR 15 M203", "JAM_W556_30mag","JAM_M433vest"]]
+_CAR15M203 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m16a4_acog_m203","ASSAULT RIFLE: M16A4 ACOG M203","LSR_m16mag","JAM_M433vest"]]
+_m16a4Acogm203 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m14_aim_new","SNIPER RIFLE: M14 Aimpoint","JAM_W762_20mag"]]
+_M14Aimpoint = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m14_leu","SNIPER RIFLE: M14 Scope","JAM_W762_20mag"]]
+_M14Scope = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m14_sopmod_sd","SNIPER RIFLE: M14 SD Sopmod","LSR_m14sdmag"]]
+_M14SDSopmod = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m1014_aim","SHOTGUN: M1014 Aimpoint","JAM_12Gauge_Shotgun_Mag"]]
+_m1014_aim = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m3","SHOTGUN: M3 Shotgun","LSR_m3mag"]]
+_m3Shotgun = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_sr25","SNIPER RIFLE: SR 25","JAM_W762Sniper_20mag"]]
+_SR25 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_sr25_sd","SNIPER RIFLE: SR 25 SD","JAM_W762Sniper_20SDmag"]]
+_SR25SD = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m21_nbp","SNIPER RIFLE: M21","JAM_W762Sniper_20mag"]]
+_m21_nbp = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m21_sd","SNIPER RIFLE: M21 SD","JAM_W762Sniper_20SDmag"]]
+_M21SD = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m24","SNIPER RIFLE: M24","HuntingRifleMag"]]
+_M24 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m40","SNIPER RIFLE: M40","JAM_W762_5mag"]]
+_M40 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m82a1","SNIPER RIFLE: m82 A1","LSR_m82a1magIT"]]
+_m82a1 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_socom_sd","HANDGUN: SOCOM SD","LSR_socomsdmag"]]
+_SOCOMSD = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m9","HANDGUN: M9","LSR_m9mag"]]
+_M9 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m9_sd","HANDGUN: M9SD","LSR_m9sdmag"]]
+_M9SD = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_hpda","HANDGUN: HP","LSR_hpdamag"]]
+_HP = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_m1911_sd","HANDGUN: Colt M1911 SD","LSR_m1911sdmag"]]
+_m1911_sd = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_smawLauncher","RPG: SMAW","LSR_smawAT"]]
+_SMAW = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_lawLauncher","RPG: LAW","LSR_lawAT"]]
+_LAW = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["LSR_at4Launcher","RPG: AT4","LSR_at4rocket"]]
+_AT4 = _ary select _number; _number = _number + 1
+
+;/--------------BIS
+
+_ary set [_number, ["AALauncher","ANTI AIR: STINGER","AALauncher"]]
+_Stinger = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["9K32Launcher","ANTI AIR: Strela-2","9K32Launcher"]]
+_Strela = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["G36A","ASSAULT RIFLE: G36A","G36aMag"]]
+_G36A = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["Steyr","ASSAULT RIFLE: Steyr","Steyrmag"]]
+_Steyr = _ary select _number; _number = _number + 1
+
+
+;--------------MP5 PACK
+
+_ary set [_number, ["HK_MP5KA4P","HANDGUN: MP5KA4 pistol","HK_MP5mag"]]
+_HK_MP5KA4P = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5A5F","SUBMACHINE GUN: MP5A5F","HK_MP5mag"]]
+_HK_MP5A5F = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5SD5swat","SUBMACHINE GUN: MP5SD5 SWAT","HK_MP5SDmag"]]
+_HK_MP5SD5swat = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5A5Fai","SUBMACHINE GUN: MP5A5F Aimpoint","HK_MP5mag"]]
+_HK_MP5A5Fai = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5A5SF","SUBMACHINE GUN: MP5A5F Holo","HK_MP5mag"]]
+_HK_MP5A5SF = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5SD6SF","SUBMACHINE GUN: MP5SD6F Holo","HK_MP5SDmag"]]
+_HK_MP5SD6SF = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5SD6Ai","SUBMACHINE GUN: MP5SD6 Aimpoint","HK_MP5SDmag"]]
+_HK_MP5SD6Ai = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5A5","SUBMACHINE GUN: MP5A5","HK_MP5mag"]]
+_HK_MP5A5 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5A5FB","SUBMACHINE GUN: MP5A5 Navy","HK_MP5mag"]]
+_HK_MP5A5FB = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5a4swat","SUBMACHINE GUN: MP5A4 SWAT","HK_MP5mag"]]
+_HK_MP5a4swat = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP510A4","SUBMACHINE GUN: MP510A4","HK_MP510mag"]]
+_HK_MP510A4 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP510a5","SUBMACHINE GUN: MP510A5","HK_MP510mag"]]
+_HK_MP510a5 = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["HK_MP5SD6","SUBMACHINE GUN: MP5SD6","HK_MP5SDmag"]]
+_HK_MP5SD6 = _ary select _number; _number = _number + 1
+
+
+_ary set [_number, ["XXXclass","XXXTEXT","XXXMAG"]]
+_XXXname = _ary select _number; _number = _number + 1
+
+
+
+
+~0.1
+
+_number = 0
+
+;/ AryAmmo [вид: ["оригинальное название боеприпаса","текст, который будет видеть игрок"]
+_ary = aryAmmo
+
+_ary set [_number, ["medkit","Medkit"]]
+_I_medkit = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["repairkit","Repair kit"]]
+_I_repairkit = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["static_malutka","Static weapon: Malutka"]]
+_I_staticMalutka = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["static_spg9","Static weapon: SPG-9"]]
+_I_staticSPG9 = _ary select _number; _number = _number + 1
+
+
+~0.1
+
+_number = 0
+
+;/ AryVehicle [вид: ["оригинальное название техники","текст, который будет видеть игрок"]
+_ary = aryVehicle
+
+
+;//--HELI COP
+
+_ary set [_number, ["bas_mh6a","AIR: MH-6 with MP5SD"]]; _v_bas_mh6a = _ary select _number; _number = _number + 1;
+_ary set [_number, ["bas_md500dtow","AIR: MH-6 TOW"]]; _v_bas_mh6TOW = _ary select _number; _number = _number + 1;
+_ary set [_number, ["bas_ah6mp","AIR: MH-6 Super armed"]]; _v_bas_mh6mp = _ary select _number; _number = _number + 1;
+
+_ary set [_number, ["bas_uh60l","AIR: UH60L M60"]]; _v_bas_uh60l = _ary select _number; _number = _number + 1;
+_ary set [_number, ["bas_mh60k","AIR: MH60K Minigun"]]; _v_bas_mh60k = _ary select _number; _number = _number + 1;
+_ary set [_number, ["bas_ah60l","AIR: AH60L Super armed"]]; _v_bas_uh60K = _ary select _number; _number = _number + 1;
+_ary set [_number, ["CSJDustoff","AIR: UH-1 (Medical)"]]; _v_CSJDustoff = _ary select _number; _number = _number + 1;
+_ary set [_number, ["csjNavyBmini","AIR: UH-1 (Minigun)"]]; _v_csjNavyBmini = _ary select _number; _number = _number + 1;
+_ary set [_number, ["csjNavyBM2119","AIR: UH-1 (Heavy armed)"]]; _v_csjNavyBM2119 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["SSV_V22","AIR: V22 Osprey"]]; _v_SSV_V22 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["",""]]; _v_ = _ary select _number; _number = _number + 1;
+_ary set [_number, ["",""]]; _v_ = _ary select _number; _number = _number + 1;
+_ary set [_number, ["",""]]; _v_ = _ary select _number; _number = _number + 1;
+;//--CAR COP
+
+_ary set [_number, ["CBT_M998MP_W","CAR: Hummer"]]; _v_CBT_M998MP_W = _ary select _number; _number = _number + 1;
+_ary set [_number, ["CBT_M1025_W91_M2","CAR: Hummer (M2)"]]; _v_CBT_M1025_W91_M2 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["CBT_M1025_W_M240","CAR: Hummer (M240)"]]; _v_CBT_M1025_W_M240 = _ary select _number; _number = _number + 1;
+;//--------_ary set [_number, ["CBT_M1121_W91","CAR: Hummer (TOW)"]]; _v_CBT_M1121_W91 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["wood_hmmwv_tow2","CAR: Hummer (TOW)"]]; _v_CBT_M1121_W91 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["CBT_M1025_W91_MK19","CAR: Hummer (MK19)"]]; _v_CBT_M1025_W91_MK19 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["CBT_M996_W","CAR: Hummer (Medical)"]]; _v_CBT_M996_W = _ary select _number; _number = _number + 1;
+
+
+
+_ary set [_number, ["dmx_policieuaz","CAR: Police UAZ"]]; _v_dmx_policieuaz = _ary select _number; _number = _number + 1;
+_ary set [_number, ["dmx_policiejeep","CAR: Police jeep"]]; _v_dmx_policiejeep = _ary select _number; _number = _number + 1;
+_ary set [_number, ["dmx_policiegaz","CAR: Police Volha"]]; _v_dmx_policiegaz = _ary select _number; _number = _number + 1;
+_ary set [_number, ["dmx_policiejawa","CAR: Police bike"]]; _v_dmx_policiejawa = _ary select _number; _number = _number + 1;
+_ary set [_number, ["dmx_policieot64","CAR: Police BRDM"]]; _v_dmx_policieot64 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["dmx_policiebus","CAR: Police bus"]]; _v_dmx_policiebus = _ary select _number; _number = _number + 1;
+
+_ary set [_number, ["CadillacN","CAR: Police Cadillac 4x4"]]; _v_PoliceJEEP = _ary select _number; _number = _number + 1;
+_ary set [_number, ["BMWM","CAR: BMWM M5"]]; _v_BMWMM5 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Mi2T2NO","AIR: Police Mi 2"]]; _v_Mi2T2NO = _ary select _number; _number = _number + 1;
+_ary set [_number, ["dzik","CAR: Police DZIK"]]; _v_dzik = _ary select _number; _number = _number + 1;
+_ary set [_number, ["dzikpk","CAR: Police DZIK (PK)"]]; _v_dzikpk = _ary select _number; _number = _number + 1;
+_ary set [_number, ["nivapol","CAR: Police Niva"]]; _v_nivapol = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Octavia5","CAR: Police Octavia"]]; _v_Octavia5 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Octavia1","CAR: Octavia"]]; _v_Octavia1 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Jeep","CAR: Jeep"]]; _v_Jeep = _ary select _number; _number = _number + 1;
+
+_ary set [_number, ["CBT_M113A3A_W","ARMOR: M113 (Medical)"]]; _v_CBT_M113A3A_W = _ary select _number; _number = _number + 1;
+_ary set [_number, ["CBT_M113A2_W","ARMOR: M113 (M2)"]]; _v_CBT_M113A2_W = _ary select _number; _number = _number + 1;
+_ary set [_number, ["CBT_M2A1W","ARMOR: M2A1 Bradley IFV"]]; _v_CBT_M2A1W = _ary select _number; _number = _number + 1;
+_ary set [_number, ["BAS_klr250wood","BIKE: KLR 250 bike (Wood)"]]; _v_BAS_klr250wood = _ary select _number; _number = _number + 1;
+_ary set [_number, ["MFM_CFG_LYNX_G","CAR: IVECO LYNX (Armored car)"]]; _v_MFM_CFG_LYNX_G = _ary select _number; _number = _number + 1;
+_ary set [_number, ["MFM_CFG_LYNX_G_MG","CAR: IVECO LYNX PKP (Armored car)"]]; _v_MFM_CFG_LYNX_G_MG = _ary select _number; _number = _number + 1;
+;//_ary set [_number, ["",""]]; _v_ = _ary select _number; _number = _number + 1;
+
+
+;//---------------EAST AIR
+_ary set [_number, ["bas_mh6","AIR: MH6"]]; _v_bas_mh6 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["bas_ah6j","AIR: AH6J (ARMED)"]]; _v_bas_ah6j = _ary select _number; _number = _number + 1;
+_ary set [_number, ["BAS_HH60G_Des","AIR: HH60G (minigun)"]]; _v_BAS_HH60G_Des = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Mi2NO","AIR: Mi2 (FFAR)"]]; _v_Mi2NO = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Mi2urpNO","AIR: Mi2 (Heavy armed)"]]; _v_Mi2urpNO = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Mi2usNO","AIR: Mi2 (PK)"]]; _v_Mi2usNO = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Mi2NOcif","AIR: Mi2"]]; _v_Mi2NOcif = _ary select _number; _number = _number + 1;
+_ary set [_number, ["jetpackE","AIR: Jetpack"]]; _v_jetpackE = _ary select _number; _number = _number + 1;
+_ary set [_number, ["csjXM213","AIR: XM-213 (M2)"]]; _v_csjXM213 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Gst_Ka26","AIR: KA-26 Hoodlum"]]; _v_Gst_Ka26 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["flklyna","AIR: LYNX (AT)"]]; _v_flklyna = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Ch47_HC2_B","AIR: Chinook HC-2"]]; _v_Ch47_HC2_B = _ary select _number; _number = _number + 1;
+;//-------EAST CAR
+
+_ary set [_number, ["ARMKraz255cls","CAR: Kraz 255"]]; _v_ARMKraz255cls = _ary select _number; _number = _number + 1;
+_ary set [_number, ["GJeep","CAR: Jeep"]]; _v_GJeep = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Mustang69","CAR: Ford Mustang (Blue)"]]; _v_Mustang69 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["viper","CAR: Dodge Viper GTS (Armored)"]]; _v_viper = _ary select _number; _number = _number + 1;
+_ary set [_number, ["JeepMG","CAR: Jeep (M2)"]]; _v_JeepMG = _ary select _number; _number = _number + 1;
+_ary set [_number, ["TruckV3SG","CAR: Praha"]]; _v_TruckV3SG = _ary select _number; _number = _number + 1;
+_ary set [_number, ["UAZG","CAR: UAZ"]]; _v_UAZG = _ary select _number; _number = _number + 1;
+_ary set [_number, ["BAS_klr250dese","BIKE: KLR 250 bike (Desert)"]]; _v_BAS_klr250dese = _ary select _number; _number = _number + 1;
+_ary set [_number, ["marky_as","CAR: Alvis Stalwart"]]; _v_marky_as = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_goretsk_nomrap","CAR: MRAP Goretsk"]]; _v_mfm_goretsk_nomrap = _ary select _number; _number = _number + 1;
+;//--------------_ary set [_number, ["Ar5t","CAR: Handmade armored T5"]]; _v_Ar5t = _ary select _number; _number = _number + 1;			;@_car_ArmoredTruck_T5
+_ary set [_number, ["Buggy3","CAR: Buggy (Nitro)"]]; _v_Buggy3 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["hiluxmg","CAR: Toyota Hilux (MG)"]]; _v_hiluxmg = _ary select _number; _number = _number + 1;
+_ary set [_number, ["INQ_HTTV_WOOD","CAR: HTTW (MG)"]]; _v_INQ_HTTV_WOOD = _ary select _number; _number = _number + 1;
+_ary set [_number, ["INQ_HTTV_Desert","CAR: HTTW (Mk19)"]]; _v_INQ_HTTV_Desert = _ary select _number; _number = _number + 1;
+_ary set [_number, ["MERCS_THS_B","CAR: Hilux Special"]]; _v_MERCS_THS_B = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_Zil157kd2a","CAR: ZIL 157K DSHK"]]; _v_mfm_Zil157kd2a = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_Zil157k3","CAR: ZIL 157KD ZSU"]]; _v_mfm_Zil157k3 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_ZiL157k3c","CAR: ZIL 157K"]]; _v_mfm_ZiL157k3c = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_ZiL157k3co","CAR: ZIL 157K (Open)"]]; _v_mfm_ZiL157k3co = _ary select _number; _number = _number + 1;
+
+_ary set [_number, ["Buggy4_GAU19","ARMOR: Buggy MARV (Minigun)"]]; _v_Buggy4_GAU19 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Buggy4_M40A1d","ARMOR: Buggy MARV (AT)"]]; _v_Buggy4_M40A1d = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Buggy4_geruest","ARMOR: Buggy MARV (Medical)"]]; _v_Buggy4_geruest = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Buggy4_ZU23d","ARMOR: Buggy MARV (ZSU)"]]; _v_Buggy4_ZU23d = _ary select _number; _number = _number + 1;
+
+_ary set [_number, ["VTbtrcz","ARMOR: BTR 40 (1964)"]]; _v_VTbtrcz = _ary select _number; _number = _number + 1;
+_ary set [_number, ["SFM_BRDM1Wood","ARMOR: BRDM 1 (Woodland)"]]; _v_SFM_BRDM1Wood = _ary select _number; _number = _number + 1;
+_ary set [_number, ["CSJm50ontos","ARMOR: M50 Ontos"]]; _v_CSJm50ontos = _ary select _number; _number = _number + 1;
+_ary set [_number, ["MNF_BMP1R","ARMOR: BMP-1"]]; _v_MNF_BMP1R = _ary select _number; _number = _number + 1;
+
+_ary set [_number, ["MNF_BRDM2_AT3","ARMOR: BRDM-2 (AT SAGGET)"]]; _v_MNF_BRDM2_AT3 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["MNF_BRDM2_AT4","ARMOR: BRDM-2 (AT SPIGOT)"]]; _v_MNF_BRDM2_AT4 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["MNF_BRDM2R","ARMOR: BRDM-2"]]; _v_MNF_BRDM2R = _ary select _number; _number = _number + 1;
+_ary set [_number, ["MNF_BRDM2U","ARMOR: BRDM-2U (UNARMED)"]]; _v_MNF_BRDM2U = _ary select _number; _number = _number + 1;
+_ary set [_number, ["MNF_SA9","ARMOR: SA-9 (AA)"]]; _v_MNF_SA9 = _ary select _number; _number = _number + 1;
+
+_ary set [_number, ["VIT_BMD3M","ARMOR: BMD-3M"]]; _v_VIT_BMD3M = _ary select _number; _number = _number + 1;
+_ary set [_number, ["228_t54camo2","ARMOR: T-54"]]; _v_228_t54camo2 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["ICP_T80UM","ARMOR: T-80UM"]]; _v_ICP_T80UM = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_Luaz967","CAR: Luaz-967"]]; _v_mfm_Luaz967 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_Luaz967_ags","CAR: Luaz-967 (AGS)"]]; _v_mfm_Luaz967_ags = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_Luaz967_med3","CAR: Luaz-967 (Medical)"]]; _v_mfm_Luaz967_med3 = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_Luaz967_pk","CAR: Luaz-967 (PK)"]]; _v_mfm_Luaz967_pk = _ary select _number; _number = _number + 1;
+_ary set [_number, ["mfm_Luaz967_spg","CAR: Luaz-967 (SPG)"]]; _v_mfm_Luaz967_spg = _ary select _number; _number = _number + 1;
+
+_ary set [_number, ["BTRT_A_FIA","ARMOR: BTR-T"]]; _v_BTRT_A_FIA = _ary select _number; _number = _number + 1;
+_ary set [_number, ["BTRT_B_FIA_2","ARMOR: BTR-T (AA)"]]; _v_BTRT_B_FIA_2 = _ary select _number; _number = _number + 1;
+
+
+
+
+
+
+
+_ary set [_number, ["Truck5tReammo","CAR: T5 Truck (Ammo)"]]; _v_Truck5tReammo = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Truck5tRepair","CAR: T5 Truck (Repair)"]]; _v_Truck5tRepair = _ary select _number; _number = _number + 1;
+_ary set [_number, ["Truck5tRefuel","CAR: T5 Truck (Refuel)"]]; _v_Truck5tRefuel = _ary select _number; _number = _number + 1;
+_ary set [_number, ["UralReammo","CAR: Ural Truck (Ammo)"]]; _v_UralReammo = _ary select _number; _number = _number + 1;
+_ary set [_number, ["UralRepair","CAR: Ural Truck (Repair)"]]; _v_UralRepair = _ary select _number; _number = _number + 1;
+_ary set [_number, ["UralRefuel","CAR: Ural Truck (Refuel)"]]; _v_UralRefuel = _ary select _number; _number = _number + 1;
+
+
+~0.1
+;//----------------MEN
+_number = 0
+
+;/ aryMen  [вид: ["оригинальное название пехотинца","текст, который будет видеть игрок"]
+_ary = aryMen
+
+
+;///-----WEST
+
+;this animate [{nvgs}, 1]
+_ary set [_number, ["LSR_seal_riflemanmp5_vbss","Operator (MP5)", "Police1_OperatorMP5"]]; _men_Police1_OperatorMP5 = _ary select _number; _number = _number + 1
+_ary set [_number, ["LSR_seal_autorifleman_lwf","Operator (M249 SAW)", "Police1_OperatorMG"]]; _men_Police1_OperatorMG = _ary  select _number; _number = _number + 1
+_ary set [_number, ["LSR_sqleader","Sniper (M24)", "Police1_OperatorSniper"]]; _men_Police1_OperatorSniper = _ary select _number; _number = _number + 1
+_ary set [_number, ["LSR_ranger_medic","Medic (CAR-15 Aimpoint)", "Police1_Medic"]]; _men_Police1_Medic = _ary select _number; _number = _number + 1
+_ary set [_number, ["LSR_seal_autorifleman_vbss_s","Operator (M4 RX SD)", "Police1_SD"]]; _men_Police1_SD = _ary select _number; _number = _number + 1
+_ary set [_number, ["LSR_delta_cqb3","Operator (AT)", "Police1_AT"]]; _men_Police1_AT = _ary select _number; _number = _number + 1
+_ary set [_number, ["LSR_seal_spotter_lwf","Operator (M16A4 Agog)", "Police1_Acog"]]; _men_Police1_Acog = _ary select _number; _number = _number + 1
+_ary set [_number, ["SWAT_M4A1","SWAT (MP5)", "Police1_SWAT"]]; _men_Police1_SWAT = _ary select _number; _number = _number + 1
+
+;//_ary set [_number, ["","", ""]]; _men_ = _ary select _number; _number = _number + 1
+
+
+;//-------EAST
+_ary set [_number, ["edg_resSoldierGBr","Terrorist (UZI)", "Terror1_UziGuy"]]; _men_FP_Insurgent_3 = _ary select _number; _number = _number + 1
+_ary set [_number, ["edg_resSoldierGBr","Terrorist (Shotgun)", "Terror1_Shotgun"]]; _men_FP_Insurgent_5 = _ary select _number; _number = _number + 1
+_ary set [_number, ["edg_resSoldierGBr","Terrorist (AKS-47)", "Terror1_AKS"]]; _men_FP_Insurgent_6 = _ary select _number; _number = _number + 1
+_ary set [_number, ["edg_resSoldierGBa","Specialist (RPD)", "Terror1_RPD"]]; _men_Terror1_RPD = _ary select _number; _number = _number + 1
+_ary set [_number, ["edg_resSoldierGBs","Specialist (RPG)", "Terror1_RPG"]]; _men_Terror1_RPG = _ary select _number; _number = _number + 1
+_ary set [_number, ["edg_resSoldierGMedic","Medic (MP5A5)", "Terror1_MEDIC"]]; _men_Terror1_Medic = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["res_troop_MG","Soldier (MP5K)", "Terror2_MP5K"]]; _men_Terror2_MP5K = _ary select _number; _number = _number + 1
+_ary set [_number, ["res_troop_MG","Soldier (RPK-74M)", "Terror2_RPK"]]; _men_Terror2_RPK = _ary select _number; _number = _number + 1
+_ary set [_number, ["res_troop_MG","Specialist (PKM)", "Terror2_PK"]]; _men_Terror2_PK = _ary select _number; _number = _number + 1
+_ary set [_number, ["res_troop_MED","Medic (AKM)", "Terror2_MEDIC"]]; _men_Terror2_MEDIC = _ary select _number; _number = _number + 1
+_ary set [_number, ["res_troop_MG","Specialist (RPG)", "Terror2_RPG"]]; _men_Terror2_RPG = _ary select _number; _number = _number + 1
+
+_ary set [_number, ["CRSMOfficer","Mercenary (AS VAL)", "Terror3_Soldat"]]; _men_Terror3_Soldat = _ary select _number; _number = _number + 1
+_ary set [_number, ["CRSMOfficer","Mercenary (RPG)", "Terror3_RPG"]]; _men_Terror3_RPG = _ary select _number; _number = _number + 1
+_ary set [_number, ["CRSMOfficer","Mercenary (AT)", "Terror3_AT"]]; _men_Terror3_AT = _ary select _number; _number = _number + 1
+_ary set [_number, ["CRSMSoldierMedic","Medic (SVD)", "Terror3_MEDIC"]]; _men_Terror3_MEDIC = _ary select _number; _number = _number + 1
+_ary set [_number, ["CRSMOfficer","Mercenary (MM1)", "Terror3_MM1"]]; _men_Terror3_MM1 = _ary select _number; _number = _number + 1
+_ary set [_number, ["CRSMOfficer","Mercenary (MP5SD)", "Terror3_MP5SD"]]; _men_Terror3_MP5SD = _ary select _number; _number = _number + 1
+_ary set [_number, ["CRSMOfficer","Mercenary (M60)", "Terror3_M60"]]; _men_Terror3_M60 = _ary select _number; _number = _number + 1
+;//_ary set [_number, ["","", ""]]; _men_ = _ary select _number; _number = _number + 1
+
+
+
+
+;//----------------SQUAD
+_number = 0
+
+;/ arySquad  [вид: ["оригинальное название пехотинца","текст, который будет видеть игрок"]
+_ary = arySquad
+
+;//-----EAST----TERROR 1
+_ary set [_number, [1,"3X SKODA | Assault team (UZI)"]]; _squad_EAST_LVL1 = _ary select _number; _number = _number + 1
+_ary set [_number, [2,"1X Bus | Assault team (Shotgun)"]]; _squad_EAST_LVL2 = _ary select _number; _number = _number + 1
+_ary set [_number, [3,"3X Jeep 4x4 | Assault team (AKs)"]]; _squad_EAST_LVL3 = _ary select _number; _number = _number + 1
+_ary set [_number, [4,"1X Kraz 255 | Assault team (Mixed)"]]; _squad_EAST_LVL4 = _ary select _number; _number = _number + 1
+
+_ary set [_number, [5,"2x BRDM-1 1x BRDM-2 AT SAGGET | Assault team (Mixed)"]]; _squad_EAST_LVL5 = _ary select _number; _number = _number + 1
+_ary set [_number, [6,"1x BMP-1 | Assault team (RPG)"]]; _squad_EAST_LVL6 = _ary select _number; _number = _number + 1
+
+;//-----EAST----TERROR 2
+_ary set [_number, [100,"2x Jeep(MG) 1x Jeep | 12 Soldiers (MP5K)"]]; _squad_EAST2_LVL1 = _ary select _number; _number = _number + 1
+_ary set [_number, [101,"1x Zil 157 | Assault team (RPK)"]]; _squad_EAST2_LVL2 = _ary select _number; _number = _number + 1
+_ary set [_number, [102,"2x BTR 40 | Assault team (Mixed)"]]; _squad_EAST2_LVL3 = _ary select _number; _number = _number + 1
+_ary set [_number, [103,"1x Zil 157 (DSHK) 1x Zil 157 (ZSU)| 12 Soldiers (RPG)"]]; _squad_EAST2_LVL4 = _ary select _number; _number = _number + 1
+
+_ary set [_number, [104,"1x HTTV (M2) 2x HTTV (MK19) | Assault team (Mixed)"]]; _squad_EAST2_LVL5 = _ary select _number; _number = _number + 1
+_ary set [_number, [105,"2x BRDM-2 2x BRDM-2 AT | Assault team (Mixed)"]]; _squad_EAST2_LVL6 = _ary select _number; _number = _number + 1
+_ary set [_number, [106,"2x T-54 1x Ontos 1x SA-9 | Assault team (RPK)"]]; _squad_EAST2_LVL7 = _ary select _number; _number = _number + 1
+
+
+_ary set [_number, [200,"2x Luaz (PK) 2x Luaz (SPG) | Assault team (AT)"]]; _squad_EAST3_LVL1 = _ary select _number; _number = _number + 1
+_ary set [_number, [201,"1x Alvis | Assault team (AS VAL)"]]; _squad_EAST3_LVL2 = _ary select _number; _number = _number + 1
+_ary set [_number, [204,"1x MARV | Assault team (MP5SD)"]]; _squad_EAST3_LVL5 = _ary select _number; _number = _number + 1
+
+_ary set [_number, [202,"3x Luaz (AGS) |  Assault team (M60)"]]; _squad_EAST3_LVL3 = _ary select _number; _number = _number + 1
+_ary set [_number, [203,"1x MARV (Minigun) 1x (SPG) 1x (ZU) |  Assault team (MM1)"]]; _squad_EAST3_LVL4 = _ary select _number; _number = _number + 1
+_ary set [_number, [205,"1x MRAP Goretsk | Assault team (RPG)"]]; _squad_EAST3_LVL6 = _ary select _number; _number = _number + 1
+_ary set [_number, [206,"1x BTRT 1x BTRT AA | Assault team (Mixed)"]]; _squad_EAST3_LVL7 = _ary select _number; _number = _number + 1
+_ary set [_number, [207,"1x T-80U 1x BMD-3M"]]; _squad_EAST3_LVL8 = _ary select _number; _number = _number + 1
+;//-------_ary set [_number, [208,"XXXXXXXXXXXXXX"]]; _squad_EAST3_LVL9 = _ary select _number; _number = _number + 1
+
+
+
+~0.1
+;//----------------ARRAYS OF GOODS
+;TalonRobot3		gRENADE
+;TalonRobot2
+_TerrorShop1_Weapons = [[_NVGoggles, 0],[_BINOCULAR, 0],[_Makarov,10], [_TThandgun,10], [_m1911, 12], [_MakarovMSD,15], [_m1911_sd,15], [_HK_MP5KA4P, 100], [_microuzi, 200], [_Mossbergm590, 100], [_m1014_aim, 200], [_USAS12, 350], [_m3a1,200],[_HK_MP5A5, 300], [_HK_MP510a5, 350], [_HK_MP5SD6, 360], [_HK_MP5A5Fai, 400], [_HK_MP5SD6Ai, 450], [_AKM, 310], [_m16A2, 320],[_M4, 315],[_M4GL, 1500],[_xm733, 450], [_AK74PSO, 450], [_ASVAL, 400], [_Steyr, 500],  [_M14Aimpoint, 500], [_M14SDSopmod, 600], [_VSS, 500],[_SVD, 650], [_m21_nbp, 650], [_M21SD, 700], [_M40, 655], [_RPD, 400], [_M60, 410], [_M60Scope, 550], [_PK, 400], [_M240, 420], [_M240Scope, 560], [_LAW, 200], [_ICPRPG2, 250], [_RPG7v, 300], [_AT4, 350], [_ICPRPG26, 400], [_SMAW, 400], [_ICPRPG29, 425], [_ICPRPG18, 450]];
+
+
+_TerrorShop1_Mag = [[_I_medkit, 250],[_I_repairkit, 400]];
+
+_TerrorShop1_Vehicles = [[_v_BAS_klr250dese, 150], [_v_UAZG, 100], [_v_Mustang69, 1000], [_v_ARMKraz255cls, 240], [_v_Mi2NOcif, 1250],[_v_UralReammo, 250],[_v_UralRepair, 250],[_v_UralRefuel, 250]]
+_TerrorShop2_Vehicles = [[_v_BAS_klr250dese, 150], [_v_GJeep, 100], [_v_JeepMG, 250], [_v_TruckV3SG, 200], [_v_VTbtrcz, 400], [_v_mfm_ZiL157k3co, 250], [_v_mfm_ZiL157k3c, 190], [_v_mfm_Zil157kd2a, 500], [_v_mfm_Zil157k3, 750], [_v_Gst_Ka26, 1000],[_v_UralReammo, 250],[_v_UralRepair, 250],[_v_UralRefuel, 250]]
+_TerrorShop3_Vehicles = [[_v_BAS_klr250dese, 150], [_v_mfm_goretsk_nomrap, 500], [_v_viper, 2000], [_v_Buggy4_geruest, 800], [_v_mfm_Luaz967, 110], [_v_mfm_Luaz967_med3, 200], [_v_mfm_Luaz967_pk, 350], [_v_mfm_Luaz967_spg, 450], [_v_marky_as, 600], [_v_bas_mh6, 900], [_v_Ch47_HC2_B, 1100],[_v_UralReammo, 250],[_v_UralRepair, 250],[_v_UralRefuel, 250]]
+
+
+_TerrorShop1_Men = [ [_men_FP_Insurgent_3, 150], [_men_FP_Insurgent_5, 150], [_men_FP_Insurgent_6, 200], [_men_Terror1_Medic, 225], [_men_Terror1_RPD, 250], [_men_Terror1_RPG, 290] ];
+_TerrorShop2_Men = [ [_men_Terror2_MP5K, 160], [_men_Terror2_RPK, 220], [_men_Terror2_PK, 280], [_men_Terror2_MEDIC, 225], [_men_Terror2_RPG, 290]];
+_TerrorShop3_Men = [ [_men_Terror3_Soldat, 250], [_men_Terror3_RPG, 300], [_men_Terror3_AT, 310], [_men_Terror3_MEDIC, 300],  [_men_Terror3_MM1, 325],  [_men_Terror3_MP5SD, 220],  [_men_Terror3_M60, 310]];
+
+
+_TerrorShop1_SQUAD = [ [_squad_EAST_LVL1, 1000], [_squad_EAST_LVL2, 850], [_squad_EAST_LVL3, 1200], [_squad_EAST_LVL4, 1800]];
+_TerrorShop2_SQUAD = [ [_squad_EAST2_LVL1, 1000], [_squad_EAST2_LVL2, 1400], [_squad_EAST2_LVL3, 2000], [_squad_EAST2_LVL4, 2500]];
+_TerrorShop3_SQUAD = [ [_squad_EAST3_LVL1, 2700],  [_squad_EAST3_LVL2, 1450], [_squad_EAST3_LVL6, 1500], [_squad_EAST3_LVL5, 1100]];
+
+_TerrorShop1s_Weapons = [[_AKMGP, 1], [_m16a4_m203, 1], [_m16a4Acogm203, 2], [_OICW, 4], [_msg90a1, 1],[_SR25, 1], [_SR25SD, 2], [_m82a1,2], [_M249SDACOG, 2], [_MM1, 1], [_Strela, 1]];
+_TerrorShop1s_Mag = [[_I_medkit, 1],[_I_repairkit, 1],[_I_staticMalutka, 1],[_I_staticSPG9, 2]];
+
+
+
+_TerrorShop1s_Vehicles = [[_v_hiluxmg, 2], [_v_SFM_BRDM1Wood, 3], [_v_MNF_BRDM2_AT3, 4], [_v_MNF_BMP1R, 5], [_v_Mi2NO, 4], [_v_Mi2usNO, 2], [_v_csjXM213, 2]];
+_TerrorShop2s_Vehicles = [[_v_Buggy3, 1], [_v_INQ_HTTV_WOOD, 1], [_v_INQ_HTTV_Desert, 2], [_v_CSJm50ontos, 5], [_v_MNF_BRDM2U, 2], [_v_MNF_BRDM2R, 5], [_v_MNF_BRDM2_AT4, 5], [_v_MNF_SA9, 5], [_v_228_t54camo2, 6], [_v_Mi2urpNO, 7], [_v_BAS_HH60G_Des, 2]];
+_TerrorShop3s_Vehicles = [[_v_MERCS_THS_B, 1], [_v_mfm_Luaz967_ags, 2], [_v_Buggy4_GAU19, 3], [_v_Buggy4_M40A1d, 3], [_v_Buggy4_ZU23d, 3], [_v_BTRT_A_FIA, 7], [_v_BTRT_B_FIA_2, 7], [_v_VIT_BMD3M, 9], [_v_ICP_T80UM, 11], [_v_bas_ah6j, 5], [_v_jetpackE, 3], [_v_flklyna, 5]];
+
+
+_TerrorShop1s_SQUAD = [ [_squad_EAST_LVL5, 5], [_squad_EAST_LVL6, 4]];
+_TerrorShop2s_SQUAD = [ [_squad_EAST2_LVL5, 3], [_squad_EAST2_LVL6, 7], [_squad_EAST2_LVL7, 10]];
+_TerrorShop3s_SQUAD = [ [_squad_EAST3_LVL3, 4], [_squad_EAST3_LVL4, 6], [_squad_EAST3_LVL7, 7], [_squad_EAST3_LVL8, 10]];
+
+
+_CopShop1_Weapons = [[_NVGoggles, 0],[_BINOCULAR, 0],[_ussocom, 0],[_m3Shotgun,0],[_HK_MP5A5F, 1],[_HK_MP510A4, 2],[_HK_MP5SD5swat, 2],[_HK_MP5SD6SF, 3],[_ICP_aks74m, 3],[_ICP_akmb, 3],[_M4black, 3],[_M4rs, 4],[_car15_aim, 4],[_car15_aimSD, 5],[_CAR15M203, 30],[_M16A4Acog, 5], [_VSK, 3], [_M14Scope, 5],[_M14SDSopmod, 6],[_SR25, 7],[_SR25SD, 8],[_M24, 6],[_m82a1, 10],[_M240, 5],[_m249saw, 6],[_M249sawScope, 10],[_M249SDACOG, 15],[_LAW, 1],[_AT4, 2],[_SMAW, 3],[_Stinger, 10]];
+_CopShop1_Mag = [[_I_medkit, 2],[_I_repairkit, 5]];
+_CopShop1_Vehicles = [[_v_BAS_klr250wood, 1],[_v_dmx_policiejawa, 0],[_v_dmx_policiejeep, 0],[_v_dmx_policieuaz, 0],[_v_dmx_policiegaz, 0],[_v_dmx_policieot64, 5],[_v_dmx_policiebus, 0],[_v_PoliceJEEP, 3],[_v_BMWMM5, 5],[_v_nivapol, 1],[_v_Octavia5, 1],[_v_Octavia1, 1],[_v_Jeep, 0],[_v_CBT_M998MP_W, 4],[_v_CBT_M1025_W91_M2, 5],[_v_CBT_M1025_W_M240, 6],[_v_CBT_M1121_W91, 6],[_v_CBT_M1025_W91_MK19, 6],[_v_CBT_M996_W, 5],[_v_dzik, 4],[_v_dzikpk, 5],[_v_MFM_CFG_LYNX_G, 5],[_v_MFM_CFG_LYNX_G_MG, 6],[_v_CBT_M113A3A_W, 6],[_v_CBT_M113A2_W, 8],[_v_CBT_M2A1W, 50],[_v_bas_mh6a, 10],[_v_bas_mh6TOW, 30],[_v_bas_mh6mp, 35],[_v_bas_uh60l, 15],[_v_bas_mh60k, 20],[_v_bas_uh60K, 50],[_v_CSJDustoff, 12],[_v_csjNavyBmini, 18],[_v_csjNavyBM2119, 45],[_v_SSV_V22, 15], [_v_Truck5tReammo,5], [_v_Truck5tRepair,5], [_v_Truck5tRefuel,5]];
+
+_CopShop1_Men = [ [_men_Police1_SWAT, 2], [_men_Police1_OperatorMP5, 2], [_men_Police1_OperatorMG, 5], [_men_Police1_OperatorSniper, 4], [_men_Police1_Medic, 3], [_men_Police1_SD, 3], [_men_Police1_AT, 4], [_men_Police1_Acog, 3]];
+
+~0.1
+_number = 0
+
+;/ AryT [вид: [имя торговца, ассортимент товаров, ящик (для торговцев оружием), Объект, на котором будет появляться техника (для торговцев техникой)]
+_ary = aryT
+
+_assort = [ _TerrorShop1_Weapons, _TerrorShop1_Mag, _TerrorShop1_Vehicles, _TerrorShop1_Men, _TerrorShop1_SQUAD]
+_ary set [_number, [TerrorShop1, _assort, TerrorShop1_box, TerrorShop1_carPos, TerrorShop1_army]]
+_number = _number + 1
+_assort = [ _TerrorShop1_Weapons, _TerrorShop1_Mag, _TerrorShop2_Vehicles, _TerrorShop2_Men, _TerrorShop2_SQUAD]
+_ary set [_number, [TerrorShop2, _assort, TerrorShop2_box, TerrorShop2_carPos, TerrorShop2_army]]
+_number = _number + 1
+_assort = [ _TerrorShop1_Weapons, _TerrorShop1_Mag, _TerrorShop3_Vehicles, _TerrorShop3_Men, _TerrorShop3_SQUAD]
+_ary set [_number, [TerrorShop3, _assort, TerrorShop3_box, TerrorShop3_carPos, TerrorShop3_army]]
+_number = _number + 1
+
+_assort = [ _TerrorShop1s_Weapons, _TerrorShop1s_Mag, _TerrorShop1s_Vehicles, [], _TerrorShop1s_SQUAD]
+_ary set [_number, [TerrorShop1s, _assort, TerrorShop1_box, TerrorShop1_carPos, TerrorShop1_army]]
+_number = _number + 1
+_assort = [ _TerrorShop1s_Weapons, _TerrorShop1s_Mag, _TerrorShop2s_Vehicles, [], _TerrorShop2s_SQUAD]
+_ary set [_number, [TerrorShop2s, _assort, TerrorShop2_box, TerrorShop2_carPos, TerrorShop2_army]]
+_number = _number + 1
+_assort = [ _TerrorShop1s_Weapons, _TerrorShop1s_Mag, _TerrorShop3s_Vehicles, [], _TerrorShop3s_SQUAD]
+_ary set [_number, [TerrorShop3s, _assort, TerrorShop3_box, TerrorShop3_carPos, TerrorShop3_army]]
+_number = _number + 1
+
+
+_assort = [ _CopShop1_Weapons, _CopShop1_Mag, _CopShop1_Vehicles, _CopShop1_Men, []]
+_ary set [_number, [CopBase1, _assort, CopShop1_box, CopShop1_carPos, PoliceArmy1]]
+_number = _number + 1
+_assort = [ _CopShop1_Weapons, _CopShop1_Mag, _CopShop1_Vehicles, _CopShop1_Men, []]
+_ary set [_number, [CopBase2, _assort, CopShop2_box, CopShop2_carPos, PoliceArmy2]]
+_number = _number + 1
+_assort = [ _CopShop1_Weapons, _CopShop1_Mag, _CopShop1_Vehicles, _CopShop1_Men, []]
+_ary set [_number, [CopBase3, _assort, CopShop3_box, CopShop3_carPos, PoliceArmy3]]
+_number = _number + 1
+
+
+
+~0.1
+
+InitTypesReady = true
+
+exit

@@ -1,0 +1,7 @@
+_VIP = _this
+
+
+if(random 100<25)THEN{removeAllweapons _VIP;  _VIP addMagazine "sof2_m1911Mag";  _VIP addMagazine "sof2_m1911Mag";  _VIP addMagazine "sof2_m1911Mag"; _VIP addweapon "sof2_m1911"; exit};
+if(random 100<25)THEN{removeAllweapons _VIP;   _VIP addMagazine "sof2_m590Mag";  _VIP addMagazine "sof2_m590Mag";  _VIP addMagazine "sof2_m590Mag";_VIP addweapon "sof2_m590"; exit};
+if(random 100<25)THEN{removeAllweapons _VIP; _VIP addMagazine "sof2_m3a1Mag";  _VIP addMagazine "sof2_m3a1Mag";  _VIP addMagazine "sof2_m3a1Mag";  _VIP addweapon "sof2_m3a1"; exit};
+if(true)THEN{removeAllweapons _VIP;  _VIP addMagazine "sof2_socomMag";  _VIP addMagazine "sof2_socomMag";  _VIP addMagazine "sof2_socomMag"; _VIP addweapon "sof2_socom";exit};

@@ -1,0 +1,21 @@
+~1
+
+_PlaySignal = false
+_chest = _this
+#LOOP
+
+
+if(! (alive _chest))then{EXIT;}
+_Dist = _chest distance Hero;
+_Final = _Dist - (_Dist mod 1);
+if(_Final < 960)then{ player sidechat format ["Signal found, chest is close: %1 meters", _Final]; if(!_PlaySignal)then{playmusic "DangerClose2"; _PlaySignal = true;};}else{ if(_PlaySignal)then{ player sidechat format ["Signal lost! (chest): %1 meters", _Final]; playmusic "DangerClose";}; _PlaySignal = false; };
+
+
+
+
+~2
+
+
+
+
+goto "LOOP"

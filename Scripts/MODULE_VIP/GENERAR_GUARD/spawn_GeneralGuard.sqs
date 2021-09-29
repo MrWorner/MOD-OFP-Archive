@@ -1,0 +1,114 @@
+;//Battery1	Battery2	Battery3	Battery4
+_VIP = General
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+NAMESAVER_GeneralArmy moveInGunner Battery1;
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+NAMESAVER_GeneralArmy moveInGunner Battery2;
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+NAMESAVER_GeneralArmy moveInGunner Battery3;
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+
+~0.1
+
+"HYK_USsolDe" createUnit [getMarkerPos "MilitaryBASE_Marker", group _VIP,"NAMESAVER_GeneralArmy = this;  RemoveAllweapons this ; this addweapon ""NVGoggles"";; this addMagazine ""AALauncher"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addMagazine ""G36aMag"";this addWeapon ""G36A"";this addWeapon ""AALauncher"";", 1, "COLONEL"]
+NAMESAVER_GeneralArmy addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MP.sqs"" ;"]; 
+ 
+TotalGuard = TotalGuard + 1; 
+publicVariable "TotalGuard"; 
+AliveGuard = AliveGuard + 1; 
+publicVariable "AliveGuard";
+~0.1
+NAMESAVER_GeneralArmy moveInGunner Battery4;

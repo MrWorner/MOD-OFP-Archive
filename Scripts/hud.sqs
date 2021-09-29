@@ -1,0 +1,29 @@
+hint format ["Version: %25\nMode: %15\n\n--POLICE--\nAlive = %4/%1\nChase in progress = %7\n\n--VIP--\nGeneral alive = %11\nMayor alive = %12\nAlive VIP = %9/%10\nAlive Bodyguards = %23/%24\n\n--Military base--\nGuards = %16/%17\n\n--Omega Squad--\nLeader = %20\nPoints = %13\nUnits = %18/%19\n\n--RESISTANCE--\nLeader = %8\nWanted Level: %14\nGold coins = %26/%27\nMoney = $%3\nResistance army = %22/%21", TotalCopCount, HeroReputation, HeroMoney, AliveCops, (TotalCopCount - AliveCops),(HeroNeededRep*50),HowManySeeYou, name Hero,AliveVIP, TotalVIP, AliveGeneral,AliveMayor,PolicePoint, WantedLevel, Difficult_text, AliveGuard, TotalGuard, AliveOMEGA, TotalOMEGA, name Cop1, TotalSusp, AliveSusp,AliveVIPGuard,TotalVIPGuardCount, SETTINGS_VERSION, HeroGoldCoins, SETTINGS_Coins_JailRelease];
+
+;1 //TotalCopCount, 
+;2 //HeroReputation, 
+;3 //HeroMoney, 
+;4 //AliveCops, 
+;5 //(TotalCopCount - AliveCops),
+;6 //(HeroNeededRep*50),
+;7 //HowManySeeYou, 
+;8 //name Hero,
+;9 //AliveVIP, 
+;10 //TotalVIP, 
+;11 //AliveGeneral,
+;12 //AliveMayor,
+;13 //PolicePoint, 
+;14 //WantedLevel, 
+;15 //Difficult_text, 
+;16 //AliveGuard, 
+;17 //TotalGuard, 
+;18 //AliveOMEGA, 
+;19 //TotalOMEGA, 
+;20 //name Cop1, 
+;21 //TotalSusp, 
+;22 //AliveSusp,
+;23 //AliveVIPGuard,
+;24 //TotalVIPGuardCount];
+;25 //SETTINGS_VERSION
+;26	HeroGoldCoins
+;27 SETTINGS_Coins_JailRelease

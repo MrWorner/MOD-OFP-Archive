@@ -1,0 +1,33 @@
+
+
+;//if(damage player < 0.15)then{player sidechat "You are not injured.";exit;}
+if(side player == west)then{goto "West";}
+if(side player == east)then{goto "East";}
+
+
+#West
+
+if(Police_Medkit == 0)then{player sidechat "You don't have any medkit.";exit;};
+player switchMove "CombatToTreated";
+player sidechat "Healing...";
+~7
+player sidechat "Done!";
+player setDamage 0;
+Police_Medkit = Police_Medkit - 1;
+publicVariable "Police_Medkit";
+
+exit;
+#East
+
+if(Hero_Medkit == 0)then{player sidechat "You don't have any medkit.";exit;};
+player switchMove "CombatToTreated";
+player sidechat "Healing...";
+~7
+player sidechat "Done!";
+player setDamage 0;
+Hero_Medkit = Hero_Medkit - 1;
+publicVariable "Hero_Medkit";
+
+
+exit;
+

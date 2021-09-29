@@ -1,0 +1,606 @@
+#define FontS "tahomaB24"
+#define FontM "tahomaB36"
+#define FontHTML "courierNewB64"
+#define FontHTMLBold "courierNewB64"
+#define FontMAP "courierNewB64"
+#define FontMAIN "SteelfishB64"
+#define FontMAINCZ "SteelfishB64CE"
+#define FontTITLE "SteelfishB128"
+#define FontTITLEHalf "SteelfishB64"
+#define FontBOOK "garamond64"
+#define FontNOTES "AudreysHandI48"
+
+
+// Control types
+#define CT_STATIC			0
+#define CT_HTML			9
+
+//	#define CT_OBJECT		80
+//	#define CT_OBJECT_CONTAINER	82
+
+//	#define CT_3DSTATIC	20
+//	#define CT_3DHTML	23
+
+// Static styles
+#define ST_LEFT			0
+#define ST_RIGHT			1
+#define ST_CENTER			2
+#define ST_UP			3
+#define ST_DOWN			4
+#define ST_VCENTER		5
+
+#define ST_SINGLE			0
+#define ST_MULTI			16
+#define ST_PICTURE		48
+
+#define ST_HUD_BACKGROUND	128
+#define ST_TILE_PICTURE		144
+#define ST_WITH_RECT		160
+#define ST_LINE			176
+
+#define ST_SHADOW		256
+#define ST_NO_RECT		512
+
+#define CT_COMBO                 		4
+#define CT_LISTBOX               		5
+
+#define ST_FRAME   		64
+#define CT_EDIT    			2
+
+
+#define CT_ACTIVETEXT 		11
+#define CT_BUTTON   		1
+
+#define CT_SLIDER     		3
+#define ST_HPOS       		0x0F
+ 
+#define CT_TOOLBOX		6
+
+#define GUISTYLEHUD		128
+
+respawn=3;
+respawndelay=15;
+disabledAI = 1;
+
+
+
+class CfgIdentities
+{
+	class MyLittleSoldier
+	{
+		name="Givens";
+		face="LSR_brucewillis2";
+		glasses="None";
+		speaker="Male05ENG";
+		pitch=1.1;
+	};
+	class Guba
+	{
+		name="Guba";
+		face="Face15";
+		glasses="None";
+		speaker="Face15";
+		pitch=1.1;
+	};
+	
+	
+};	
+
+
+
+
+
+// =================================================================================
+// Predefined control templates
+// =================================================================================
+
+// let this be as it is
+// these are the default values of the parametres
+
+
+class RscTaste
+{
+        type = 1;
+        idc = -1;
+        style = 48;
+        colorText[] = {0, 0, 0, 0};
+        font = "AudreysHandI48";
+        size = 0.7;
+        soundPush[] = {"", 0.2, 1};
+        soundClick[] = {"", 0.2, 1};
+        soundEscape[] = {"", 0.2, 1};
+	 x = 0.0;
+        y = 0.02;
+        w = 0.10;
+        h = 0.02;
+};
+
+
+
+class RSCPICTURE
+	{
+	access=3;
+	type=0;
+	idc=-1;
+	style=48;
+	colorBackground[]={0,0,0,0};
+	colorText[]={1,1,1,1};
+	font="tahomaB24";
+	sizeEx=0;
+	};
+
+class RscStdText
+{
+	type=0;
+	idc=-1;
+	style=2; 
+	colorBackground[]={0,0,0,0}; 
+	colorText[]={1,1,1,1};       
+	font="courierNewB64";
+	size=1;
+};
+
+class RscText
+{
+	type = CT_STATIC;
+        font = AudreysHandI48;
+        idc = -1;
+        style = ST_LEFT;
+        colorBackground[] = {0, 0, 0, 0};
+        colorText[] = {0, 0, 0, 1};
+        sizeEx = 0.04;
+};
+
+class listbox
+{
+    type = CT_LISTBOX;
+    style = ST_LEFT;
+    colorText[] = {0,0,0,1};
+    colorSelect[] = {0,0,0,1};
+    font = FontM;
+    sizeEx = 0.02;
+    rowHeight = 0;
+};
+
+class RscBackground
+{
+	type = CT_STATIC;
+	idc = -1;
+	style = ST_LEFT;
+	colorBackground[] = {0.2, 0, 0, 1};
+	colorText[] = {1, 1, 1, 1};
+	font = FontS;
+	size = 0;
+	text = "";
+};
+
+class RscHTML
+{
+	type = CT_HTML;
+	idc = -1;
+	style = 0;
+	colorBackground[] = {1, 1, 1, 1};
+	colorText[] = {0, 0, 0, 1};
+	colorBold[] = {0, 0, 0.2, 1};
+	colorLink[] = {0.4, 0.4, 0.8, 1};
+	colorLinkActive[] = {0.8, 0.35, 0.48, 1};
+
+};
+
+class RscLB_C
+{
+    style = ST_LEFT;
+    idc = -1;
+    colorSelect[] = {0.4, 0.4, 0.4, 1};
+    colorSelectBackground[] = {0.2, 0.2, 0.2, 1};
+    colorText[] = {0.2, 0.2, 0.2, 1};
+    colorBackground[] = {0.4, 0.4, 0.4, 1};
+    font = FontHTML;
+    sizeEx = 0.025;
+    rowHeight = 0.04;
+};
+ 
+
+class RscListBox : RscLB_C
+{
+        type = CT_LISTBOX;
+};
+ 
+class RscCombo : RscLB_C
+{
+        
+	style = ST_LEFT;
+	idc = -1;
+	colorSelect[] = {0.4, 0.4, 0.4, 1};
+	colorSelectBackground[] = {0.2, 0.2, 0.2, 1};
+	colorText[] = {0.2, 0.2, 0.2, 1};
+	colorBackground[] = {0.4, 0.4, 0.4, 1};	
+	font = "garamond64";
+	sizeEx = 0.027;
+	rowHeight = 0.04;
+	type = CT_COMBO;
+	wholeHeight = 0.4;
+};
+
+
+class RscEdit
+	{
+	 type = CT_EDIT;
+         idc = -1;
+         style = ST_LEFT;
+         font = FontHTML;
+         sizeEx = 0.02;
+         colorText[] = {0, 0, 0, 1};
+         colorSelection[] = {0.5, 0.5, 0.5, 1};
+         autocomplete = false;
+         text = ;
+	};
+
+
+class RscActiveText
+{
+        idc = -1;
+	type = CT_ACTIVETEXT;
+	style = ST_LEFT;
+	color[] = {0, 1, 0, 1};
+	colorActive[] = {1, 1, 1, 1};
+  	font = AudreysHandI48;
+	sizeEx = 0.05;
+	soundEnter[] = {"ui\ui_over", 0.2, 1};
+	soundPush[] = {, 0.2, 1};
+	soundClick[] = {"ui\ui_ok", 0.2, 1};
+	soundEscape[] = {"ui\ui_cc", 0.2, 1};
+	default = false;
+};
+
+class RscActiveMenu : RscActiveText
+{
+	color[] = {1, 1, 1, 1};
+	colorActive[] = {1, 0, 0, 1};
+	font = FontTITLEHalf;
+	sizeEx = 0.05;
+	default = false;
+};
+
+class RscGraphic 
+{ 
+	type = CT_STATIC;
+	idd=-1; 
+	style = 48;
+	colorBackground[] = {0, 0, 0, 0};
+        colorText[] = {1, 1, 1, 1};
+        font = FontHtml;
+        size = 1;
+};
+
+class RscButton
+{
+    type = CT_BUTTON;
+    idc = -1;
+    style = ST_CENTER;
+    colorText[] = {1,1,1,1};
+    font = courierNewB64;
+    sizeEx = 0.025;
+    soundPush[] = {, 0.2, 1};
+    soundClick[] = {"ui\ui_ok", 0.2, 1};
+    soundEscape[] = {"ui\ui_cc", 0.2, 1};
+    default = false;
+};
+
+
+class RscSliderH
+{
+    type = CT_SLIDER;
+    style = ST_HPOS;
+    color[] = {0.2, 0.2, 0.2, 1};
+    idc = -1;
+    sizeEx = 0.025;
+};
+
+class RscSliderV
+{
+	type = CT_SLIDER;
+	style = SL_VERT;
+	color[] = {0, 1, 0, 1};
+	angle = 0;
+};
+
+
+class RscTextcode
+{
+        type = CT_STATIC;
+        idc = -1;
+        style = ST_LEFT;
+        colorBackground[] = {0, 0, 0, 0};
+        colorText[] = {0, 0, 0, 1};
+        font = FontNOTES;
+        sizeEx = 0.04;
+};
+
+
+//================================================================================
+//================================================================================
+
+class Buy
+{
+    idd = -1;
+    movingEnable = true;
+    controlsBackground[] = {};
+    controls[] ={"Dark", "ListFrame", "Frame", "ListBox", "Money", "Guns", "Mags", "Vehicle", "Buy", "Close", "Men", "Squad"};
+    objects[] = {};
+
+	class Dark : RscText
+	{
+	colorBackground[] = {1,1,1,1};
+    colorText[] = {1,1,1,0.9};
+	shadow = 2;
+	text = ;
+        x = 0.25;
+        y = 0.2;
+        w = 0.637;
+        h = 0.6;
+	};
+    
+	class Frame : RscText
+	{
+	type = 0;
+	style = 80;
+	x = 0.25;
+	y = 0.2;
+	w = 0.637;
+	h = 0.6;
+	colorBackground[] = {0.4, 0.4, 0, 0.8};
+    colorText[] = {0, 0, 0, 1};
+	shadow = 2;
+	text = "";
+	};
+
+	class ListBox : listbox
+	{
+	style = 80;
+	idc = 40;
+	font = "tahomaB36";
+	colorSelect[]           = {1, 0, 0, 1.0};
+	colorSelectBackground[] = {0.7, 0.7, 0.7, 1};
+	colorText[]             = {1, 1, 1, 1};
+	colorBackground[]       = {0.8, 0.8, 0.8, 0.3};
+	colorScrollbar[] 	= {Dlg_Color_White,1};
+	x = 0.4825;
+	y = 0.2040;
+	w = 0.4;
+	h = 0.5890;
+	rowHeight = 0;
+	sizeEx = 0.017;
+	};
+
+	class ListFrame : RscText
+	{
+	type = 0;
+	style = 80;
+	x = 0.4800;
+	y = 0.2000;
+	w = 0.407;
+	h = 0.6000;
+	colorBackground[] = {0, 0, 0, 0};
+	colorText[]       = {1, 1, 1, 1};
+	text = "";
+	};
+
+
+	class Money : RscText
+	{
+	style= 0;
+	idc = 41;
+	font = "courierNewB64";
+	x = 0.26;
+	y = 0.22;
+	w = 0.15;
+	h = 0.03;
+	text = "Money: -1";
+	colorBackground[] = {0.2, 0, 0, 0.3};
+	colorText[]       = {1, 1, 1, 1};
+	sizeEx = 0.022;
+	};
+
+
+	class Guns: RscActiveText
+	{
+	style = 0;
+	colorActive[]             = {1, 0, 0, 1};
+    colorDisabled[]           = {0, 0, 0, 0.1};
+    colorBackgroundDisabled[] = {1,1,1,0.5};
+    colorShadow[]             = {0, 0, 0, 1};
+    colorBorder[]             = {1, 1, 1, 0.1};
+	color[] = 					{1, 0.6, 0, 1};
+
+	
+        font = "tahomaB36";
+        sizeEx = 0.03;
+	x = 0.3;
+	y = 0.3;
+	w = 0.15;
+	h = 0.03;
+        action = "Gun = true";
+        text = "WEAPON";
+	};
+
+	class Mags: RscActiveText
+	{
+	style = 0;
+	 colorActive[]             = {1, 0, 0, 1};
+    colorDisabled[]           = {0, 0, 0, 0.1};
+    colorBackgroundDisabled[] = {1,1,1,0.5};
+    colorShadow[]             = {0, 0, 0, 0.1};
+    colorBorder[]             = {1, 1, 1, 0.1};
+	color[] = 					{1, 0.6, 0, 1};
+        font = "tahomaB36";
+        sizeEx = 0.03;
+	x = 0.3;
+	y = 0.35;
+	w = 0.15;
+	h = 0.03;
+        action = "Mag = true";
+        text = "ITEM";
+	};
+
+	class Vehicle: RscActiveText
+	{
+	style = 0;
+	 colorActive[]             = {1, 0, 0, 1};
+    colorDisabled[]           = {0, 0, 0, 0.1};
+    colorBackgroundDisabled[] = {1,1,1,0.5};
+    colorShadow[]             = {0, 0, 0, 0.1};
+    colorBorder[]             = {1, 1, 1, 0.1};
+	color[] = 					{1, 0.6, 0, 1};
+        font = "tahomaB36";
+        sizeEx = 0.03;
+	x = 0.3;
+	y = 0.4;
+	w = 0.15;
+	h = 0.03;
+        action = "Veh = true";
+        text = "VEHICLE";
+	};
+	
+	class Men: RscActiveText
+	{
+	style = 0;
+	colorActive[]             = {1, 0, 0, 1};
+    colorDisabled[]           = {0, 0, 0, 0.1};
+    colorBackgroundDisabled[] = {1,1,1,0.5};
+    colorShadow[]             = {0, 0, 0, 0.1};
+    colorBorder[]             = {1, 1, 1, 0.1};
+	color[] = 					{1, 0.6, 0, 1};
+        font = "tahomaB36";
+        sizeEx = 0.03;
+	x = 0.3;
+	y = 0.45;
+	w = 0.15;
+	h = 0.03;
+        action = "MenSelected = true";
+        text = "MEN";
+	};
+	
+	class Squad: RscActiveText
+	{
+	style = 0;
+	colorActive[]             = {1, 0, 0, 1};
+    colorDisabled[]           = {0, 0, 0, 0.1};
+    colorBackgroundDisabled[] = {1,1,1,0.5};
+    colorShadow[]             = {0, 0, 0, 0.1};
+    colorBorder[]             = {1, 1, 1, 0.1};
+	color[] = 					{1, 0.6, 0, 1};
+        font = "tahomaB36";
+        sizeEx = 0.03;
+	x = 0.3;
+	y = 0.5;
+	w = 0.15;
+	h = 0.03;
+        action = "SquadSelected = true";
+        text = "SQUAD";
+	};
+
+
+	class Buy: RscActiveText
+	{
+	idc = 42;
+	style = 2;
+	 colorActive[]             = {1, 0, 0, 1};
+    colorDisabled[]           = {0, 0, 0, 0.1};
+    colorBackgroundDisabled[] = {1,1,1,0.5};
+    colorShadow[]             = {0, 0, 0, 0.1};
+    colorBorder[]             = {1, 1, 1, 0.1};
+	color[] = 					{1, 1, 0, 1};
+        font = "courierNewB64";
+        sizeEx = 0.035;
+	x = 0.3;
+	y = 0.68;
+	w = 0.15;
+	h = 0.035;
+        action = "Buy = true";
+        text = "Buy";
+	};
+
+	class Close: RscActiveText
+	{
+	style = 2;
+	 colorActive[]             = {1, 0, 0, 1};
+    colorDisabled[]           = {0, 0, 0, 0.1};
+    colorBackgroundDisabled[] = {1,1,1,0.5};
+    colorShadow[]             = {0, 0, 0, 0.1};
+    colorBorder[]             = {1, 1, 1, 0.1};
+	color[] = 					{1, 1, 0, 1};
+        font = "courierNewB64";
+        sizeEx = 0.035;
+	x = 0.3;
+	y = 0.73;
+	w = 0.15;
+	h = 0.035;
+        action = "closedialog 1";
+        text = "Leave";
+	};
+};
+
+
+class Button_Menu {
+    idd          = 0
+    movingEnable = 0
+    controls[]   = {Window, Button1, Button2, Button3, Button4};
+	
+	// Customizable values	
+	__EXEC(SPACE_W           = 0.03)
+	__EXEC(SPACE_H           = 0.03)
+	
+	__EXEC(BUTTON_W          = 0.24)
+	__EXEC(BUTTON_H          = 0.06)
+
+	__EXEC(BUTTON_IDC        = 10)
+	__EXEC(NUMBER_OF_BUTTONS = 4)
+
+
+	
+	// Calculations
+	__EXEC(NUMBER_OF_SPACES  = NUMBER_OF_BUTTONS + 1)
+	
+	__EXEC(WINDOW_W          = BUTTON_W + SPACE_W*2)
+	__EXEC(WINDOW_H          = BUTTON_H*NUMBER_OF_BUTTONS + SPACE_H*NUMBER_OF_SPACES)
+	
+	__EXEC(WINDOW_X          = 1 - WINDOW_W)
+	__EXEC(WINDOW_X          = WINDOW_X / 2)
+	
+	__EXEC(WINDOW_Y          = 1 - WINDOW_H)
+	__EXEC(WINDOW_Y          = WINDOW_Y / 2)
+	
+	__EXEC(BUTTON_X          = WINDOW_X + SPACE_W)
+	__EXEC(BUTTON_Y          = WINDOW_Y + SPACE_H)
+
+	
+	
+	// Macro for inserting a button class
+	#define MAKE_BUTTON(NUM) \
+		class Button##NUM : RscButton { \
+		idc  = __EVAL(BUTTON_IDC); \
+		x    = __EVAL(BUTTON_X); \
+		y    = __EVAL(BUTTON_Y); \
+		w    = __EVAL(BUTTON_W); \
+		h    = __EVAL(BUTTON_H); \
+		text = Button##NUM; \
+		}; \
+		__EXEC(BUTTON_Y          = BUTTON_Y + BUTTON_H + SPACE_H); \
+		__EXEC(BUTTON_IDC        = BUTTON_IDC + 1);
+		
+		
+		
+	// Classes
+	class Window : RscBackground {
+        x = __EVAL(WINDOW_X)
+        y = __EVAL(WINDOW_Y)
+        w = __EVAL(WINDOW_W)
+        h = __EVAL(WINDOW_H)
+    }
+
+	MAKE_BUTTON(1)
+	MAKE_BUTTON(2)
+	MAKE_BUTTON(3) 
+	MAKE_BUTTON(4) 
+}

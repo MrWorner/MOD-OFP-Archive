@@ -1,0 +1,48 @@
+
+
+
+;//------VIP
+	report_dead_VIP = 0;
+	report_call_VIP = 0;
+	report_IsCalling_VIP = false;
+;//------VIP Bodyguard
+	report_dead_VIPGuard = 0;
+	report_call_bodyguard = false;
+;//------Mayor
+	report_dead_Mayor = 0;
+	report_call_Mayor = 0;
+	report_IsCalling_Mayor = false;
+;//------General
+	report_IsCalling_General = false;	
+	report_dead_General = 0;
+	report_call_General = 0;	
+;//------Car steal	
+	REPORT_stolenCar = 0;
+	
+	
+	
+report_dead_OmegaLeader = 0;
+report_dead_Hero = 0;
+report_hero_lost = 0;
+
+report_dead_cop = 0;
+report_call_cop = 0;
+
+report_dead_MP = 0;
+report_call_MP = 0;
+
+
+
+report_dead_Omega = 0;
+report_call_Omega = 0;
+
+
+report_dead_susp = 0;
+
+
+report_value = 0;
+report_points = 0;
+report_rep = 0;
+
+
+report_call_PoliceBase = false;

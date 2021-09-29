@@ -1,0 +1,175 @@
+_CopBase = array_CopBaseAIspawn select 0;
+_CountDefaultUnits = SETTINGS_WAVE_DefaultArmy;
+
+
+
+
+#SpawnDefaultArmy
+;// 4 копов в тачке
+
+_r = random ((count array_CopBaseAIspawn)-1);
+_random = _r - (_r mod 1);
+_CopBase = array_CopBaseAIspawn select (_random);
+~0.1
+
+_Police_car = "CBT_M1038_W" createVehicle (getpos _CopBase);
+
+~0.1
+"GhostRifleman" createUnit [position _Police_car, WestGroup,"NAMESAVER_wave4 = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_wave4;
+[_man] join grpnull
+[_man, "HK_MP5SDmag", 10, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInDriver _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+_LocalLeader = _man
+
+[_LocalLeader] exec "Police\AI_police.sqs"; 
+~0.1
+
+"GhostRifleman" createUnit [position _Police_car, group _LocalLeader,"NAMESAVER_wave4 = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_wave4;
+[_man, "HK_MP5SDmag", 10, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInCargo _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+
+"GhostRifleman" createUnit [position _Police_car, group _LocalLeader,"NAMESAVER_wave4 = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_wave4;
+[_man, "HK_MP5SDmag", 8, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+~0.1
+[_man, "LAWLauncher", 2, "LAWLauncher", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInCargo _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+
+~0.1
+
+"GhostRifleman" createUnit [position _Police_car, group _LocalLeader,"NAMESAVER_wave4 = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_wave4;
+[_man, "HK_MP5SDmag", 8, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+~0.1
+[_man, "LAWLauncher", 2, "LAWLauncher", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInCargo _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+
+~0.1
+
+"GhostRifleman" createUnit [position _Police_car, group _LocalLeader,"NAMESAVER_wave4 = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_wave4;
+[_man, "HK_MP5SDmag", 10, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInCargo _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+
+~0.1
+
+"GhostRifleman" createUnit [position _Police_car, group _LocalLeader,"NAMESAVER_wave4 = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_wave4;
+[_man, "HK_MP5SDmag", 10, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInCargo _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+
+~1
+_CountDefaultUnits = _CountDefaultUnits - 1;
+if(_CountDefaultUnits > 0)then{ goto "SpawnDefaultArmy"};
+~10
+
+;//-------------------------------------------------------СПЕЦИАЛЬНАЯ АРМИЯ
+_CountSpecUnits = SETTINGS_WAVE_SpecialArmy;
+
+#SpawnSpectArmy
+
+
+_r = random ((count array_CopBaseAIspawn)-1);
+_random = _r - (_r mod 1);
+_CopBase = array_CopBaseAIspawn select (_random);
+
+
+_Police_car = "dzikpk" createVehicle (getpos _CopBase);
+
+~0.1
+"GhostRifleman" createUnit [position _Police_car, WestGroup,"NAMESAVER_wave4 = this; RemoveAllWeapons this", 1, "corporal"];
+_man = NAMESAVER_wave4;
+[_man] join grpnull
+[_man, "HK_MP5SDmag", 10, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInDriver _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+_LocalLeader = _man
+[_LocalLeader] exec "Police\AI_police.sqs";
+
+
+~0.1
+"GhostRifleman" createUnit [position _Police_car, group _LocalLeader,"NAMESAVER_wave4 = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_wave4;
+[_man, "HK_MP5SDmag", 8, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+~0.1
+[_man, "LAWLauncher", 2, "LAWLauncher", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInGunner _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+
+_Count = 6;
+
+#Cycle1
+~0.1
+"GhostRifleman" createUnit [position _Police_car, group _LocalLeader,"NAMESAVER_wave4 = this; RemoveAllWeapons this; ", 1, "corporal"];
+_man = NAMESAVER_wave4;
+[_man, "HK_MP5SDmag", 8, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+~0.1
+[_man, "LAWLauncher", 2, "LAWLauncher", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInCargo _Police_car;
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"]; 
+TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; 
+AliveCops = AliveCops + 1; publicVariable "AliveCops";
+
+
+_Count = _Count - 1;
+if(_Count > 0)then{ goto "Cycle1"};
+
+
+
+
+
+~1
+_CountSpecUnits = _CountSpecUnits - 1;
+if(_CountSpecUnits > 0)then{ goto "SpawnSpectArmy"};
+
+
+
+
+_car = "BAS_MH60G" createVehicle (getpos PoliceArmyHELI);
+~0.1
+"SoldierWPilot" createUnit [position _car, WestGroup,"NAMESAVER_wave4 = this ; RemoveAllWeapons this;", 1, "corporal"]
+_LocalLeader = NAMESAVER_wave4;
+[_LocalLeader, "HK_MP5SDmag", 10, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+[_LocalLeader] join grpnull
+_LocalLeader moveInDriver _car
+_LocalLeader addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+[_LocalLeader] exec "Police\AI_police.sqs"; 
+~0.1
+"SoldierWPilot" createUnit [position _car,group _LocalLeader,"NAMESAVER_wave4 = this ; RemoveAllWeapons this;", 1, "corporal"]
+_man = NAMESAVER_wave4;
+[_man, "HK_MP5SDmag", 10, "HK_MP5SD5SWAT", true] exec "FUNCTIONS\func_addWepAndMag.sqs"
+_man moveInGunner _car
+_man addEventHandler ["killed", "[(_this select 0), SETTINGS_CopKill_wantedPoint_LvL_4] exec ""MODULE_DEAD\DEAD_Cop.sqs"" ;"];  TotalCopCount = TotalCopCount + 1; publicVariable "TotalCopCount"; AliveCops = AliveCops + 1; publicVariable "AliveCops";
+~0.1
+;//_car setPos [getPos _car select 0, getPos _car select 1, 2000]
+_car engineOn true
+
+
+
+
+

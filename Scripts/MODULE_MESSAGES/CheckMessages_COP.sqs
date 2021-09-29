@@ -1,0 +1,104 @@
+
+
+
+
+_vip = 0;
+_VIPguard = 0;
+_cop = 0;
+_susp = 0;
+_omega = 0
+_MP = 0
+_OmegaLeader = 0;
+_Hero = 0
+_general = 0
+_mayor = 0
+;//-------------------- I SEE YOU!
+_SEE_cop = 0;
+_SEE_susp = 0;
+_SEE_vip = 0;
+_SEE_omega = 0
+_SEE_MP = 0
+_SEE_OmegaLeader = 0;
+_SEE_Hero = 0
+_SEE_general = 0
+_SEE_mayor = 0
+
+;//----------2018
+_CurrentWantedLevel = WantedLevel;
+_REPORT_stealCar = 0
+~3
+#CHECK
+~0.1
+
+
+;//--------------------VIP
+if( report_dead_VIP > _vip)THEN{_Dist = player distance TOC_DEAD_VIP; _Final = _Dist - (_Dist mod 1);  TOC GLOBALCHAT format ["911 DISPATCH: VIP is down! Distance: %1 meter(s)", _Final]; _vip = _vip + 1;};
+;//--------------------VIP Guard
+if( report_dead_VIPGuard > _VIPguard)THEN{_Dist = player distance TOC; _Final = _Dist - (_Dist mod 1);  TOC GLOBALCHAT format ["911 DISPATCH: VIP bodyguard is down! Distance: %1 meter(s)", _Final]; _VIPguard = _VIPguard + 1;};
+;//--------------------Mayor
+if( report_dead_Mayor > _mayor)THEN{_Dist = player distance TOC_DEAD_VIP; _Final = _Dist - (_Dist mod 1);  TOC GLOBALCHAT format ["911 DISPATCH: Mayor is down! Distance: %1 meter(s)", _Final]; _mayor = _mayor + 1;};
+;//--------------------General
+if( report_dead_General > _general)THEN{_Dist = player distance TOC_DEAD_VIP; _Final = _Dist - (_Dist mod 1);  TOC GLOBALCHAT format ["911 DISPATCH: General has been eliminated! Distance: %1 meter(s)", _Final]; _general = _general + 1;};
+;//--------------------MP
+if( report_dead_MP > _MP)THEN{_Dist = player distance TOC; _Final = _Dist - (_Dist mod 1);  TOC GLOBALCHAT format ["911 DISPATCH: Military police officer down! Distance: %1 meter(s)", _Final]; _MP = _MP + 1;};
+;//--------------------COP
+if( report_dead_cop > _cop)THEN{_Dist = player distance TOC; _Final = _Dist - (_Dist mod 1);  TOC GLOBALCHAT format ["911 DISPATCH: Officer down! Distance: %1 meter(s)",_Final]; _cop = _cop + 1; [] exec "MODULE_Report\ManDown.sqs";};
+;//--------------------Omega
+if( report_dead_Omega > _omega)THEN{_Dist = player distance TOC; _Final = _Dist - (_Dist mod 1);  TOC GLOBALCHAT format ["911 DISPATCH: Omega member down! Distance: %1 meter(s)", _Final]; _omega = _omega + 1;};
+;//--------------------Omega Leader
+if( report_dead_OmegaLeader > _OmegaLeader)THEN{TOC GLOBALCHAT format ["You are unconscious... A rescue team is on the way!", _Final]; _OmegaLeader = _OmegaLeader + 1; [] exec "hud.sqs";};
+;//--------------------Unknown suspect
+if( report_dead_susp > _susp)THEN{_Dist = player distance TOCUnknSusp; _Final = _Dist - (_Dist mod 1);  TOC GLOBALCHAT format ["911 DISPATCH: Unknown suspect is down! (+%2 point) Distance: %1 meter(s)", _Final, SETTINGS_UnknSuspKill_Point]; _susp = _susp + 1;};
+;//--------------------Hero
+if( report_dead_Hero > _Hero)THEN{_Dist = player distance Hero; _Final = _Dist - (_Dist mod 1);  TOC GLOBALCHAT format ["911 DISPATCH: Main suspect is down and ready to be relocated to Hospital! +%2 point(s) Distance: %1 meter(s)", _Final, SETTINGS_HeroKill_Point]; _Hero = _Hero + 1; [] exec "hud.sqs";};
+
+
+
+
+;//--------------------"I SEE YOU" REPORTS
+;//--------------------VIP 
+if( report_IsCalling_VIP)THEN{ TOC GLOBALCHAT format ["VIP is calling the police!", _Final]; [] exec "MODULE_Report\CrimeInProgress.sqs"; report_IsCalling_VIP = false;};
+if( report_call_VIP > _SEE_vip)THEN{ TOC GLOBALCHAT format ["VIP in danger!", _Final]; _SEE_vip = _SEE_vip + 1;};
+;//--------------------VIP bodyGuard (REVENGE)
+if( report_call_bodyguard)THEN{ TOC GLOBALCHAT format ["Someone called the police!", _Final]; report_call_bodyguard = false;};
+;//--------------------Mayor 
+if( report_IsCalling_Mayor)THEN{ TOC GLOBALCHAT format ["Mayor is calling the police!", _Final]; [] exec "MODULE_Report\CrimeInProgress.sqs"; report_IsCalling_Mayor = false;};
+if( report_call_Mayor > _SEE_mayor)THEN{ TOC GLOBALCHAT format ["Mayor in danger!", _Final]; _SEE_mayor = _SEE_mayor + 1;};
+;//--------------------General 
+if( report_IsCalling_General)THEN{ TOC GLOBALCHAT format ["General is calling the police!", _Final]; [] exec "MODULE_Report\CrimeInProgress.sqs"; report_IsCalling_General = false;};
+if( report_call_General > _SEE_general)THEN{ TOC GLOBALCHAT format ["General in danger!", _Final]; _SEE_general = _SEE_general + 1;};
+;//--------------------MP
+if( report_call_MP > _SEE_MP)THEN{ TOC GLOBALCHAT format ["Suspect spotted by the Military police!", _Final]; [] exec "MODULE_Report\CrimeInProgress.sqs"; _SEE_MP = _SEE_MP + 1;};
+;//COP
+if( report_call_cop > _SEE_cop)THEN{ TOC GLOBALCHAT format ["Suspect spotted by the police!", _Final]; _SEE_cop = _SEE_cop + 1; [] exec "MODULE_Report\HeroSpotted.sqs";};
+;//--------------------OMEGA
+if( report_call_Omega > _SEE_omega)THEN{ TOC GLOBALCHAT format ["Suspect spotted by Omega squad!", _Final]; _SEE_omega = _SEE_omega + 1; };
+;//--------------------Police Base
+if( report_call_PoliceBase)THEN{ TOC GLOBALCHAT format ["[HQ]:Warning! The main suspect inside the Police station!", _Final]; report_call_PoliceBase = false;};
+
+
+
+
+
+;//------------2018 WANTED LEVEL EFFECT
+if(_CurrentWantedLevel != WantedLevel)then{_CurrentWantedLevel = WantedLevel; [] exec "MODULE_PoliceWave\EFFECT_newWave.sqs";};
+if(VAR_ArriveNotification)then{VAR_ArriveNotification = false; [] exec "MODULE_PoliceWave\EFFECT_newWaveArrive.sqs";};
+
+;//------------2018 CAR STEAL		
+if( REPORT_stolenCar > _REPORT_stealCar)THEN{ "HeroTarget" setMarkerPos getPos Hero; TOC GLOBALCHAT format ["[HQ]: Someone is trying to steal a car!", _Final];  _REPORT_stealCar = _REPORT_stealCar + 1; OBJ_stolenCar say "CarAlarm"; if(bool_CarHasBeenStolen)then{OBJ_stolenCar addaction ["Impound stolen car","MODULE_RandomCars\ImpoundStolenCar.sqs"]; bool_CarHasBeenStolen = false; publicvariable "bool_CarHasBeenStolen"; [] exec "MODULE_Report\GTA.sqs";};};
+;//------------2018 HERO ZAKAZ	MODULE_ARMY SQUAD_EAST
+if(HeroZakaz != 0)then{if(var_isServer)then{[] exec "MODULE_shop\SQUAD_EAST\ZAKAZ_PROCESS_EAST.sqs";}; TOC GLOBALCHAT format ["[HQ]: Main suspect is hiring an army!", _Final];  [] exec "MODULE_Report\TerrorActivity.sqs"; };
+
+;//-------------SUSP GREEN SMOKE DETECTOR
+if(SuspectGreenSmoke)then{SuspectGreenSmoke = false; publicvariable "SuspectGreenSmoke"; TOC GLOBALCHAT format ["[HQ]: Green smoke detected!", _Final]; "GreenSmokeMarker" setMarkerPos getpos TOC_GreenSmoke; }
+
+
+
+;//-----------СИРЕНА ПОЛИЦИИ
+
+if( !(isnull VAR_CarSiren_inChase) )then{_car = VAR_CarSiren_inChase; VAR_CarSiren_inChase = objNull; _car exec "MODULE_Report\PoliceSirenCHASE.sqs"};
+if( !(isnull VAR_CarSiren_Backup) )then{_car = VAR_CarSiren_Backup; VAR_CarSiren_Backup = objNull; _car exec "MODULE_Report\PoliceSirenBackup.sqs"};
+
+
+if(GameOver)then{[] exec "GameOver.sqs"; exit;};
+goto "CHECK"

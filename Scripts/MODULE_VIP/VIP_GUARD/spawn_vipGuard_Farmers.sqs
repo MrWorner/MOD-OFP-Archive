@@ -1,0 +1,33 @@
+_VIP = _this
+
+
+"Civilian" createUnit [position _VIP, group _VIP,"NAMESAVER_farm = this; removeallweapons this;  this addMagazine ""sof2_m590Mag"";this addweapon ""sof2_m590""; this addMagazine ""sof2_m590Mag""; this addMagazine ""sof2_m590Mag""; this addMagazine ""sof2_m590Mag""", 1, "private"]
+
+NAMESAVER_farm addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"]; 
+TotalVIPGuardCount = TotalVIPGuardCount + 1; 
+publicVariable "TotalVIPGuardCount"; 
+AliveVIPGuard = AliveVIPGuard + 1; publicVariable "AliveVIPGuard";
+~0.1
+
+"Civilian" createUnit [position _VIP, group _VIP,"NAMESAVER_farm = this; removeallweapons this;  this addMagazine ""sof2_m590Mag"";this addweapon ""sof2_m590""; this addMagazine ""sof2_m590Mag""; this addMagazine ""sof2_m590Mag""; this addMagazine ""sof2_m590Mag""", 1, "private"]
+
+NAMESAVER_farm addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"]; 
+TotalVIPGuardCount = TotalVIPGuardCount + 1; 
+publicVariable "TotalVIPGuardCount"; 
+AliveVIPGuard = AliveVIPGuard + 1; publicVariable "AliveVIPGuard";
+~0.1
+
+"Civilian" createUnit [position _VIP, group _VIP,"NAMESAVER_farm = this; removeallweapons this;  this addMagazine ""sof2_m590Mag"";this addweapon ""sof2_m590""; this addMagazine ""sof2_m590Mag""; this addMagazine ""sof2_m590Mag""; this addMagazine ""sof2_m590Mag""", 1, "private"]
+
+NAMESAVER_farm addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"]; 
+TotalVIPGuardCount = TotalVIPGuardCount + 1; 
+publicVariable "TotalVIPGuardCount"; 
+AliveVIPGuard = AliveVIPGuard + 1; publicVariable "AliveVIPGuard";
+~0.1
+
+"Civilian" createUnit [position _VIP, group _VIP,"NAMESAVER_farm = this; removeallweapons this;  this addMagazine ""sof2_m590Mag"";this addweapon ""sof2_m590""; this addMagazine ""sof2_m590Mag""; this addMagazine ""sof2_m590Mag""; this addMagazine ""sof2_m590Mag""", 1, "private"]
+
+NAMESAVER_farm addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"]; 
+TotalVIPGuardCount = TotalVIPGuardCount + 1; 
+publicVariable "TotalVIPGuardCount"; 
+AliveVIPGuard = AliveVIPGuard + 1; publicVariable "AliveVIPGuard";

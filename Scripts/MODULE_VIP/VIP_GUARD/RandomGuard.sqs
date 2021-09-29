@@ -1,0 +1,40 @@
+_VIP = _this
+;// 18 Випов
+;// Вооружить: 6 (4 пистолетов + 2 автомата)
+;// Охрану: (6 человек x2 FBI) + (2 копа x4) + (4 друга x2)
+
+_arrayVIP = array_VIP + [General];
+_arrayVIP2 = array_VIP + [General];
+_selectedForWep = [];
+_selectedForGuards = [];
+_currentCode = 0;
+
+#giveWep
+
+_r = random ((count _arrayVIP)-1);
+_random = _r - (_r mod 1);
+_selected = _arrayVIP select (_random);
+_selectedForWep = _selectedForWep + [_selected];
+_arrayVIP = _arrayVIP - [_selected];
+
+
+
+#giveGuard
+
+
+
+_r = random ((count _arrayVIP2)-1);
+_random = _r - (_r mod 1);
+_selected = _arrayVIP2 select (_random);
+_selectedForGuards = _selectedForGuards + [_selected];
+_arrayVIP2 = _arrayVIP2 - [_selected];
+
+
+if( ((count _selectedForWep) == SETTINGS_vipGuard_FBI) && _currentCode == 0)then{{_x exec "MODULE_VIP\VIP_GUARD\spawn_vipGuard_FBI.sqs";}foreach _selectedForWep; _selectedForWep = []; _currentCode = 1; };
+if( ((count _selectedForWep) == SETTINGS_vipGuard_BodyGuard) && _currentCode == 1)then{{_x exec "MODULE_VIP\VIP_GUARD\spawn_vipGuard_Farmers.sqs";}foreach _selectedForWep; _selectedForWep = []; _currentCode = 2; goto "giveWep";};
+if( ((count _selectedForWep) == SETTINGS_vipGuard_cops) && _currentCode == 2)then{{_x exec "MODULE_VIP\VIP_GUARD\spawn_vipGuard_Cops.sqs";}foreach _selectedForWep; _currentCode = 3;};
+if(( (count _selectedForWep) == SETTINGS_armedVIP)  && _currentCode == 3)then{{_x exec "MODULE_VIP\VIP_GUARD\VIP_giveHimWeapon.sqs";}foreach _selectedForWep; _selectedForWep = []; exit;};
+
+goto "giveWep";
+
+exit;

@@ -1,0 +1,478 @@
+﻿
+
+;//WeP_A pistols
+CopWep_A1 = []
+CopWep_A2 =[]
+CopWep_A3 = []
+CopWep_A4 = []
+CopWep_A5 = []
+
+RebWep_A1 = []
+RebWep_A2 = []
+RebWep_A3 = []
+RebWep_A4 = []
+RebWep_A5 = []
+
+
+["RHS_Aps","RHS_ApsMag"],
+["RHS_Aps_S","RHS_Apbsmag"],
+["vilvg15","vig15mag"], //автомат одиночными
+
+NotUSED_pistols =[]
+
+
+
+
+;//WeP_B shotguns
+CopWep_B1 = []
+CopWep_B2 = []
+CopWep_B3 = []
+CopWep_B4 = []
+CopWep_B5 = []
+
+RebWep_B1 = []
+RebWep_B2 = []
+RebWep_B3 = []
+RebWep_B4 = []
+RebWep_B5 = []
+
+NotUSED_shotguns =[]
+
+
+;//WeP_C submachines
+CopWep_C1 = [["vimp18","vimp18m"],]
+CopWep_C2 = [["vivikr","vivikrmag"],]
+CopWep_C3 = []
+CopWep_C4 = []
+CopWep_C5 = []
+
+RebWep_C1 = [["vimp3008","vistenm"],["vimodello42","vmodellomag"],]
+RebWep_C2 = []
+RebWep_C3 = [["vippszb","vippszm"],]
+RebWep_C4 = []
+RebWep_C5 = []
+
+["vivietk50m","vippsm"],
+["vivietmat49","vimatm"],
+
+
+NotUSED_submachines =[["vimodello38","vmodellomag"],["vismej","vismejm"],["vipps52","vippsm"],["vippszc","vippsm"],]
+
+;//WeP_D assault rifles
+
+
+CopWep_D1 = [["vigroza","ak47mag"],]
+CopWep_D2 = []
+CopWep_D3 = []
+CopWep_D4 = []
+CopWep_D5 = []
+
+RebWep_D1 = [["RHS_AKM","RHS_30RD_762_Mag"],["vigarandml","vigarandmag","garyml"],["RHS_AK74M","RHS_30RD_545_mag"],]
+RebWep_D2 = [["RHS_AK74MGP25","RHS_30RD_545_mag","RHS_VOG25PGrenadePouch"],["RHS_AKS74PBS3","RHS_30RD_545_SDMag"], ["C8xAKS74Ucobra","C8xaks74umag"],]
+RebWep_D3 = [["RHS_AKS74PSO1PBS3","RHS_30RD_545_SDMag"],]
+RebWep_D4 = []
+RebWep_D5 = []
+
+
+["vival","vivalmag"],
+["visa58","visa58mag"],
+["visa58pi","visa58mag"],
+["visa58gl2","visa58mag","glecz"],
+
+
+
+NotUSED_AssaultR = [["vilstg45m","vistgmag"],["viknorrb","vimg13mag"],["vifg42","fg42mag"],["vitantal","tanmag"],["RHS_AKS74_Folded","RHS_30RD_545_mag"], ["RHS_AKMS_FOLDED","RHS_30RD_762_Mag"],["RHS_AKMSGP25PBS1","RHS_30RD_762_SDMag","RHS_VOG25PGrenadePouch"],["RHS_AKMGP25","RHS_30RD_762_Mag","RHS_VOG25PGrenadePouch"], ["RHS_AK74MPSO1","RHS_30RD_545_mag"], ["C8XAK74MGP25cobra","c8xak74mag","c8xgp25grenade"],["C8xAKS74U","C8xaks74umag"], ["C8XAKS74U_SD","c8xaks74uSDmag"],["C8XAKS74UBS1cobra","c8xaks74usdmag"],]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Китайские пушки
+["QBZ81_1","QBZ81Mag"], //AK copy
+["QBZ95","QBZ95Mag"],
+["QBZ95WS","QBZ95WSMag"], //с глушителем
+["spotscope"], //Бинокль
+["QBZ95SSN","QBZ95Mag"], //c прицелом
+["QBZ95G","QBZ95Mag","GrenadeLauncher"],
+["QBU88","QBU88Mag"],	//снайперка
+["QBU88W","QBU88Mag"],	//снайперка в траве
+["QSZ92_9","QSZ92_9Mag"],//пистолет
+["QSZ92WS_9","QSZ92WS_9Mag"],//пистолет SD
+["QJY88","QJY88Mag"],	//пулемет 200 патронов
+["QBB95","QBB95Mag"],	//подобие РПК 75 патронов
+["PF89Launcher","PF89HEATmag"], //РПГ легкий
+["PF98Launcher","PF98HEATmag"], //РПГ МОЩНАЯ
+
+
+["ICPRPG_18","ICPRPG_18"], //RPG легкая (все снаряды исчезают из рюкзака, но можно стрелять, будто одноразовая)
+["ICPRPG26","ICPRPG26mag"], //RPG легкая (3 слота один снаряд, хреново)
+["ICP_val","ICP_valmag"], //VAL 
+["ICP_PM","ICP_PMmag"], //Макаров, хреновый
+["ICP_vss","ICP_vssmag"], //Винторез
+["ICP_vsk","ICP_vskmag"], //VSK (хуже по скорострельности чем VSS)
+["ICP_SVDN","ICP_SVDMag"], //SVD + странный ночной прицел
+["ICP_SVDCamo","ICP_SVDMag"], //SVD с травой и камо
+["ICP_SVDS","ICP_SVDMag"], //SVD черная
+["ICP_SVD","ICP_SVDMag"], //SVD
+["ICP_Ak74","ICP_Ak74mag"], //AK74 дерево
+["ICP_Ak74mo","ICP_Ak74mag"], //AK74 дерево PSO
+["ICP_Ak74N","ICP_Ak74mag"], //AK74 дерево Ночной прицел
+["ICP_Ak74gl","ICP_Ak74mag","icp_grenadeE"], //AK74GP дерево
+["ICP_akm","ICP_akmmag"], //AKM
+["ICP_akmgp","ICP_akmmag","icp_grenadeE"], //AKM GP
+["ICP_akmnb","ICP_akmmag"], //AKM с Коброподобным прицелом
+["ICP_Ak74mgl","ICP_Ak74mag","icp_grenadeE"], //AK74m Черный ГП
+["ICP_rpkn","ICP_rpk74mag"], //RPK 74 со странным прицелом ночным
+["ICP_rpk74m","ICP_rpk74mag"], //RPK 74 ночной
+["ICP_rpk74","ICP_rpk74mag"], //RPK 74
+["ICP_aks74u","ICP_ak74mag"], //AKSU
+["ICP_PK","ICP_PKMmag"],
+["JAM_RPD","JAM_E762M_100mag"], //лучше чем РПК 100 патронов
+["AW50F","AW50Fmag"], //крутая снайперка
+["KEGmakarov","KEGmakarovMag"],
+["mVSS","mVSSmag"], //VSS 10 патронов WTF
+["mAS","mASmag"],
+["RFSVUa","RFSVUAmag"],
+
+["hh_minigun","hh_minigun"], //Шестикрутка
+["BD_UziStock","BD_UziMag"], //Узишка
+["BD_UziSD_S","BD_UziSDMag"], // узишка SD
+
+//JAPAN GUNS
+["BOHType89rD","BOH556_30Mag"], //с прицелом похоже на FAL
+["BOHType89r","BOH556_30Mag"], // похоже на FAL
+["BOH9mmPistol","BOH9mmMag"], //пистолет
+["BOHM249","BOHM249mag"], //M249
+["BOH110mmpf3","BOH110mmHEAT"],//РПГ все снаряды исчезают из рюкзака, но можно стрелять, будто одноразовая)
+["BOH84RR","BOH84RR_HEAT"],// РПГ 1 снаряд 3 клетки
+["BOHFIM92Alauncher","BOHFIM92AlauncherShell"], //Stinger Очень слабый
+["BOHType91SAM","BOHSAM2"],//Stinger 2 Очень слабый
+["BOHLmatLauncher","BOHlmatMissile"], //Javelin треб 3 ракеты
+["BOHType62LMG","BOHType62LMGMag"], //Пулемет старый
+["BOHType64","BOHType64Mag"], //старая штурм винтовка
+["BOHType64sniper","BOHType64Mag"],//старая штурм винтовка + крутой прицел x10
+["BOHM9MachinePistol","BOHM9mag"], //УЗИ
+["BOHm24","BOHm24Mag"], //m24 с ултра зумом
+
+["dmx_csshell"], //ГАЗОВАЯ ГРАНАТА
+
+//OFPR
+["OFrp_FAMASF1Aimpt","OFrp_FAMASMag"],	//FAMAS AIMPOINT
+["OFrp_FAMASF1ACOG","OFrp_FAMASMag"],	//FAMAS ACOG
+["OFrp_FAMASF1","OFrp_FAMASMag","OfrP_AC58"],	//FAMAS с ракетами на ствол (2 слота, неплохой урон танкам)
+["OFrp_FAMASF1m203","OFrp_FAMASMag","OfrP_M433HEDPVest"],	//FAMAS GP
+["OFrp_FAMASF1SD","OFrp_FAMASF1SDMag"],	//FAMAS + SD + AIMPOINT
+["OFrp_ABLlauncher","OFrp_ABLmag"],	//легкая РПГ очень слабая
+["OFrp_APILASlauncher","OFrp_APILASmag"], //РПГ 4 слота ракета
+["OFrp_Eryxlauncher","OFrp_Eryxmag"], //РПГ 4 слота ракета
+["OFrp_LRAC89Launcher","OFrp_LRAC89mag"], //РПГ в слоте автомата!
+["OFrp_MAC50","OFrp_MAC50mag"], //пистолет
+["OFrp_P226","OFrp_P226mag"], //Пистолет
+["OFrp_P226S","OFrp_P226smag"], //Пистолет SD
+["OFrp_ANF1L","OFrp_ANF1Lmag"], //пулемет 50 патронов
+["OFrp_Minimi","OFrp_Minimimag"],
+["OFrp_HecateII","OFrp_HecateIIAPEImag"], //снайперка
+["OFrp_FRF2","OFrp_FRF2mag"],//снайперка
+
+//Шведская армия
+["SFP_ak5","SFP_ak5mag"], //AK5 (шведский ФАЛ)
+["SFP_ak5b","SFP_ak5mag"], //AK5 (шведский ФАЛ) ACOG
+["SFP_ak5sd","SFP_ak5sdmag"], //AK5 (шведский ФАЛ) ACOG + SD
+["SFP_ak5df","SFP_ak5mag"], //AK5 (шведский ФАЛ) черный с AIMPOINT
+["SFP_ak5dfgrt","SFP_ak5mag","SFP_grtbag"], //AK5 (шведский ФАЛ) черный с AIMPOINT + GL
+["SFP_ak5drp","SFP_ak5mag"], //AK5 (шведский ФАЛ) + AIMPOINT
+["SFP_AK5grt","SFP_ak5mag","SFP_grtbag"],//AK5 (шведский ФАЛ) + GP
+["SFP_Ksp90C","SFP_Ksp90Mag"],//Пулемет + AIMPOINT
+["SFP_Ksp90","SFP_Ksp90Mag"],//Пулемет + AIMPOINT
+["SFP_shgr90"], //граната
+["SFP_pskott","SFP_pskottmag"], //Одноразовый гранатомет
+["SFP_psg90","SFP_psg90mag"], //Снайперка
+["SFP_psg90sd","SFP_psg90sdmag"], //Снайперка + SD
+["SFP_grg","SFP_grgPMag"], //Гранатомет
+["SFP_rb57","SFP_shgr90"], // гранатомет (ракета в гранатомете)
+["SFP_remington","SFP_remingtonmag"],
+["SFP_Wpnshield"],	//ЩИТ
+["SFP_ak4","SFP_ak4mag"], //AK4 подобие G3
+["SFP_ak4or","SFP_ak4mag"], //AK4 + ACOG
+["SFP_ak4b","SFP_ak4mag"], //AK4 + AIMPOINT
+["SFP_ak4grt","SFP_ak4mag","SFP_grtmag"], //AK4 GL
+["SFP_P88","SFP_P88Mag"], //пистолет
+["SFP_P88bsd","SFP_P88bsdMag"], //пистолет + лазер + SD
+["SFP_M45","SFP_M45mag"], //старый автомат
+["SFP_ag90","SFP_ag90mag"], // Barret
+["SFP_psg90lov","SFP_psg90mag"],//Снайперка в траве
+["SFP_grg","SFP_grgPmag"], //Гранатомет (3 слота)
+["SFP_pskott68","SFP_shgr56"], //Гранатомет легкий
+["SFP_remingtont","SFP_remingtonmag"],//Ружье + прицел + лазер
+
+
+
+//VILAS
+["visa24","visa24m"], //узишка подобие Израильской +M
+["viuzimicro","viuzimicro"], //Micro UZI +S
+["viuzib4","viuzibm"], // УЗИ израиль +M
+["viuzib3","viuzibm"], // УЗИ израиль +M
+["vifal","vifalmag"], // FAL
+["vifaleotech","vifalmag"], // FAL + EOTECH
+["vifalnew","vifalmag"], // FAL
+["violdfal","vifalmag"], //OLD FAL
+["viAK101","AK101mag"], //AK 101
+["visteyr2","visteyrmag"], // Steyr
+["vicz5257","vicz527m"], //Чешский типа SKS
+["vical","vim16a1mag"], //штурмовой автомат
+["vifncml","g41mag"], //штурмовой автомат FNC
+["vilfnmag","vitas2mag"], //пулемет 100p
+["vifn49","vifn49mag"], // подобие m1 grant
+["vig3a4","g3mag"], //G3 mag
+["vim16a4","vim16a1mag","glw"], //M16A4 GL
+["vim16a13","natomag"], //M16A1 3
+["videg","virpdmag"], //RPD
+["viuk2","viuk59mag"], //пулемет 100p
+["vim59ml","m14mag","vilasMortarber"], //m14 + grenades
+["vim70ml","ak47mag","vilasMortar"], // AK47 + grenades
+["viamd","ak47mag"], //AK47 с ручкой
+["viAKmsb","AKsdmag"],	//AKM SD
+["viuziksd","viluziksd"], //UZI SD
+["vilstg44","vistgmag"], //WW2 STG
+["vig57","g57mag"],	//штурмовой автомат
+["vitype81","ak47mag"], //китайский AK47
+["visa58no","natomag"], // SA 58 PSO
+["vilbem12","viuzibm"], // пистолет пулемет m12
+["viwin1895","viwin1895m"], // винтовка Winchester
+["viblysk","vistenm"], //пистолет пулемет STEN
+["vimas36","vimas36m"], //винтовка
+["vippd34","vippd34m"],
+["vi","vi"],
+["vi","vi"],
+["vi","vi"],
+
+//станковый ГП
+["SFP_grspWpn"],
+["SFP_stridssack","SFP_RUCK_GRSP"],
+["SFP_WpnTripod"],
+//станковый гранатомет
+["SFP_rb56WpnTripod"],
+["SFP_rb56Wpn"],
+["SFP_stridssack","SFP_RUCK_RB56"],
+//станковый крутой гранатомет
+["SFP_rb70WpnTripod"],
+["SFP_rb70Wpnsight"],
+["SFP_rb70Wpn","SFP_RUCK_GRSP"],
+//Станковый пулемет
+["SFP_WpnTripod"],
+["SFP_tkspWpn"],
+
+//ADF MOD AUSTRALIAN ARMY
+
+["ADF_M4a1_m203","ADF_M4mag","ADFm203Vest"],	//M4 AIMPOINT GL
+["ADF_SOM4a1_m203","ADF_M4mag","ADFm203Vest"],	//M4 AUSTRALIAN ACOG GL
+["ADF_SOM4A1","ADF_M4mag"],	//M4 AUSTRALIAN ACOG
+["ADF_SOM4A1S","ADF_M4SDmag"],	//M4 AUSTRALIAN ACOG + SILENCER
+["ADF_SOM4A1S_M203","ADF_M4SDmag","ADFm203Vest"],	//M4 AUSTRALIAN ACOG + SILENCER + GL
+["ADF_M4A1","ADF_M4mag"],	//M4 AIMPOINT 
+["ADF_M4A1S","ADF_M4SDmag"],	//M4 AIMPOINT + SILENCER
+
+["ADF_M4a1D_m203","ADF_M4mag","ADFm203Vest"],	//M4 AIMPOINT GL Desert
+["ADF_SOM4a1D_m203","ADF_M4mag","ADFm203Vest"],	//M4 AUSTRALIAN ACOG GL Desert
+["ADF_SOM4A1D","ADF_M4mag"],	//M4 AUSTRALIAN ACOG DES
+["ADF_SOM4A1DS","ADF_M4SDmag"],	//M4 AUSTRALIAN ACOG DES + SILENCER
+["ADF_SOM4A1DS_M203","ADF_M4SDmag","ADFm203Vest"],	//M4 AUSTRALIAN ACOG DES + SILENCER + GL
+["ADF_M4A1D","ADF_M4mag"],	//M4 AIMPOINT DES
+["ADF_M4A1Scope","ADF_M4mag"],	//M4 SCOPE трава
+["ADF_M4A1DS","ADF_M4SDmag"],	//M4 AIMPOINT DES + SILENCER
+["ADF_F89DSP","ADF_F89mag"], //M249 + AUSTRALIAN ACOG
+["ADF_MAG58","ADF_MAG58mag"], //MAG58 machinegun
+["Skeg_870","C8XM1014mag"], //дробовик
+["SkegF88SScope","ADF_F88mag"], //AUSTRALIAN AUG СНАЙПЕРСКИЙ ПРИЦЕЛ
+["SUCHJavelinLauncher","SUCHJavelinMag"], //Javelin
+["ADF_MK3","ADF_BrowningMag"],	//Пистолет
+["ADF_MK3TL","ADF_BrowningMag"],	//Пистолет
+["ADF_Browning","ADF_BrowningMag"],	//Пистолет
+["SKEG_AW50F","SKEG_AW50Fmag"], //Снайперка с травой
+["ADF_SR98S","ADF_SR98SMag"],	//Снайперка SD Трава
+["ADF_SR98","ADF_SR98Mag"],	//Снайперка  Трава
+
+["ADF_F88Dshort","ADF_F88mag"], //Australian AUG
+["ADF_F88DS","ADF_F88mag"], //Australian AUG Scope
+["ADF_F88D_m203","ADF_F88mag","ADFm203Vest"], //Australian AUG GL
+["ADF_F88DS_m203","ADF_F88mag","ADFm203Vest"], //Australian AUG GL Scope
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["ADF_",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+["",""],
+
+
+
+
+
+
+
+
+
+["",""],
+["",""],
+["",""],
+
+
+
+
+
+;//WeP_E sniper rifles
+CopWep_E1 = []
+CopWep_E2 = []
+CopWep_E3 = []
+CopWep_E4 = []
+CopWep_E5 = []
+
+RebWep_E1 = [["vimanlicherl","vigew95mag"],["vimauser981","vimauser98mag"],]
+RebWep_E2 = [["vimauser9832","vimauser98smag"],]
+RebWep_E3 = [["RHS_V94","RHS_5RD_127_Mag"],["RHS_SVD","RHS_10RD_762_mag"],["vigew43s","vigew41sm"],]
+RebWep_E4 = []
+RebWep_E5 = []
+
+["vigew43","vigew41m"],
+["LSR_awm","LSR_awmMag"],
+["visks","visksm"],
+["visvt40","visvt40m"],
+["viarisaka2","viarimag"],
+["viviettyp68","type63mag"],
+["vimas","vimasm"],
+["viswu","viswdm"],
+
+NotUSED_sniperrifles =[]
+
+
+;//WeP_F machine guns
+CopWep_F1 = [["vitype96","vitype96mag"],["vidp","vidpMag"],]
+CopWep_F2 = [["viuk","viuk59mag"],]
+CopWep_F3 = []
+CopWep_F4 = []
+CopWep_F5 = []
+
+RebWep_F1 = [["RHS_RPK74","RHS_45RD_545MG_Mag"],]
+RebWep_F2 = [["RHS_RPK74PSO1V","RHS_45RD_545MG_Mag"],["RHS_PK","RHS_100rd_762_mag"],["vimg42box","vimg42boxm"],]
+RebWep_F3 = [["vimg0815","vimg0815Mag"],]
+RebWep_F4 = []
+RebWep_F5 = []
+
+NotUSED_machineguns = []
+
+
+
+;//WeP_G Explosives and RPG
+CopWep_G1 = []
+CopWep_G2 = []
+CopWep_G3 = []
+CopWep_G4 = []
+CopWep_G5 = []
+
+RebWep_G1 = [["RHS_RPG22","RHS_RPG22Rocket"],]
+RebWep_G2 = [["RHS_RPG7V","RHS_PG7VLRocket"],]
+RebWep_G3 = [["RHS_RPG7V","RHS_PG7VRRocket"],]
+RebWep_G4 = []
+RebWep_G5 = []
+
+NotUSED_Explosives =[]
+
+
+
+
+AllWeapons_array =  CopWep_A1 + CopWep_A2 + CopWep_A3 + RebWep_A1 + RebWep_A2 + RebWep_A3 + CopWep_B1 + CopWep_B2 + CopWep_B3 + RebWep_B1 + RebWep_B2 + RebWep_B3 + CopWep_C1 + CopWep_C2 + CopWep_C3 + CopWep_D1 + CopWep_D2 + CopWep_D3 + CopWep_E1 + CopWep_E2 + CopWep_E3 + CopWep_F1 + CopWep_F2 + CopWep_F3 + CopWep_G1 + CopWep_G2 + CopWep_G3 + RebWep_C1 + RebWep_C2 + RebWep_C3 + RebWep_D1 + RebWep_D2 + RebWep_D3 + RebWep_E1 + RebWep_E2 + RebWep_E3 + RebWep_F1 + RebWep_F2 + RebWep_F3 + RebWep_G1 + RebWep_G2 + RebWep_G3
+
+
+
+
+Rebbel_begin = RebWep_B1 + RebWep_C1 + RebWep_D1 + RebWep_E1 + RebWep_F1;
+Cop_begin = CopWep_A1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

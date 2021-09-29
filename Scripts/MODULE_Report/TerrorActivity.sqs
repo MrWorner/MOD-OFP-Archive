@@ -1,0 +1,15 @@
+;//[] exec "MODULE_Report\TerrorActivity.sqs";
+
+
+if(VAR_PoliceReport_TerrorActivity)then{exit;}
+VAR_PoliceReport_TerrorActivity = true;
+~1
+
+_array = ["report_terror1","report_terror2","report_terror3","report_terror3"]
+_r = random ((count _array)-1);
+_random = _r - (_r mod 1);
+_selected = _array select (_random);
+playsound _selected;
+
+~random(60)
+VAR_PoliceReport_TerrorActivity = false;

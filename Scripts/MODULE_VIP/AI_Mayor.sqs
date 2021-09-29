@@ -1,0 +1,22 @@
+_VIP = _this select 0;
+~5
+_group = group _VIP;
+
+_VIP addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_MAYOR.sqs"" ;"];
+
+#CHECK
+~3
+	if(! (alive _VIP) ) then {_group exec "Police\AI_REVENGE_SEARCH.sqs"; exit;};
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then { _group reveal (vehicle Hero); HowManySeeYou = HowManySeeYou + 1; publicVariable "HowManySeeYou"; report_IsCalling_Mayor = true; PublicVariable "report_IsCalling_Mayor"; goto "PURSUIT"; } 
+
+goto "CHECK"
+
+#PURSUIT
+
+	if(! (alive _VIP) ) then {doStop (units _group); HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou"; _group exec "Police\AI_REVENGE_SEARCH.sqs"; exit;};
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then{ report_call_Mayor = report_call_Mayor + 1; PublicVariable "report_call_Mayor";}else {  HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou";   goto "CHECK"; }
+~5
+goto "PURSUIT"
+
+
+

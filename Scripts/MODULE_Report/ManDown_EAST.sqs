@@ -1,0 +1,11 @@
+if(VAR_EASTReport_HeroContact)then{exit;}
+VAR_EASTReport_HeroContact = true;
+~1
+_array = ["report_contact10", "report_manDown7","report_manDown8","report_manDown9","report_manDown9"]
+_r = random ((count _array)-1);
+_random = _r - (_r mod 1);
+_selected = _array select (_random);
+playsound _selected;
+
+~300
+VAR_EASTReport_HeroContact = false;

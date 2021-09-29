@@ -1,0 +1,16 @@
+_cost = SETTINGS_OMEGA_LeaveSquadCost;
+
+if(PolicePoint < _cost)then{player groupchat format ["Not enough points! You have only $%2. Required additional: $%3. But, You will be a new police group in any way",_cost,PolicePoint, (_cost - PolicePoint)];}
+if(count units group player == 1)then{player groupchat format ["You do not have any team member in your squad!",_cost]; exit;}
+player sidechat "Please wait 5 sec! You will be a new police group.";
+
+~5
+if(speed player > 0)then{player sidechat "You are moving! Abort mission!"; exit}
+PolicePoint = PolicePoint - _cost
+PublicVariable "PolicePoint";
+_group = group player;
+[player] join grpnull
+player sidechat "Done!";
+~1
+
+IF(count(units _group)> 0)THEN{[(leader _group)] exec "Police\AI_policeOmega.sqs";}

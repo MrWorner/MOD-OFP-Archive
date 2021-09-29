@@ -1,0 +1,31 @@
+;//ПРОИГРЫВАЕТСЯ ИНТРО ДЛЯ ВСЕХ ИГРОКОВ (БЫЛ ВЫЗВАН ИЗ ТРИГГЕРА)
+_GENERAL = General; 
+_POS = (getpos _GENERAL select 2)+5
+_camera = "camera" camCreate [(getpos _GENERAL select 0) - 0.5,(getpos _GENERAL select 1) + 0.4 ,_POS]
+_camera cameraEffect ["internal","back"]
+_camera camsettarget _GENERAL
+_camera camCommit 0
+@camCommitted _camera
+
+
+_GENERALSAY_ARRAY = ["General1","General2","General3","General4","General5","General6","General7","General8","General9","General10","General11","General12","General13","General14","General15","General16","General17","General18","General19","General20","General21","General22","General23","General24","General25","General26","General27","General28","General29","General30","General31","General32","General33","General34","General35","General35"];
+_selected = _GENERALSAY_ARRAY select (SETTINGS_GENERALSAY_NUM);
+
+
+_GENERAL say _selected
+;//playsound _selected
+
+~3
+_camera cameraEffect ["terminate","back"];
+camDestroy _camera;
+
+~0.1
+
+;/// HUD ДЛЯ EAST
+if(side player == east)then{[] exec "MODULE_DIFFICULT\EAST_StarterPackEquipment.sqs"; };
+INTRO_ENDED = true;
+
+~1
+;///Пингование подозреваемого
+if(side player == west)then{if(SETTINGS_PoliceKVADRATonSusp)then{[] exec "MODULE_PING\Ping_suspecPost.sqs";};};
+

@@ -1,0 +1,84 @@
+titleText [" ", "BLACK", 13];
+
+~3
+_wep="UZI"
+_mag="UZIMag"
+_NewLeader = Player
+if(count units group player > 1)then{_NewLeader = ((units group player) select 1)};
+
+~1
+
+#loop
+if(alive player)then{goto "start"};
+~0.1
+goto "loop"
+#start
+HowManySeeYou = 0;
+publicvariable "HowManySeeYou"
+
+if(_NewLeader != Player)then{ [_NewLeader] exec "Terror\OrderAttackGeneral.sqs";};
+
+[player] join grpnull
+Hero = Player; 
+PublicVariable "Hero"
+player addrating 10000
+player addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_HERO.sqs""; [] exec ""MODULE_Spawn\SuspectRespawn.sqs"" ;"]
+
+Act2 = player addAction ["-> MENU <-", "MODULE_HUD\GUI_FastMenu_EAST.sqs"]
+
+
+removeallweapons player
+player addweapon "Binocular"
+player addweapon "nvgoggles"
+;//player switchmove "FXStandAtt"
+if( HeroGoldCoins < SETTINGS_Coins_JailRelease)then{TOC globalchat "You don't have enough gold coins to be released!"; goto "cashOrEnd"};
+titleText ["..loading", "BLACK IN", 3];
+
+
+
+[] exec "MODULE_Spawn\Suspects_RespawnArmy.sqs";
+
+
+HeroNeededRep = HeroNeededRep + 1
+publicvariable "HeroNeededRep"
+player sidechat format ["You paid %1 gold coins for freedom.",SETTINGS_Coins_JailRelease];
+HeroGoldCoins = HeroGoldCoins - SETTINGS_Coins_JailRelease;
+publicvariable "HeroGoldCoins"
+SETTINGS_Coins_JailRelease = SETTINGS_Coins_JailRelease + SETTINGS_Coins_AddJailRelease;
+publicvariable "SETTINGS_Coins_JailRelease"
+
+
+
+~3
+;//---------------HowManySeeYou = 0;
+;//---------------publicvariable "HowManySeeYou"
+
+_r = random ((count AllWeapons_array)-1);
+_random = _r - (_r mod 1);
+_selected = AllWeapons_array select (_random);
+
+_mag = (_selected select 1)
+_wep = (_selected select 0)
+
+if(_mag in MachineGun_Array)then{[player, _mag, 5] exec "FUNCTIONS\func_addMagazine.sqs";}else{[player, _mag, 10] exec "FUNCTIONS\func_addMagazine.sqs";};
+~1
+player addweapon _wep
+
+
+~3
+
+player addmagazine "ICPRPG_18"
+player addweapon "ICPRPG_18"
+
+
+exit;
+
+#cashOrEnd
+;//if( (HeroMoney) >= 20000)then{HeroMoney = HeroMoney - 20000; PublicVariable "HeroMoney"; TOC globalchat "You spent $20000!"; HeroNeededRep = HeroNeededRep - 1; goto "start";}else{titleText [" ", "BLACK IN", 1]; GameOver = true; publicvariable "GameOver";  player switchmove "FXStandAtt"};
+;//"NUT_NBCmpMedic" createUnit [position player, WestGroup,"", 0, "corporal"]
+;//player setpos getpos General; player setPos [(getPos player select 0) + 1, (getPos player select 1 ) + 0.5, (getPos player select 2) + 4.0]; 
+
+titleText [" ", "BLACK IN", 1]; 
+GameOver = true; 
+publicvariable "GameOver";  
+player switchmove "FXStandAtt"

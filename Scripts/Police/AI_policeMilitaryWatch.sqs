@@ -1,0 +1,18 @@
+_COP = _this;
+_group = group _COP;
+~0.2
+
+
+#CHECK
+~3
+	if(count units _group == 0) then {exit;};
+	if(! (alive General) ) then {_group exec "Police\AI_REVENGE_SEARCH.sqs"; exit;};	
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then {_group reveal (vehicle Hero); HowManySeeYou = HowManySeeYou + 1; publicVariable "HowManySeeYou"; report_call_MP = report_call_MP + 1; PublicVariable "report_call_MP"; goto "PURSUIT"; }
+goto "CHECK"
+
+#PURSUIT
+	if(! (alive General) ) then {HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou"; _group exec "Police\AI_REVENGE_SEARCH.sqs"; exit;};	
+	if (count units _group == 0) then {HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou"; exit;};
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then{ }else {HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou";  goto "CHECK"; }
+~5
+goto "PURSUIT"

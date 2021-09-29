@@ -1,0 +1,534 @@
+;//НЕОБХОДИМЫЕ АДДОНЫ MEN: @_men_CivPack;@_men_GHOST;@_men_NUT_NBC;@_men_HYK_US_Army;@_pack_ICP_Naval_RU;@_men_CRS_MERC
+;//НЕОБХОДИМЫЕ АДДОНЫ CAR: @_pack_DifferentCARS;@_car_VilasPoliceDzik;@_pack_CBT_HMMW;@_pack_CBT_Misc;@_car_SkodaOctaviaPack;@_car_NivaPack;@_car_NoePoliceCADILAC;@_car_Volha;@_car_MilitaryKawasaki;@_car_AlvisStar;@_car_Buggy;@_car_HiluxMG;@_car_INQ_HTTV;@_car_MFM_ZiL157;@_car_ResBattleBuggy;@_car_GoodVazPack;@_car_GoretsK;@_car_KrazCoolPack
+;//НЕОБХОДИМЫЕ АДДОНЫ ARMOR: @_pack_INC_M1A2; @_pack_CBT_Bradley; @_pack_CBT_Misc;@_pack_CBT_M113;@_armor_BTR40pack;@_armor_BRDM1_MG;@_armor_MNF_BRDM2;@_misc_MCAR_engine;@_armor_BMD3;@_armor_T54_WOT;@_pack_ICP_t72_t80_t90;@_car_Luaz_Jeep_Ru;@_pack_BTRT;@_armor_MNF_BMP
+;//НЕОБХОДИМЫЕ АДДОНЫ AIR: @_air_BAS_LittleBird;@_pack_BAS_SeaUH60;@_pack_BAS_UH60_EXTRA;@_air_Vit_AH1_pack;@_ai_Mi2;@_air_UH1_pack_vietnam;;@_air_jetPack;@_air_MV22_Osprey;@_air_AFR_CH47;@_air_Gst_Ka26;@_air_Heli_LYNX_AT
+;//НЕОБХОДИМЫЕ АДДОНЫ WEP: @_wep_MP5pack;@_wep_SOF;@_pack_RHS_weapons
+;//НЕОБХОДИМЫЕ АДДОНЫ OBJ: @_obj_FML;@_obj_Baracken_JOF;@_obj_PCPrison;@_pack_hwk_nimitz;@_obj_MAP;@_obj_NoePoliceStation
+;//НЕОБХОДИМЫЕ АДДОНЫ OTHER: @_other_FaceText;@_static_SPG9
+;//НЕОБХОДИМЫЕ АДДОНЫ PACK: @_pack_DMX_NogovaPolice;
+;//ДОП. АДДОНЫ:				@DMALEAN;@SKY_Llaumax;@_DTA_SOUND;
+;//РЕДАКТОР:				@2016_LARGE_EDITOR;
+
+;//removeAllWeapons player;
+
+Hero = objNull;
+Cop1 = objNull;
+
+~0.3
+TOC globalchat "[init.sqs]: Initialization.."
+var_isServer = isServer
+if(alive ZZZ1 and alive ZZZ2)then{var_isServer = true;};
+SETTINGS_VERSION = "v0.81 (2018)"
+
+
+;//PLAYER MODEL
+IF(side player == east)THEN{ Hero = Player; PublicVariable "Hero" }else{ Cop1 = Player; PublicVariable "Cop1";};
+
+;//NEW | НАСТРОЙКИ МИРА 2019 BEGIN
+	
+	SETTINGS_SuspectMarker = false;
+	SETTINGS_PoliceRadarONSuspect = false;
+	SETTINGS_PoliceKVADRATonSusp = false;
+	SETTINGS_DetectorOnOmegaLeader = true;
+	SETTINGS_SETTINGS_PoliceRadarONSuspect_Distance = 750;
+	SETTINGS_HERO_DetectorOmegaDist = 750;
+	
+	
+	
+	;//Шанс на спавн любой случайной машины (default = 80)
+	SETTINGS_CarSpawn_Chance = 80;
+	;//Шанс на спавн крутой случайной машины вместо обычной (default = 10)
+	SETTINGS_CarSpawn_ChanceCoolCar = 10;
+	
+	;//ИСПОЛЬЗОВАНИЕ АДДОНА: VANILLA CARS
+	SETTINGS_CarSpawn_BIS_bool = false;
+	;//ИСПОЛЬЗОВАНИЕ АДДОНА: @_pack_DifferentCARS
+	SETTINGS_CarSpawn_DifferentCARS_bool = true;
+
+	;//Сколько отсппавнить полицейских патрулей в начале игры. (default = 6)
+	SETTINGS_PatrolUnits = 6;
+	;//Время пингование позиции главного подозреваемого. (default = 30)
+	SETTINGS_TimeToPing = 30;
+	;//Время удаления трупа. (default = 120)
+	SETTINGS_deleteCorpTime = 120;
+	
+	;//Количество вооруженных Випов. (default = 6) НЕ ДОЛЖНО ПРЕВЫШАТЬ ОБЩЕЕ КОЛ-ВО ВИПОВ НА КАРТЕ (18)
+	SETTINGS_armedVIP = 6;	
+	;//Количество FBI отрядов для защиты VIP'а. (default = 2) 
+	SETTINGS_vipGuard_FBI = 2;	
+	;//Количество телохранителей отрядов для защиты VIP'а. (default = 2) 
+	SETTINGS_vipGuard_BodyGuard = 2;	
+	;//Количество коповских отрядов для защиты VIP'а. (default = 4) 
+	SETTINGS_vipGuard_cops = 4;
+	
+	;//Награды за убийство VIP'a (default = 1) (default = 5) (default = 650)
+	SETTINGS_VIPkill_GoldCoin = 1;
+	SETTINGS_VIPkill_wantedPoint = 5;
+	SETTINGS_VIPkill_money = 650;
+	
+	;//Награды за убийство телохранителя (default = 1 default = 100)
+	SETTINGS_GuardKill_wantedPoint = 1;
+	SETTINGS_Guardkill_money = 100;
+	
+	;//Награды за убийство Мэра (default = 10	default = 100	default = 5000)
+	SETTINGS_Mayorkill_GoldCoin = 10;
+	SETTINGS_Mayorkill_wantedPoint = 100;
+	SETTINGS_Mayorkill_money = 5000;
+	
+	;//Награды за убийство Генерала (default = 10	default = 150	default = 5000)
+	SETTINGS_Generalkill_GoldCoin = 10;
+	SETTINGS_Generalkill_wantedPoint = 900;		
+	SETTINGS_Generalkill_money = 5000;	
+
+	;//Награды за убийство военной полиции (default = 4 default = 100)
+	SETTINGS_MPKill_wantedPoint = 4;
+	SETTINGS_MPKill_money = 100;
+	
+	;//Награды за убийство полиции (default = 1 default = 100)
+	SETTINGS_CopKill_wantedPoint = 1;
+	SETTINGS_Copkill_money = 100;
+	
+	SETTINGS_CopKill_wantedPoint_LvL_2 = 1;
+	SETTINGS_CopKill_wantedPoint_LvL_3 = 2;
+	SETTINGS_CopKill_wantedPoint_LvL_4 = 3;
+	SETTINGS_CopKill_wantedPoint_LvL_5 = 4;
+	SETTINGS_CopKill_wantedPoint_LvL_6 = 5;
+	SETTINGS_CopKill_wantedPoint_LvL_7 = 6;
+	
+	;//Награды за убийство Omega leader (default = 3 default = 1 default = 2000)
+	SETTINGS_OmegaLeaderkill_GoldCoin = 3;
+	SETTINGS_OmegaLeaderkill_wantedPoint = 1;
+	SETTINGS_OmegaLeaderkill_money = 2000;
+
+	;//Награды за убийство Omega бойца  (default = 1 default = 300)
+	SETTINGS_Omegakill_wantedPoint = 1;
+	SETTINGS_Omegakill_money = 300;
+	
+	;//------------У КОПА НАГРАДЫ:
+	;//Награды за убийство ботов подозреваемых (default = 1)
+	SETTINGS_UnknSuspKill_Point = 1;
+	
+	;//Награды за убийство игрока Hero (default = 15)
+	SETTINGS_HeroKill_Point = 15;
+	
+	;//Зарплата (default (EAST): $100, default (WEST): 3 point(s))
+	SETTINGS_Salary_EAST = 100;
+	SETTINGS_Salary_COP = 3;
+		
+	;//Необходимое количество золотых монет для освобождения из тюрьмы (default = 3)	HeroGoldCoins
+	SETTINGS_Coins_JailRelease = 3;
+	;//Увеличить цену за свободу за каждую смерть HERO (default = 2) report_dead_Hero HeroNeededRep
+	SETTINGS_Coins_AddJailRelease = 2;
+
+	;//Сколько требуется очков WantedLevelPoints чтобы перейти на след уровень розыска		
+	SETTINGS_WantedLevelPoints_LEVEL2 = 2 												+ 5;
+	SETTINGS_WantedLevelPoints_LEVEL3 = 23	+ SETTINGS_WantedLevelPoints_LEVEL2			+ 5;
+	SETTINGS_WantedLevelPoints_LEVEL4 = 36	+ SETTINGS_WantedLevelPoints_LEVEL3 + 10	+ 5;
+	SETTINGS_WantedLevelPoints_LEVEL5 = 85	+ SETTINGS_WantedLevelPoints_LEVEL4 + 15	+ 5;
+	SETTINGS_WantedLevelPoints_LEVEL6 = 93	+ SETTINGS_WantedLevelPoints_LEVEL5 + 20	+ 5;
+	
+	;//ВРЕМЯ НА ПРИБЫТИЕ НОВОЙ ВОЛНЫ
+	VAR_ArriveNotification = false;
+	;//MINUTES
+	SETTINGS_ArriveTimeWave2 = 2;
+	SETTINGS_ArriveTimeWave3 = 3;
+	SETTINGS_ArriveTimeWave4 = 5;
+	SETTINGS_ArriveTimeWave5 = 7;
+	SETTINGS_ArriveTimeWave6 = 10;
+	
+	
+	
+	;//SETTINGS_WantedLevelPoints_LEVEL7 = 116	+ SETTINGS_WantedLevelPoints_LEVEL6 + 35;
+	
+	;Level 2: 2 человека x 6 = 12 очков
+	;Level 3: 4 человека x 5 = 20 очков	| Спец: 11 человек = 11 очков
+	;Level 4: 4 человека x 5 = 20 * 2 = 40 очков	| Спец: 4 человека = 4 * 2 = 8 очков
+	;Level 5: 6 человека x 5 = 30 * 3 = 90 очков	| Спец: 8 человека = 8 * 3 = 24 очков
+	;Level 6: 5 человека x 5 = 25 * 4 = 100 очков| Спец: 6 человека = 6 * 4 = 24 очков
+	;Level 7: 5 человека x 5 = 25 * 5 = 125 очков| Спец: 3 человека = 6 * 5 = 30 очков
+	
+
+	;//СПАВН КОПОВ В WAVE, КОЛ-ВО ОБЫЧНЫХ ПАТРУЛЬНЫХ ОТРЯДОВ, НЕ СЧИТАЯ ОСОБЫЕ (default = 5	default = 1	default = 2)
+	SETTINGS_WAVE_DefaultArmy = 5;
+	SETTINGS_WAVE_SpecialArmy = 1;
+	SETTINGS_WAVE_ExtraUnits = 2;
+	
+	
+	;//Шанс на активации сингнализации
+	SETTINGS_CarSteal_AlarmChance = 75;
+	SETTINGS_CarSteal_ImpoundBountyP = 3;
+	OBJ_stolenCar = objNull;
+	bool_CarHasBeenStolen = false;
+	
+	
+	
+	;//Цена эвакуации Omega (default = 5 default = 1 default = $350)
+	SETTINGS_OMEGA_RescueCost = 5
+	SETTINGS_OMEGA_LeaveSquadCost = 1
+	SETTINGS_HERO_RescueVehicle = 350
+
+	;//default = 1 
+	STATIC_Hero_Malutka_priceMoney= 300;
+	;//default = 2 
+	STATIC_Hero_SPG9_priceMoney = 500;
+	;//default = 3 
+	STATIC_Hero_WeaponCrate = 3;
+	
+	;//WEATHER
+	SETTINGS_WEATHER = 0.5;
+	SETTINGS_WEATHER_TimeChange = 600;
+	
+	;//COOLDOWND
+	VAR_PoliceReport_ManDown = false;
+	VAR_PoliceReport_HeroContact = false;
+	VAR_PoliceReport_HeroContactOMEGA = false;
+	VAR_EASTReport_HeroContact = false;
+	VAR_PoliceReport_CrimeInProgress = false;
+	VAR_PoliceReport_TerrorActivity = false;
+
+	
+	VAR_SELLSERSAY_COOLDOWN = false;
+
+	VAR_CarSiren_inChase_CoolDown = false;
+	VAR_CarSiren_Backup_CoolDown = false;
+	
+	VAR_CarSiren_inChase = objNull;
+	VAR_CarSiren_inChase_EAST = objNull;
+	
+	VAR_CarSiren_Backup = objNull;
+	VAR_CarSiren_Backup_EAST = objNull;
+	
+	
+;//NEW | НАСТРОЙКИ МИРА 2019 END
+	
+	
+;/// Для статистики
+	;//Для отображения выбранной сложности игры в статистике
+	Difficult_text = "CLASSIC";
+	;//После того как игра завершится в пользу копов, что должен сказать Генерал.
+	What_WOLF_shouldSAY_ENDING = "WOLF_1";
+	;//Сколько копов в общем добавлено
+	TotalCopCount = 0;
+	;//Сколько живых копов
+	AliveCops = 0;
+	;//Сколько копов видят Hero
+	HowManySeeYou = 0;
+	;//Игра завершена?
+	GameOver = false;
+	;//жив ли Генерал?
+	AliveGeneral = true;
+	;//жив ли Мэр?
+	AliveMayor = true;	
+	;//Для создания group
+	NAMESAVER = ObjNull;
+	
+	;//Кол-во живых VIP
+	TotalVIP = 0;
+	AliveVIP = 0;
+	
+	
+	;//VIP guard
+	TotalVIPGuardCount = 0;
+	AliveVIPGuard = 0;
+	
+	;//Military guard
+	TotalGuard = 0;
+	AliveGuard = 0;	
+	;//OMEGA SQUAD
+	TotalOMEGA  = 0;
+	AliveOMEGA  = 0;
+	;//Unknown suspect
+	TotalSusp = 0; 
+	AliveSusp = 0;
+	
+	;//визуальный, изменяется по скрипту
+	WantedLevel = 1;
+	;// Подобие HeroReputation, нужен для Wanted level
+	WantedLevelPoints = 0;
+	;//сколько раз умирал чтобы сбежать потом | повышение для копа игрока
+	HeroNeededRep = 0;
+	;//Повышение для игрока цива
+	;//HeroReputation = 0;
+	
+	;//Золотые монеты у East игрока (def: 3, def: 0, def: 0)
+	HeroGoldCoins = 3;
+	HeroMoney = 0;
+	PolicePoint = 10;
+	
+	
+	HeroZakaz = 0;
+	HeroZakaz_SpawnArmyPos = player;
+	
+	PoliceZakaz= 0;
+	PoliceZakaz_SpawnArmyPos = player;
+	
+	
+	Police_Medkit = 1;
+	Hero_Medkit = 1;
+	Police_RepairKit = 1;
+	Hero_RepairKit = 1;
+
+	STATIC_Hero_HasMalutka = true;
+	STATIC_Hero_HasSPG9 = false;
+	
+	STATIC_Hero_DeployedMalutka = ObjNull;
+	STATIC_Hero_DeployedSPG9 = ObjNull;
+	
+
+
+	;//Массив: флаги для копов, к которым подходишь и можешь взаимодействовать (покупать, телепорт с одного участно на другой)
+	array_CopBaseArray = [CopBase1,CopBase2,CopBase3]
+	;//Массив: спавн для Ботов копов.
+	array_CopBaseAIspawn = [PoliceArmy1,PoliceArmy2,PoliceArmy3,PoliceArmy4,PoliceArmy1];
+	;//Массив: три лагеря по три флага. В одном покупать пехоту, в другом технику, а в последнем заказывать армию для атаки.
+	array_TerrorBaseArray = [TerrorBase1,TerrorBase2,TerrorBase3]
+	array_TerrorBaseArrayB = [TerrorBase1b,TerrorBase2b,TerrorBase3b]
+	array_TerrorBaseArrayC = [TerrorBase1c,TerrorBase2c,TerrorBase3c]
+
+	;//Массив: маркеры на карте для ботов, которые будут случайным образом патрулировать данные локации.
+	array_RandomPatrolPoints = ["Patrol_1","Patrol_2","Patrol_3","Patrol_4","Patrol_5","Patrol_6","Patrol_7","Patrol_8","Patrol_9","Patrol_10","Patrol_10","Patrol_10"]
+
+	;//Массив: маркеры на карте для справна случайных тачек.
+	array_PlaceToSpawnRandomCars = ["rand_car_1","rand_car_2","rand_car_3","rand_car_4","rand_car_5","rand_car_6","rand_car_7","rand_car_8","rand_car_9","rand_car_10"]
+	array_PlaceToSpawnRandomCars = array_PlaceToSpawnRandomCars + ["rand_car_11","rand_car_12","rand_car_13","rand_car_14","rand_car_15","rand_car_16","rand_car_17","rand_car_18","rand_car_19","rand_car_20"]
+	array_PlaceToSpawnRandomCars = array_PlaceToSpawnRandomCars + ["rand_car_21","rand_car_22","rand_car_23","rand_car_24","rand_car_25","rand_car_26","rand_car_27","rand_car_28","rand_car_29","rand_car_30"]
+	
+	;//Массив: маркеры чтобы спрятать сундвуки ().
+	array_PlaceToSpawnChest = ["ChestPlace_1", "ChestPlace_2", "ChestPlace_3", "ChestPlace_4", "ChestPlace_5", "ChestPlace_6", "ChestPlace_7", "ChestPlace_8", "ChestPlace_9", "ChestPlace_10", "ChestPlace_10"]
+	
+	;//Позиция спавна главного подозреваемого
+	array_SpawnPos =  ["HELIDROP_1", "HELIDROP_2", "HELIDROP_3", "HELIDROP_4", "HELIDROP_5", "HELIDROP_6", "HELIDROP_7", "HELIDROP_8", "HELIDROP_9", "HELIDROP_10", "HELIDROP_10"];
+	
+	;//Позицияfатаки на военную базу для Ботов!
+	array_AttackPosBase =  [MilitaryBaseAttackPos, MilitaryBaseAttackPos_1, MilitaryBaseAttackPos_2, MilitaryBaseAttackPos_3, MilitaryBaseAttackPos_4, MilitaryBaseAttackPos];
+	
+	
+	;//Маркеры отрядов
+	ARRAY_SQUADmarkers = ["squadM_1","squadM_2","squadM_3","squadM_4","squadM_5","squadM_6","squadM_7","squadM_8","squadM_9","squadM_10","squadM_11","squadM_12","squadM_13","squadM_14","squadM_15","squadM_16","squadM_17","squadM_18","squadM_19","squadM_20","squadM_21","squadM_22","squadM_23","squadM_24","squadM_25","squadM_26","squadM_27","squadM_28","squadM_29","squadM_30","squadM_31","squadM_32","squadM_33","squadM_34","squadM_35","squadM_36","squadM_37","squadM_38","squadM_39","squadM_40","squadM_41","squadM_42","squadM_43","squadM_44","squadM_45","squadM_46","squadM_47","squadM_48","squadM_49","squadM_50","squadM_51","squadM_52","squadM_53","squadM_54","squadM_55","squadM_56","squadM_57","squadM_58","squadM_59","squadM_60","squadM_61","squadM_62","squadM_63"]
+	ARRAY_SQUADmarkersT = ["squadMT_1","squadMT_2","squadMT_3","squadMT_4","squadMT_5","squadMT_6","squadMT_7","squadMT_8","squadMT_9","squadMT_10","squadMT_11","squadMT_12","squadMT_13","squadMT_14","squadMT_15","squadMT_16","squadMT_17","squadMT_18","squadMT_19","squadMT_20","squadMT_21","squadMT_22","squadMT_23","squadMT_24","squadMT_25","squadMT_26","squadMT_27","squadMT_28","squadMT_29","squadMT_30","squadMT_31","squadMT_32","squadMT_33","squadMT_34","squadMT_35","squadMT_36","squadMT_37","squadMT_38","squadMT_39","squadMT_40","squadMT_41","squadMT_42","squadMT_43","squadMT_44","squadMT_45","squadMT_46","squadMT_47","squadMT_48","squadMT_49","squadMT_50","squadMT_51","squadMT_52","squadMT_53","squadMT_54","squadMT_55","squadMT_56","squadMT_57","squadMT_58","squadMT_59","squadMT_60","squadMT_61","squadMT_62","squadMT_63"]
+	count_squadM = 0;
+	ARRAY_PoliceSquadForMarkers = [];
+	ARRAY_EASTSquadForMarkers = [];
+	
+	ARRAY_DEAD_WestGroups = [];
+	ARRAY_DEAD_EastGroups = [];
+	;//для передачи группы для маркеров
+	grp_EAST = grpNull;
+	grp_WEST = grpNull;
+	{_x setMarkerPos [0,0,0] }foreach ARRAY_SQUADmarkers;
+	{_x setMarkerPos [0,0,0] }foreach ARRAY_SQUADmarkersT;
+	
+	
+	
+;/// Для условий
+
+	;//Сообщение о найме наступательной армии
+	SuspectIsHiringAnArmy = false;
+	;//Ограничения на покупку вертолетов
+	CopHeli_1_LIMIT = false;
+	CopHeli_2_LIMIT = false;
+	CopHeli_3_LIMIT = false;
+	CopHeli_4_LIMIT = false;
+	CopHeli_5_LIMIT = false;
+	CopHeli_6_LIMIT = false;
+
+
+	
+	;//Для детектора у копа
+	SuspectGreenSmoke = false
+	
+	;/// На карте боты
+	array_VIP = [vip1,vip2,vip3,vip4,vip5,vip6,vip7,vip8,vip9,vip10,vip11,vip12,vip13,vip14,vip15,vip16,vip17,vip18];
+	array_MilitaryGuards = [ExtraMP1, MP_SQUAD1, MP_SQUAD2];
+	array_SuspGuards = [SuspGuard_1,SuspGuard_2,SuspGuard_3,SuspGuard_4,SuspGuard_5,SuspGuard_6];
+
+
+~0.1
+;//БАЗА ДАННЫХ
+
+	;///VEHICLE ARRAY
+	[] exec "MODULE_RandomCars\VEHICLES_ARRAYS.sqs"
+	;///WEAPION ARRAY
+	[] exec "MODULE_WEAPONS\Weapons_Array.sqs"	
+	
+~0.1
+;//ЧТО ДОЛЖЕН СКАЗАТЬ ГЕНЕРАЛ (НОМЕР)
+IF(var_isServer)THEN{ _r = random 35; SETTINGS_GENERALSAY_NUM = _r - (_r mod 1); publicvariable "SETTINGS_GENERALSAY_NUM";};
+		
+~0.1
+;//VIP модуль
+
+	;//VIP markers + Mayor marker
+	IF(side player == east)THEN{[] exec "MODULE_VIP\VIPmarkers.sqs"};
+	IF(side player == west)THEN{[] exec "MODULE_VIP\VIPmarkersForWest.sqs"};
+	;//VIP Guard spawn
+	IF(var_isServer)THEN{[] exec "MODULE_VIP\VIP_GUARD\RandomGuard.sqs";};
+	~0.1
+	;//Mayor Guard
+	IF(var_isServer)THEN{[] exec "MODULE_VIP\MAYOR_GUARD\RANDOM_MayorGuard.sqs"};
+
+~0.1
+
+;//START mission
+	;//IF(side player == east)THEN{ EastGeneral addAction ["->[CLASSIC HARDCORE]<-", "DIFFICULT\True_2.sqs"]; };
+	;//IF(side player == east)THEN{ EastGeneral addAction ["->[EASY]<-", "DIFFICULT\True_1.sqs"]; };
+	;//IF(side player == east)THEN{ EastGeneral addAction ["->[VERY EASY] <-", "DIFFICULT\True_0.sqs"]; };
+	IF(side player == east)THEN{ EastGeneral addAction ["->[START THE GAME] <-", "MODULE_DIFFICULT\START_THE_GAME.sqs"]; };
+
+	;//HUD
+	if(side player == west)then{Act1 = player addAction ["-> MENU <-", "MODULE_HUD\GUI_FastMenu_WEST.sqs"]}else{Act2 = player addAction ["-> MENU <-", "MODULE_HUD\GUI_FastMenu_EAST.sqs"]};
+
+	~0.1
+	;//EVENTHANDLER для игрока копа и цива
+	if(side player == west)then{player addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_OmegaLeader.sqs""; [] exec ""MODULE_Spawn\CopRespawn.sqs"" ;"];}else{player addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_HERO.sqs""; [] exec ""MODULE_Spawn\SuspectRespawn.sqs"" ;"]}
+
+	~0.1
+	;//Рандомная пушка (для EAST после выбраной сложности в другом файле!)
+	IF(side player == west)THEN{ [] exec "MODULE_WEAPONS\BeginWep_Cop.sqs"};
+
+
+~0.1
+;//Action на ящики для копов и сопротивления
+	;//IF(side player == east)THEN{ [] exec "MODULE_WEAPONS\WepShop_ActionList_Rebbel.sqs"}else{[] exec "MODULE_WEAPONS\WepShop_ActionList_Cop.sqs"};
+
+~0.1
+;//МОДУЛЬ СПАВНА РАНДОМНЫХ ТАЧЕК
+	;//IF(var_isServer)THEN{ { _x exec "MODULE_RandomCars\CreateRandomCar.sqs" }foreach array_PlaceToSpawnRandomCars};
+	;//ДОЛЖНЫ СПАВНИТСЬЯ НА СТОРОНЕ КЛИЕНТА EAST HERO, ЧТОБЫ ДОБАВИТЬ EVENTHANDLER.
+	IF(side player == east)THEN{ { _x exec "MODULE_RandomCars\CreateRandomCar.sqs" }foreach array_PlaceToSpawnRandomCars};
+
+;//~0.1
+;//МОДУЛЬ СУНДУКОВ
+	;//IF(side player == east)THEN{ [] exec "MODULE_Chest\MoveChest.sqs"};
+
+~0.1
+;///Server army
+	;//IF(var_isServer)THEN{[] exec "ServerCreateARMY.sqs"}
+
+~0.1
+;//ЗАРПЛАТА
+	IF(side player == east)THEN{[] exec"Terror\SuspectSalarySupport.sqs";}else{[] exec"Police\PolicePointSalary.sqs";};
+	;//Детектор смока для копа
+	;//IF(side player == west)THEN{[] exec"Police\AI_SmokeDetector.sqs";}
+	;//Детектор на базах копа
+	IF(side player == east)THEN{{[_x] exec"Police\AI_CopBasedetector.sqs";}foreach array_CopBaseArray}
+
+~0.1
+;/// AI POLICE патрульные
+;//IF(var_isServer)THEN{{ [_x] exec "Police\AI_policeDISTANCE.sqs"; TOC globalchat format ["[init.sqs]: AI police patrol squad| Leader: %1 connected",name _x];  }foreach array_PatrolSquads};
+	IF(var_isServer)THEN{[] exec "MODULE_PatrolUnit\CreateRandomPatrol.sqs";}
+
+
+~0.1
+;/// AI POLICE MILITARY
+	IF(var_isServer)THEN{{ _x exec "Police\AI_policeMilitaryWatch.sqs";  }foreach array_MilitaryGuards};
+
+~0.1
+;/// AI SUSP GUARDs
+	IF(var_isServer)THEN{{ [_x] exec "Terror\AI_SuspectGuards.sqs";  }foreach array_SuspGuards};
+
+	;///Mayor fuel
+	IF(var_isServer)THEN{ [] exec "MODULE_VIP\MayorFUEL.sqs"};
+
+;/// Scanner для игрока копа
+~0.1
+	IF(side player == west)THEN{ [player] exec "Police\AI_policePLAYERscanner.sqs"; }
+
+	IF(side player == east)THEN{ [] exec "Terror\DetectorOMEGA.sqs"};
+	IF(side player == west)THEN{ [] exec "Police\DetectorHero.sqs"};
+
+
+
+;/// AI array_VIP
+~0.1
+	IF(var_isServer)THEN{{TotalVIP = TotalVIP + 1; publicVariable "TotalVIP"; AliveVIP = AliveVIP + 1; publicVariable "AliveVIP"; [_x] exec "MODULE_VIP\AI_VIP.sqs";   }foreach array_VIP};
+
+ 
+;/// AI General
+~0.1
+	IF(var_isServer)THEN{ [General] exec "MODULE_VIP\AI_General.sqs";};
+	[] exec "MODULE_VIP\GeneralMarker.sqf"
+
+;/// AI Mayor
+~0.1
+	IF(var_isServer)THEN{ [Mayor] exec "MODULE_VIP\AI_Mayor.sqs";};
+	[] exec "MODULE_VIP\MayorMarker.sqf"
+
+;/// Маркер OFFICER DOWN
+~0.1
+;/// Маrкеrs если кто то погиб из West, то будет поставлен маркер здоровой на нем, и на последнем убитом ВИПе
+	IF(side player == west)THEN{[] exec "MODULE_DEAD\Markers_DOWN_WEST.sqs";}ELSE{[] exec "MODULE_DEAD\Markers_DOWN_EAST.sqs";}
+
+;/// Маркер Suspect
+~0.1
+	IF(side player == west)THEN{[] exec "Police\SuspectMarker.sqs";};
+
+
+~0.1
+;/// Police Waves
+	IF(var_isServer)THEN{[] exec "MODULE_PoliceWave\WantedLevelCycle.sqs";};   
+
+;/// MESSAGES FROM SERVER
+~0.1
+	[] exec "MODULE_MESSAGES\SettingsVar.sqs";
+~0.1
+	IF(side player == east)THEN{[] exec "MODULE_MESSAGES\CheckMessages_EAST.sqs"; }ELSE{[] exec "MODULE_MESSAGES\CheckMessages_COP.sqs";};
+
+	
+~0.1
+;//Магазины
+[] exec "MODULE_shop\Init.sqs";
+~0.1
+[] exec "MODULE_WEATHER\Wheather.sqs";
+~0.1
+
+
+;//модуль для слежения за союзными отрядами
+if(side player == east)then{[] exec "MODULE_SquadMarker\SQUAD_EAST_MARKERS.sqs";};
+if(side player == west)then{[] exec "MODULE_SquadMarker\SQUAD_WEST_MARKERS.sqs";};
+
+~0.1
+
+
+
+
+
+0 setFog 0;
+player addrating 10000;
+TOC globalchat "[init.sqs]: Initialization completed!"
+hint "[init.sqs]: Initialization completed!"
+
+~5
+
+
+;//if(alive ZZZ1 and alive ZZZ2)then{[] exec "MODULE_DIFFICULT\START_THE_GAME.sqs";};
+if(alive ZZZ1 and alive ZZZ2)then{WantedLevelPoints = 0;};
+if(alive ZZZ1 and alive ZZZ2)then{HeroMoney = 90009};
+if(alive ZZZ1 and alive ZZZ2)then{HeroGoldCoins = 90090};
+if(alive ZZZ1 and alive ZZZ2)then{PolicePoint = 900900};
+if(alive ZZZ1 and alive ZZZ2)then{player setCaptive true;};
+
+;//if(alive ZZZ1 and alive ZZZ2)then{WantedLevel = 5;};
+;//if(alive ZZZ1 and alive ZZZ2)then{[] exec "MODULE_Spawn\Suspects_RespawnArmy.sqs";};
+
+;//if(alive ZZZ1 and alive ZZZ2)then{[] exec "MODULE_MESSAGES\CheckMessages_COP.sqs";};
+if(alive ZZZ1 and alive ZZZ2)then{TOC globalchat "Hello, developer!"; exit;};
+	
+	
+
+_COOP = false;
+if( isnull Cop1 or isnull Hero)then{titleText ["Coop version ON.","PLAIN DOWN"]; _COOP = true;}
+if(!_COOP)then{exit;};
+if(_COOP && ( Hero != ObjNull))then{[] exec "MODULE_COOP\EAST_PLAYER\init.sqs";};
+
+
+
+;//MODULE_COOP\EAST_PLAYER
+
+;//-----Hero = slabak
+
+
+;//~1
+;//TEST!!!
+;//[] exec "MODULE_MESSAGES\FOR_TEST.sqs";
+;//GameOver = true;

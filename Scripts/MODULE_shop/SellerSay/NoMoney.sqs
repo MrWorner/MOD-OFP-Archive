@@ -1,0 +1,13 @@
+
+
+if(VAR_SELLSERSAY_COOLDOWN)then{exit;}
+VAR_SELLSERSAY_COOLDOWN = true;
+~1
+_array = ["Seller_1","Seller_2","Seller_3","Seller_3"]
+_r = random ((count _array)-1);
+_random = _r - (_r mod 1);
+_selected = _array select (_random);
+playsound _selected;
+
+~5
+VAR_SELLSERSAY_COOLDOWN = false;

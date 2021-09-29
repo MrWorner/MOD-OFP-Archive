@@ -1,0 +1,24 @@
+
+
+
+if(!SETTINGS_DetectorOnOmegaLeader)then{exit;};
+
+
+#LOOP_noSignal
+
+	~1
+	_Dist = Cop1 distance Hero;	
+	if(_Dist < SETTINGS_HERO_DetectorOmegaDist)then{ playmusic "DangerClose2"; _Final = _Dist - (_Dist mod 1); player sidechat format ["Signal found! Main enemy is close: %1 meters", _Final]; goto "LOOP_FOUND" };
+	 
+goto "LOOP_noSignal"
+
+#LOOP_FOUND
+
+	~1
+	_Dist = Cop1 distance Hero;
+	if( (_Dist ) >= SETTINGS_HERO_DetectorOmegaDist + 50)then{ playmusic "DangerClose"; player sidechat format ["Signal lost! Main enemy is out of range.", _Final]; goto "LOOP_noSignal" };	
+	_Final = _Dist - (_Dist mod 1);
+	player sidechat format ["Signal found! Main enemy is close: %1 meters", _Final];
+	
+goto "LOOP_FOUND"
+;//Cop1

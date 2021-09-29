@@ -1,0 +1,5 @@
+_UNIT = _this select 0;
+_ALLUNITS = units _UNIT;
+~0.2
+
+{_x addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"]; TotalSusp = TotalSusp + 1;AliveSusp = AliveSusp + 1; PublicVariable "TotalSusp"; PublicVariable "AliveSusp";} foreach _ALLUNITS 

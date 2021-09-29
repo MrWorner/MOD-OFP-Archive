@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+if(WantedLevel == 1)then{_text = format ["Additional police units will arrive within %1 minutes!", SETTINGS_ArriveTimeWave2]; titleText [_text,"PLAIN DOWN"];};
+if(WantedLevel == 2)then{_text = format ["SWAT team will arrive within %1 minutes!", SETTINGS_ArriveTimeWave3];titleText [_text,"PLAIN DOWN"];};
+if(WantedLevel == 3)then{_text = format ["Heavy Responce Team will arrive within %1 minutes!", SETTINGS_ArriveTimeWave4];titleText [_text,"PLAIN DOWN"];};
+if(WantedLevel == 4)then{_text = format ["Delta force will arrive within %1 minutes!", SETTINGS_ArriveTimeWave5];titleText [_text,"PLAIN DOWN"];};
+if(WantedLevel == 5)then{_text = format ["Liquidators will arrive within %1 minutes!", SETTINGS_ArriveTimeWave6];titleText [_text,"PLAIN DOWN"];};

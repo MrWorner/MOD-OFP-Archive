@@ -1,0 +1,8 @@
+
+
+
+if(WantedLevel == 2)then{titleText ["Additional police units have been arrived!","PLAIN DOWN"];};
+if(WantedLevel == 3)then{titleText ["SWAT team has been arrived!","PLAIN DOWN"];};
+if(WantedLevel == 4)then{titleText ["Heavy Responce Team has been arrived!","PLAIN DOWN"];};
+if(WantedLevel == 5)then{titleText ["Delta force has been arrived!","PLAIN DOWN"];};
+if(WantedLevel == 6)then{titleText ["Liquidators have been arrived!","PLAIN DOWN"];};

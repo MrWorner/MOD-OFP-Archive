@@ -1,0 +1,22 @@
+_DEADMAN = _this
+
+;//============ВНИМАНИЕ: ТОЛЬКО НА ОДНОЙ СТОРОНЕ ДОЛЖЕН РАБОТАТЬ ДАННЫЙ EVENTHANDLER
+;//--------------НАГРАДЫ
+WantedLevelPoints = WantedLevelPoints + SETTINGS_Omegakill_wantedPoint; 
+PublicVariable "WantedLevelPoints";
+HeroMoney = HeroMoney + SETTINGS_Omegakill_money;
+publicVariable "HeroMoney";
+
+;//--------------СТАТИСТИКА
+AliveOMEGA = AliveOMEGA - 1; 
+publicVariable "AliveOMEGA";
+
+
+;//--------------МАРКЕР НА УБИТОГО, И ОТПРАВКИ СООБЩЕНИЯ
+TOC setpos getpos _DEADMAN;
+report_dead_Omega = report_dead_Omega + 1;
+publicVariable "report_dead_Omega"
+
+;//--------------ОЧИСТКА ТРУПА
+~SETTINGS_deleteCorpTime
+deleteVehicle _DEADMAN;

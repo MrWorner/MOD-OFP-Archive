@@ -1,0 +1,21 @@
+_DEADMAN = _this
+
+;//============ВНИМАНИЕ: ТОЛЬКО НА ОДНОЙ СТОРОНЕ ДОЛЖЕН РАБОТАТЬ ДАННЫЙ EVENTHANDLER
+;//--------------НАГРАДЫ
+
+PolicePoint = PolicePoint + SETTINGS_HeroKill_Point;
+publicVariable "PolicePoint";
+
+
+;//--------------СТАТИСТИКА
+;//AliveSusp = AliveSusp - 1; 
+;//publicVariable "AliveSusp";
+
+;//--------------МАРКЕР НА УБИТОГО, И ОТПРАВКИ СООБЩЕНИЯ
+;//TOCUnknSusp setpos getpos _DEADMAN;
+report_dead_Hero = report_dead_Hero + 1;
+publicVariable "report_dead_Hero";
+
+;//--------------ОЧИСТКА ТРУПА
+~SETTINGS_deleteCorpTime
+deleteVehicle _DEADMAN;

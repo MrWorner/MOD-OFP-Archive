@@ -1,0 +1,32 @@
+_group = _this;
+
+~0.2
+[leader _group] exec "Police\RandomPatrol.sqs"
+
+#CHECK
+~3
+
+	if(count units _group == 0) then {exit;};
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then {_group reveal (vehicle Hero);HowManySeeYou = HowManySeeYou + 1; publicVariable "HowManySeeYou"; report_call_bodyguard = true; PublicVariable "report_call_bodyguard"; goto "PURSUIT"; } 
+	if ((HowManySeeYou > 0) and (alive Hero)) then{goto "BACKUP"}
+
+goto "CHECK"
+
+
+#PURSUIT
+
+	if(count units _group == 0) then {HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou"; exit;};
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then{(units _group) DoMove getpos Hero}else{HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou";  goto "CHECK"; }
+~5
+goto "PURSUIT"
+
+
+#BACKUP
+~5
+
+	if(count units _group == 0) then {exit;};
+	if ((_group KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then{_group reveal (vehicle Hero);HowManySeeYou = HowManySeeYou + 1; publicVariable "HowManySeeYou";goto "PURSUIT";}
+	if ((HowManySeeYou > 0) and (alive Hero)) then{ (units _group) DoMove getpos Hero; goto "BACKUP"}else {goto "CHECK"; }
+	
+goto "BACKUP"
+

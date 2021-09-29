@@ -1,0 +1,71 @@
+~10
+;player sidechat format ["_jeep =%1",_jeep];
+;jmgcops  jmgcops
+NAMESAVER = ObjNull
+_CopBase = array_CopBaseAIspawn select 0;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 1.4 sec
+~1
+if(random 1 > 0.5)then{ if(random 1 > 0.5)then{_CopBase = array_CopBaseAIspawn select 0;}else{_CopBase = array_CopBaseAIspawn select 1;} }else{ if(random 1 > 0.5)then{_CopBase = array_CopBaseAIspawn select 2;}else{_CopBase = array_CopBaseAIspawn select 3;} }
+
+_jeep = "jmgcopsmp" createVehicle (getmarkerpos _CopBase);
+~0.1
+"DPStrooper" createUnit [position _jeep, WestGroup,"NAMESAVER = this ;", 1, "corporal"]
+[NAMESAVER] join grpnull
+NAMESAVER moveInDriver  _jeep
+_LocalLeader = NAMESAVER
+~0.1
+"DPStrooperNH" createUnit [position _jeep, _LocalLeader,"NAMESAVER = this ;", 1, "corporal"]
+NAMESAVER moveInCargo  _jeep
+~0.1
+"DPStrooper" createUnit [position _jeep, _LocalLeader,"NAMESAVER = this ;", 1, "corporal"]
+NAMESAVER moveInCargo _jeep
+~0.1
+"DPStrooper" createUnit [position _jeep, _LocalLeader,"NAMESAVER = this ;", 1, "corporal"]
+NAMESAVER moveInCargo _jeep
+[_LocalLeader] exec "Police\AI_police.sqs"; 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1.4 sec
+~1
+if(random 1 > 0.5)then{ if(random 1 > 0.5)then{_CopBase = array_CopBaseAIspawn select 0;}else{_CopBase = array_CopBaseAIspawn select 1;} }else{ if(random 1 > 0.5)then{_CopBase = array_CopBaseAIspawn select 2;}else{_CopBase = array_CopBaseAIspawn select 3;} }
+
+_jeep = "jmgcopsmp" createVehicle (getmarkerpos _CopBase);
+~0.1
+"DPStrooper" createUnit [position _jeep, WestGroup,"NAMESAVER = this ;", 1, "corporal"]
+[NAMESAVER] join grpnull
+NAMESAVER moveInDriver  _jeep
+_LocalLeader = NAMESAVER
+~0.1
+"DPStrooperNH" createUnit [position _jeep, _LocalLeader,"NAMESAVER = this ;", 1, "corporal"]
+NAMESAVER moveInCargo  _jeep
+~0.1
+"DPStrooper" createUnit [position _jeep, _LocalLeader,"NAMESAVER = this ;", 1, "corporal"]
+NAMESAVER moveInCargo _jeep
+~0.1
+"DPStrooper" createUnit [position _jeep, _LocalLeader,"NAMESAVER = this ;", 1, "corporal"]
+NAMESAVER moveInCargo _jeep
+[_LocalLeader] exec "Police\AI_police.sqs"; 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1.4 sec
+~1
+if(random 1 > 0.5)then{ if(random 1 > 0.5)then{_CopBase = array_CopBaseAIspawn select 0;}else{_CopBase = array_CopBaseAIspawn select 1;} }else{ if(random 1 > 0.5)then{_CopBase = array_CopBaseAIspawn select 2;}else{_CopBase = array_CopBaseAIspawn select 3;} }
+
+_jeep = "jmgcopsmp" createVehicle (getmarkerpos _CopBase);
+~0.1
+"DPStrooper" createUnit [position _jeep, WestGroup,"NAMESAVER = this ;", 1, "corporal"]
+[NAMESAVER] join grpnull
+NAMESAVER moveInDriver  _jeep
+_LocalLeader = NAMESAVER
+~0.1
+"DPStrooperNH" createUnit [position _jeep, _LocalLeader,"NAMESAVER = this ;", 1, "corporal"]
+NAMESAVER moveInCargo  _jeep
+~0.1
+"DPStrooper" createUnit [position _jeep, _LocalLeader,"NAMESAVER = this ;", 1, "corporal"]
+NAMESAVER moveInCargo _jeep
+~0.1
+"DPStrooper" createUnit [position _jeep, _LocalLeader,"NAMESAVER = this ;", 1, "corporal"]
+NAMESAVER moveInCargo _jeep
+[_LocalLeader] exec "Police\AI_police.sqs"; 
+
+

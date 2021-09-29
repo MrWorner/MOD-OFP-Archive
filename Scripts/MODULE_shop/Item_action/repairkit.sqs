@@ -1,0 +1,64 @@
+
+
+
+
+
+if(side player == west)then{goto "West";}
+if(side player == east)then{goto "East";}
+
+
+#West
+
+if(Police_RepairKit == 0)then{player sidechat "You don't have any repair kit.";exit;};
+
+
+player sidechat "Get inside your car and wait 5 seconds, your repair kit will be activated!";
+
+~5
+if( ((vehicle player) == player) )then{player sidechat "You are not inside of your vehicle. Abort mission.";exit;};
+
+_car = (vehicle player);
+(vehicle player) lock true;
+player action ["eject",(vehicle player)]
+player sidechat "Repairing...";
+playsound "deploy";
+~0.1
+player switchMove "combatToMedic";
+~4
+player switchMove "combatToMedic";
+~5
+_car setDamage 0;
+_car lock false;
+player sidechat "Done!";
+
+Police_RepairKit = Police_RepairKit - 1;
+publicVariable "Police_RepairKit";
+
+exit;
+#East
+
+if(Hero_RepairKit == 0)then{player sidechat "You don't have any repair kit.";exit;};
+
+player sidechat "Get inside your car and wait 5 seconds, your repair kit will be activated!";
+
+~5
+if( ((vehicle player) == player) )then{player sidechat "You are not inside of your vehicle. Abort mission.";exit;};
+
+_car = (vehicle player);
+(vehicle player) lock true;
+player action ["eject",(vehicle player)]
+player sidechat "Repairing...";
+~0.1
+player switchMove "combatToMedic";
+~4
+player switchMove "combatToMedic";
+~5
+_car setDamage 0;
+_car lock false;
+player sidechat "Done!";
+
+Hero_RepairKit = Hero_RepairKit - 1;
+publicVariable "Hero_RepairKit";
+
+exit;
+

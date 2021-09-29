@@ -1,0 +1,19 @@
+~1
+
+
+#LOOP
+"OfficerDown" setMarkerPos getpos TOC;
+"OfficerDown" setMarkerColor "ColorRed";
+"UnknowSuspDOWN" setMarkerPos getpos TOCUnknSusp;
+"UnknowSuspDOWN" setMarkerColor "ColorRed";
+"VIP_DOWN" setMarkerPos getpos TOC_DEAD_VIP;
+"VIP_DOWN" setMarkerColor "ColorRed";
+~0.3
+"OfficerDown" setMarkerPos getpos TOC;
+"OfficerDown" setMarkerColor "ColorBlue";
+"UnknowSuspDOWN" setMarkerPos getpos TOCUnknSusp;
+"UnknowSuspDOWN" setMarkerColor "ColorBlue";
+"VIP_DOWN" setMarkerPos getpos TOC_DEAD_VIP;
+"VIP_DOWN" setMarkerColor "ColorBlue";
+~0.3
+goto "LOOP"

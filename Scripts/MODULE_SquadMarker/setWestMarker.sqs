@@ -1,0 +1,12 @@
+_group = _this select 0;
+_num = _this select 1;
+
+if(_num > 62)then{exit;}
+
+_marker = ARRAY_SQUADmarkers select _num;
+_marker setMarkerPos getpos leader _group;
+
+
+if(_group knowsAbout (vehicle Hero) >= 1)then{TOC globalchat "HQ: Police chase in progress!", _marker2 =  ARRAY_SQUADmarkersT select _num; _marker2 setMarkerPos getMarkerPos _marker};
+
+if(alive leader _group)then{_marker setMarkerColor "ColorGreen";}else{_marker setMarkerColor "ColorBlack"; if(count (units _group) == 0)then{ARRAY_PoliceSquadForMarkers = ARRAY_PoliceSquadForMarkers - [_group]; ARRAY_DEAD_WestGroups = ARRAY_DEAD_WestGroups + [_group]};};

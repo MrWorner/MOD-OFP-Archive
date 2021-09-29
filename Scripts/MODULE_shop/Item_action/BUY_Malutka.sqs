@@ -1,0 +1,12 @@
+_cost = _this select 0;
+_text = _this select 1;
+_valuta = _this select 2;
+
+if(STATIC_Hero_HasMalutka)then{ player sidechat "You already have a a static weapon Malutka.";exit;};
+
+player sidechat format ["Your bought %2 for %1 gold coin(s).", _cost, _text]; 
+
+STATIC_Hero_HasMalutka = true;
+publicVariable "STATIC_Hero_HasMalutka";
+HeroGoldCoins = HeroGoldCoins - _cost
+PublicVariable "HeroGoldCoins";

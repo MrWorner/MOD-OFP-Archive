@@ -1,0 +1,92 @@
+private ["_jeep","_LocalLeader"]
+
+
+_jeep = "JeepMG" createVehicle (getpos HeroZakaz_SpawnArmyPos);
+clearmagazinecargo _jeep; clearweaponcargo _jeep;
+
+~0.1
+	"res_troop_MG" createUnit [position _jeep, EastGroup,"NAMESAVER_squadEAST = this; RemoveAllWeapons this;", 1, "corporal"]
+	_man = NAMESAVER_squadEAST
+	[_man, "Terror2_MP5K"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+	[_man] join grpnull
+	_man moveInDriver  _jeep
+	_LocalLeader = _man
+	TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+	AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+	_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+
+~1	
+
+[_LocalLeader] exec "Terror\OrderAttackGeneral.sqs"; 
+[_LocalLeader] exec "Terror\AI_SuspectGuards.sqs";
+	
+~1
+	_count = 2;
+	#LOOp_CARGO_CAR1
+		"res_troop_MG" createUnit [position _jeep, _LocalLeader,"NAMESAVER_squadEAST = this ; RemoveAllWeapons this;", 1, "corporal"]
+		_man = NAMESAVER_squadEAST
+		[_man, "Terror2_MP5K"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+		
+		TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+		AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+		_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+		
+		IF(_count == 2)THEN{_man moveInGunner  _jeep};
+		IF(_count == 1)THEN{_man moveInCargo  _jeep};
+		_count = _count - 1;
+	~0.1
+	IF(_count > 0)THEN{ GOTO "LOOp_CARGO_CAR1";};
+	
+
+		
+;//-----------------car 2 JEEP	
+~4
+
+_jeep = "GJeep" createVehicle (getpos HeroZakaz_SpawnArmyPos);
+clearmagazinecargo _jeep; clearweaponcargo _jeep;
+~0.1
+	_count = 4;
+	#LOOp_CARGO_CAR2
+		"res_troop_MG" createUnit [position _jeep, _LocalLeader,"NAMESAVER_squadEAST = this ; RemoveAllWeapons this;", 1, "corporal"]
+		_man = NAMESAVER_squadEAST
+		[_man, "Terror2_MP5K"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+		
+		
+		TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+		AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+		_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+		
+		IF(_count == 4)THEN{_man moveInDriver  _jeep}ELSE{_man moveInCargo _jeep};
+		_count = _count - 1;
+	~0.1
+	IF(_count > 0)THEN{ GOTO "LOOp_CARGO_CAR2";};
+	
+	
+;//-----------------car 3	
+~4
+
+_jeep = "JeepMG" createVehicle (getpos HeroZakaz_SpawnArmyPos);
+clearmagazinecargo _jeep; clearweaponcargo _jeep;
+~0.1
+	_count = 3;
+	#LOOp_CARGO_CAR3
+		"res_troop_MG" createUnit [position _jeep, _LocalLeader,"NAMESAVER_squadEAST = this ; RemoveAllWeapons this;", 1, "corporal"]
+		_man = NAMESAVER_squadEAST
+		[_man, "Terror2_MP5K"] exec "MODULE_shop\SQUAD_EAST\OneMan\REARM.sqs";
+			
+			
+		TotalSusp  = TotalSusp + 1; PublicVariable "TotalSusp";
+		AliveSusp  = AliveSusp + 1; PublicVariable "AliveSusp";
+		_Man addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_UnknownSusp.sqs"" ;"];
+		
+		IF(_count == 3)THEN{_man moveInDriver  _jeep};
+		IF(_count == 2)THEN{_man moveInGunner  _jeep};
+		IF(_count == 1)THEN{_man moveInCargo  _jeep};
+		
+		_count = _count - 1;
+	~0.1
+	IF(_count > 0)THEN{ GOTO "LOOp_CARGO_CAR3";};
+
+
+		
+

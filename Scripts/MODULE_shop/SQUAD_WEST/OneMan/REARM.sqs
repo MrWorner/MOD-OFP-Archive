@@ -1,0 +1,89 @@
+
+_man = _this select 0;
+_Type = _this select 1;
+
+
+
+if(_Type == "Police1_OperatorMP5")then {removeAllweapons _man; goto "Police1_OperatorMP5";};
+if(_Type == "Police1_OperatorMG")then {removeAllweapons _man; goto "Police1_OperatorMG";};
+if(_Type == "Police1_OperatorSniper")then {removeAllweapons _man; goto "Police1_OperatorSniper";};
+if(_Type == "Police1_Medic")then {removeAllweapons _man; goto "Police1_Medic";};
+if(_Type == "Police1_SD")then {removeAllweapons _man; goto "Police1_SD";};
+if(_Type == "Police1_AT")then {removeAllweapons _man; goto "Police1_AT";};
+if(_Type == "Police1_Acog")then {removeAllweapons _man; goto "Police1_Acog";};
+if(_Type == "Police1_SWAT")then {removeAllweapons _man; goto "Police1_SWAT";};
+
+
+player globalchat format ["DEBUG: %1 no rearm class (%2).", _man, _Type]
+exit;
+
+#Police1_OperatorMP5
+	[_man, "HK_MP5mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "HK_MP5a5SF";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Police1_OperatorMG
+	[_man, "JAM_W556M_200mag", 5] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "LSR_m249";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Police1_OperatorSniper
+	[_man, "JAM_W762_5mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "LSR_m24";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Police1_Medic
+	[_man, "JAM_W556_30mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "LSR_car15_aim";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Police1_SD
+	_man animate [{nvgs}, 1]
+	[_man, "JAM_W556_30SDmag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "LSR_m4_rx_sd";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Police1_Acog
+	[_man, "LSR_m16mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "LSR_m16a4_acog";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+#Police1_SWAT
+	[_man, "HK_MP5mag", 10] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "HK_MP5A5F";
+	~1
+	_man addWeapon "NVGoggles";
+exit;
+
+
+#Police1_AT
+	[_man, "HK_MP510mag", 4] exec "FUNCTIONS\func_addMagazine.sqs";
+	~4
+	_man addWeapon "HK_MP510A4";
+	~4
+	_man addMagazine "LSR_smawAT";
+	_man addMagazine "LSR_smawAT";
+	~4
+	_man addWeapon "LSR_smawLauncher";
+	~1
+	_man addWeapon "NVGoggles";
+exit;

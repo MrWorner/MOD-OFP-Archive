@@ -1,0 +1,44 @@
+
+
+
+
+GameOver2 = true
+
+exit;
+
+_GENERAL = Player
+_POS = (getpos _GENERAL select 2)+1;
+if(alive General)then{_GENERAL = General; _POS = (getpos _GENERAL select 2)+5}else{_GENERAL = Cop1; _POS = (getpos _GENERAL select 2)+1}
+
+;// we create the camera immediately
+_camera = "camera" camCreate [(getpos _GENERAL select 0) - 0.5,(getpos _GENERAL select 1) + 0.4 ,_POS]
+_camera cameraEffect ["internal","back"]
+_camera camsettarget _GENERAL
+_camera camCommit 0
+@camCommitted _camera
+~1
+_GENERAL setmimic "Ironic"
+~1
+_GENERAL setmimic "Smile"
+~2
+
+
+_wolf = ["WOLF_1","WOLF_1","WOLF_3","WOLF_3","Wolf_4","Wolf_4","Wolf_5","Wolf_5","WOLF_2","WOLF_2"]
+_r = random ((count _wolf)-1);
+_random = _r - (_r mod 1);
+_selected = _wolf select (What_WOLF_shouldSAY_ENDING);
+_GENERAL say _selected
+playmusic _selected
+
+~5
+_GENERAL setmimic "Cynic"
+~1
+_GENERAL setmimic "Smile"
+if(random 100 < 20)then{_GENERAL setFace "T1000" };
+~2
+;//_camera cameraEffect ["terminate","back"];
+;//camDestroy _camera;
+;//hint "GAME OVER";
+
+GameOver2 = true
+

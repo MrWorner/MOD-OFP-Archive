@@ -1,0 +1,12 @@
+_cost = _this select 0;
+_text = _this select 1;
+_valuta = _this select 2;
+
+if(STATIC_Hero_HasSPG9)then{ player sidechat "You already have a a static weapon SPG-9.";exit;};
+
+player sidechat format ["Your bought %2 for %1 point(s).", _cost, _text]; 
+
+STATIC_Hero_HasSPG9 = true;
+publicVariable "STATIC_Hero_HasSPG9";
+HeroGoldCoins = HeroGoldCoins - _cost
+PublicVariable "HeroGoldCoins";

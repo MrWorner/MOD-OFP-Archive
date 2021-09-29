@@ -1,0 +1,20 @@
+_Man1 = _this select 0;
+_Man2 = _this select 1;
+_WE = true;
+_NS = true;
+_RUN1 = 200 + (RANDOM 100);
+_RUN2 = 200 + (RANDOM 100);
+_TotalDifference = [(position _Man1 select 0) - (position _Man2 select 0), (position _Man1 select 1) - (position _Man2 select 1)];
+if(_TotalDifference select 0 < 0)then{_WE = false; _Test1 = "EAST"; _RUN1 = (-200) - (RANDOM 100); };
+if(_TotalDifference select 1 < 0)then{_NS = false; _Test2 = "NORTH"; _RUN2 = (-200) - (RANDOM 100);};
+_Man1 setspeedMode "full";
+_Man1 setCombatMode "RED";
+_Man1 setBehaviour "COMBAT";
+
+if((RANDOM 100) > 50)then{if((RANDOM 100) > 50)then{_RUN1 = 0;}else{_RUN2 = 0;};};
+
+~1
+if((RANDOM 100) > 35)then{_Man1 domove [(getpos _Man1 select 0)+(_RUN1),(getpos _Man1 select 1)+(_RUN2)];}
+
+
+{if(_Man1 !=_x)then{if((RANDOM 100) > 50)then{_x domove getpos (vehicle _Man2);}else{_x dofollow _Man1};};}foreach (units group _Man1)

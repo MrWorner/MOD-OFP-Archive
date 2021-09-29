@@ -1,0 +1,7 @@
+~60
+
+
+#FUEL
+	if(alive Mayor)then{{vehicle _x setfuel 1;}foreach units Mayor}else{EXIT;}
+~350
+goto "FUEL"

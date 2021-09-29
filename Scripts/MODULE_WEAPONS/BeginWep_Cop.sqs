@@ -1,0 +1,20 @@
+
+
+removeAllWeapons player;
+
+_r = random ((count Cop_begin)-1);
+_random = _r - (_r mod 1);
+_selected = Cop_begin select (_random);
+
+
+
+_mag = (_selected select 1)
+_wep = (_selected select 0)
+
+[player, _mag, 4] exec "FUNCTIONS\func_addMagazine.sqs";
+~0.1
+player addweapon _wep;
+
+~1
+player addweapon "Binocular";
+player addweapon "nvgoggles";

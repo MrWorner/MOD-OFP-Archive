@@ -1,0 +1,37 @@
+;/ Запускаем скрипт, который создает массивы с оружием, боеприпасами, техникой и.. торговцами!
+player exec {MODULE_shop\InitTypes.sqs}
+;/ Ждем пока он завершит работу (во избежание ошибок)
+@InitTypesReady
+;/ В цикле находим торговцев и вешаем на них скрипт, который позволит игроку начать торговать.
+~0.1
+
+
+IF(side player == west)THEN{goto "West"}
+
+TerrorShop1 addaction [format ["-> Main shop ($) <-", name player],"MODULE_shop\Dialog.sqs"]
+TerrorShop2 addaction [format ["-> Main shop ($) <-", name player],"MODULE_shop\Dialog.sqs"]
+TerrorShop3 addaction [format ["-> Main shop ($) <-", name player],"MODULE_shop\Dialog.sqs"]
+
+TerrorShop1s addaction [format ["-> Special shop (Gold coins) <-", name player],"MODULE_shop\DialogGoldCoins.sqs"]
+TerrorShop2s addaction [format ["-> Special shop (Gold coins) <-", name player],"MODULE_shop\DialogGoldCoins.sqs"]
+TerrorShop3s addaction [format ["-> Special shop (Gold coins) <-", name player],"MODULE_shop\DialogGoldCoins.sqs"]
+
+exit;
+
+#West
+
+
+
+CopBase1 addaction [format ["-> Main shop (Points) <-", name player],"MODULE_shop\DialogPoints.sqs"]
+CopBase2 addaction [format ["-> Main shop (Points) <-", name player],"MODULE_shop\DialogPoints.sqs"]
+CopBase3 addaction [format ["-> Main shop (Points) <-", name player],"MODULE_shop\DialogPoints.sqs"]
+
+#waitFor
+
+~10
+
+if(WantedLevel < 3)then{goto "waitFor"}
+TOC globalchat "Teleport between police stations is now available!"
+{_x addAction ["=> TELEPORT: Police station 1 <=", "CopShop\teleport1.sqs"]}foreach array_CopBaseArray
+{_x addAction ["=> TELEPORT: Police station 2 <=", "CopShop\teleport2.sqs"]}foreach array_CopBaseArray
+{_x addAction ["=> TELEPORT: Police station 3 <=", "CopShop\teleport3.sqs"]}foreach array_CopBaseArray

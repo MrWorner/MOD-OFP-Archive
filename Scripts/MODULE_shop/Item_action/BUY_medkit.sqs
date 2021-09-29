@@ -1,0 +1,41 @@
+_cost = _this select 0;
+_text = _this select 1;
+_valuta = _this select 2;
+
+
+
+
+
+
+if(side player == west)then{goto "West";}
+if(side player == east)then{goto "East";}
+
+
+#West
+
+if(Police_Medkit == 1)then{player sidechat "You already have a medkit.";exit;};
+
+Police_Medkit = Police_Medkit + 1;
+publicVariable "Police_Medkit";
+
+PolicePoint = PolicePoint - _cost
+publicvariable "PolicePoint"
+
+
+player sidechat format ["Your bought %2 for %1 point(s).", _cost, _text]; 
+exit;
+
+#East
+
+if(Hero_Medkit == 1)then{player sidechat "You already have a medkit.";exit;};
+
+Hero_Medkit = Hero_Medkit + 1;
+publicVariable "Hero_Medkit";
+
+if(_valuta == "money")then{HeroMoney = HeroMoney - _cost;publicvariable "HeroMoney"; player sidechat format ["Your bought %2 for $%1.", _cost, _text]; exit;};
+if(_valuta == "gold")then{HeroGoldCoins = HeroGoldCoins - _cost;publicvariable "HeroGoldCoins"; player sidechat format ["Your bought %2 for %1 gold coins.", _cost, _text]; exit;};
+
+
+ 
+
+

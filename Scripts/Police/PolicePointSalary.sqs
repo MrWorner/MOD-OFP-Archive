@@ -1,0 +1,6 @@
+#LOOP
+~60
+TOC globalchat "Income 3 point(s)!";
+PolicePoint = PolicePoint + SETTINGS_Salary_COP;
+PublicVariable "PolicePoint";
+goto "LOOP"

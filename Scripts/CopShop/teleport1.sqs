@@ -1,0 +1,10 @@
+
+
+if ((Hero KnowsAbout (vehicle Player) >= 1))then{Player sidechat "Main suspect is close! Abort mission.";EXIT;};
+_Can = false;
+if(player distance CopBase1 < 10)then{_Can = true}
+if(player distance CopBase2 < 10)then{_Can = true}
+if(player distance CopBase3 < 10)then{_Can = true}
+if(!_Can)then{Player sidechat "you are too far from the cop base";EXIT;}
+player sidechat "you were moved to Police station 1"
+player setpos getpos CopBase1

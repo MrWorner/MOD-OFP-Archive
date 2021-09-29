@@ -1,0 +1,24 @@
+
+
+_SpawnChest = [Chest_1, Chest_2, Chest_3, Chest_1, Chest_2, Chest_3, Chest_1, Chest_2, Chest_3];
+
+_r = random ((count _SpawnChest)-1);
+_random = _r - (_r mod 1);
+_selectedChest = _SpawnChest select (_random);
+_SpawnChest = _SpawnChest - [_selectedChest]
+
+
+
+_r2 = random ((count array_PlaceToSpawnChest)-1);
+_random2 = _r2 - (_r2 mod 1);
+_selected = array_PlaceToSpawnChest select (_random2);
+_selectedChest setpos getMarkerpos _selected
+
+
+if( !(Chest_1 in _SpawnChest))then{Chest_1 exec "MODULE_Chest\DetectorChest.sqs"}
+if( !(Chest_2 in _SpawnChest))then{Chest_2 addAction ["-> Open Gold chest (+$100000) <-", "MODULE_Chest\ChestAward_Gold.sqs"] ;Chest_2 exec "MODULE_Chest\DetectorChest.sqs"}
+if( !(Chest_3 in _SpawnChest))then{Chest_3 addAction ["-> Take decryption device <-", "MODULE_Chest\ChestAward_DETECTOR.sqs"] ;Chest_3 exec "MODULE_Chest\DetectorChest.sqs"}
+
+{ deleteVehicle _x } forEach _SpawnChest;
+
+

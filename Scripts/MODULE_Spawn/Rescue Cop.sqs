@@ -1,0 +1,18 @@
+_cost = SETTINGS_OMEGA_RescueCost
+
+if(PolicePoint < _cost)then{player groupchat format ["Not enough points! You have only $%2. Required additional: $%3. But, you will be evacuated in anyway",_cost,PolicePoint, (_cost - PolicePoint)];}
+_pos = position player
+player sidechat "Please wait 20 sec! Evac is coming! Keep away from smoke if you don't want to be evacuated";
+_obj = "SmokeShellGreen" createVehicle (_pos)
+~5
+playmusic "Plane"
+~13
+if(player distance _obj > 20)then{player sidechat "Abort mission!"; exit}
+titleText [" ", "BLACK", 2];
+~2
+PolicePoint = PolicePoint - _cost
+if(PolicePoint < 0)then{PolicePoint = 0}
+PublicVariable "PolicePoint";
+player sidechat "Done!";
+player setpos getpos COpBase1
+titleText [" ", "BLACK IN", 1];

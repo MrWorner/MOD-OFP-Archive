@@ -1,0 +1,23 @@
+_DEADMAN = _this
+
+;//============ВНИМАНИЕ: ТОЛЬКО НА ОДНОЙ СТОРОНЕ ДОЛЖЕН РАБОТАТЬ ДАННЫЙ EVENTHANDLER
+;//--------------НАГРАДЫ
+HeroGoldCoins = HeroGoldCoins + SETTINGS_VIPkill_GoldCoin;
+publicVariable "HeroGoldCoins";
+WantedLevelPoints = WantedLevelPoints + SETTINGS_VIPkill_wantedPoint; 
+PublicVariable "WantedLevelPoints";
+HeroMoney = HeroMoney + SETTINGS_VIPkill_money;
+publicVariable "HeroMoney";
+
+;//--------------СТАТИСТИКА
+AliveVIP = AliveVIP - 1; 
+publicVariable "AliveVIP";
+
+;//--------------МАРКЕР НА УБИТОГО, И ОТПРАВКИ СООБЩЕНИЯ
+TOC_DEAD_VIP setpos getpos _DEADMAN;
+report_dead_VIP = report_dead_VIP + 1;
+publicVariable "report_dead_VIP"
+
+;//--------------ОЧИСТКА ТРУПА
+~SETTINGS_deleteCorpTime
+deleteVehicle _DEADMAN;

@@ -1,0 +1,5 @@
+
+
+if(VAR_CarSiren_Backup_CoolDown)then{exit;};
+_leader = _this select 0;
+{if((vehicle _x) != driver _x)then{VAR_CarSiren_Backup_EAST = (vehicle (driver _x)); publicvariable "VAR_CarSiren_Backup_EAST"; VAR_CarSiren_Backup =  (vehicle (driver _x)); publicvariable "VAR_CarSiren_Backup"; exit; }; }foreach units  group _leader;

@@ -1,0 +1,21 @@
+
+;///Проверка на подозреваемого и проверка на потери
+#CHECK
+~3
+	;//видят подозреваемого
+	if (((group Player) KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then {HowManySeeYou = HowManySeeYou + 1; publicVariable "HowManySeeYou"; report_call_Omega = report_call_Omega + 1; PublicVariable "report_call_Omega"; goto "PURSUIT";}
+	
+goto "CHECK"
+
+
+;///ПРЕСЛЕДОВАНИЕ если видят
+#PURSUIT
+
+	;//Видят и преследуют
+	if(((group Player) KnowsAbout (vehicle Hero) >= 1) and (alive Hero)) then{}else {HowManySeeYou = HowManySeeYou - 1; publicVariable "HowManySeeYou";  goto "CHECK";} 
+~5
+goto "PURSUIT"
+
+
+
+

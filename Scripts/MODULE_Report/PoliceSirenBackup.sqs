@@ -1,0 +1,17 @@
+_car = _this;
+
+
+if(VAR_CarSiren_Backup_CoolDown)then{exit;}
+VAR_CarSiren_Backup_CoolDown = true;
+~1
+_array = ["Long1","Long2","Long3","Long3", "Siren1A","Siren2A","Siren5A","Siren6A","Siren7A","Siren8A","Siren9A","Siren10A","Siren14A","Siren14A"];
+_r = random ((count _array)-1);
+_random = _r - (_r mod 1);
+_selected = _array select (_random);
+
+~0.1
+
+_car say _selected;
+
+~5 + (random(10))
+VAR_CarSiren_Backup_CoolDown = false;

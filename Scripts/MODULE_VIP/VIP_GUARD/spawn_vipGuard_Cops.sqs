@@ -1,0 +1,20 @@
+_VIP = _this
+
+"Civilian11" createUnit [position _VIP, group _VIP,"NAMESAVER_copVip = this; RemoveAllWeapons this; this addmagazine ""sof2_m1911Mag""; this addmagazine ""sof2_m1911Mag""; this addmagazine ""sof2_m1911Mag""; this addmagazine ""sof2_m1911Mag""; this addWeapon ""sof2_m1911""", 1, "private"]
+
+NAMESAVER_copVip addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"]; 
+TotalVIPGuardCount = TotalVIPGuardCount + 1; 
+publicVariable "TotalVIPGuardCount"; 
+AliveVIPGuard = AliveVIPGuard + 1; 
+publicVariable "AliveVIPGuard";
+
+~0.1
+
+"Civilian11" createUnit [position _VIP, group _VIP,"NAMESAVER_copVip = this; RemoveAllWeapons this; this addmagazine ""sof2_m1911Mag""; this addmagazine ""sof2_m1911Mag""; this addmagazine ""sof2_m1911Mag""; this addmagazine ""sof2_m1911Mag""; this addWeapon ""sof2_m1911""", 1, "private"]
+
+NAMESAVER_copVip addEventHandler ["killed", "(_this select 0) exec ""MODULE_DEAD\DEAD_VIPGuard.sqs"" ;"]; 
+TotalVIPGuardCount = TotalVIPGuardCount + 1; 
+publicVariable "TotalVIPGuardCount"; 
+AliveVIPGuard = AliveVIPGuard + 1; 
+publicVariable "AliveVIPGuard";
+
